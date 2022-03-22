@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="scroom" id="Project-56e" database="LogicalDesign" >
+	<schema name="scroom" >
+		<table name="attendance" prior="Entity" >
+			<column name="attendance_id" type="int" jt="4" mandatory="y" unsigned="y" />
+			<index name="pk_attendance" unique="PRIMARY_KEY" >
+				<column name="attendance_id" />
+			</index>
+		</table>
+		<table name="bonus" prior="Entity" >
+			<column name="bonus_id" type="int" jt="4" mandatory="y" unsigned="y" />
+			<index name="pk_bonus" unique="PRIMARY_KEY" >
+				<column name="bonus_id" />
+			</index>
+		</table>
+		<table name="exam" prior="Entity" >
+			<column name="exam_id" type="int" jt="4" mandatory="y" unsigned="y" />
+			<index name="pk_exam" unique="PRIMARY_KEY" >
+				<column name="exam_id" />
+			</index>
+		</table>
+		<table name="lecture" prior="Entity" >
+			<column name="lecture_id" type="int" jt="4" mandatory="y" unsigned="y" />
+			<index name="pk_lecture" unique="PRIMARY_KEY" >
+				<column name="lecture_id" />
+			</index>
+		</table>
+		<table name="note" prior="Entity" >
+			<column name="note_id" type="int" length="600" jt="4" mandatory="y" unsigned="y" />
+			<index name="pk_note" unique="PRIMARY_KEY" >
+				<column name="note_id" />
+			</index>
+		</table>
+		<table name="professor" prior="Entity" >
+			<column name="professor_uni_id" type="int" jt="4" mandatory="y" unsigned="y" />
+			<index name="pk_professor" unique="PRIMARY_KEY" >
+				<column name="professor_uni_id" />
+			</index>
+		</table>
+		<table name="student" prior="Entity" >
+			<column name="student_uni_id" type="int" jt="4" mandatory="y" unsigned="y" />
+			<index name="pk_student" unique="PRIMARY_KEY" >
+				<column name="student_uni_id" />
+			</index>
+		</table>
+		<table name="subject" prior="subjects" >
+			<column name="subject_id" type="int" jt="4" mandatory="y" unsigned="y" />
+			<index name="pk_subject" unique="PRIMARY_KEY" >
+				<column name="subject_id" />
+			</index>
+			<fk name="fk_subject_student" to_schema="scroom" to_table="student" type="ManyToMany" >
+				<fk_column name="subject_id" pk="student_uni_id" />
+			</fk>
+		</table>
+	</schema>
+	<layout name="Default Layout" id="Layout-1525" show_relation="columns" >
+		<entity schema="scroom" name="attendance" color="C1D8EE" x="704" y="176" />
+		<entity schema="scroom" name="bonus" color="C1D8EE" x="928" y="336" />
+		<entity schema="scroom" name="exam" color="C1D8EE" x="144" y="384" />
+		<entity schema="scroom" name="lecture" color="C1D8EE" x="656" y="416" />
+		<entity schema="scroom" name="note" color="C1D8EE" x="560" y="480" />
+		<entity schema="scroom" name="professor" color="C1D8EE" x="448" y="96" />
+		<entity schema="scroom" name="student" color="C1D8EE" x="128" y="128" />
+		<entity schema="scroom" name="subject" color="C1D8EE" x="448" y="224" />
+		<callout x="48" y="48" pointer="Round" >
+			<comment><![CDATA[Right-click the layout to create entities or shapes, create relations using drag and drop.
+Save the design to file. Use the Convert menu option to convert the model to a physical model.]]></comment>
+		</callout>
+	</layout>
+</project>
