@@ -2,28 +2,67 @@
 <project version="4">
   <component name="PhpIncludePathManager">
     <include_path>
-      <path value="$PROJECT_DIR$/testRatchet/vendor/react/socket" />
-      <path value="$PROJECT_DIR$/testRatchet/vendor/psr/http-factory" />
-      <path value="$PROJECT_DIR$/testRatchet/vendor/react/promise-timer" />
-      <path value="$PROJECT_DIR$/testRatchet/vendor/react/promise" />
-      <path value="$PROJECT_DIR$/testRatchet/vendor/symfony/polyfill-mbstring" />
-      <path value="$PROJECT_DIR$/testRatchet/vendor/cboden/ratchet" />
-      <path value="$PROJECT_DIR$/testRatchet/vendor/symfony/deprecation-contracts" />
-      <path value="$PROJECT_DIR$/testRatchet/vendor/ratchet/rfc6455" />
-      <path value="$PROJECT_DIR$/testRatchet/vendor/ralouphie/getallheaders" />
-      <path value="$PROJECT_DIR$/testRatchet/vendor/symfony/routing" />
-      <path value="$PROJECT_DIR$/testRatchet/vendor/composer" />
-      <path value="$PROJECT_DIR$/testRatchet/vendor/guzzlehttp/psr7" />
-      <path value="$PROJECT_DIR$/testRatchet/vendor/symfony/http-foundation" />
-      <path value="$PROJECT_DIR$/testRatchet/vendor/react/dns" />
-      <path value="$PROJECT_DIR$/testRatchet/vendor/react/cache" />
-      <path value="$PROJECT_DIR$/testRatchet/vendor/react/event-loop" />
-      <path value="$PROJECT_DIR$/testRatchet/vendor/evenement/evenement" />
-      <path value="$PROJECT_DIR$/testRatchet/vendor/react/stream" />
-      <path value="$PROJECT_DIR$/testRatchet/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/SocketServer/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/SocketServer/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/SocketServer/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/SocketServer/vendor/sebastian/cli-parser" />
+      <path value="$PROJECT_DIR$/SocketServer/vendor/sebastian/code-unit" />
+      <path value="$PROJECT_DIR$/SocketServer/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/SocketServer/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/SocketServer/vendor/sebastian/complexity" />
+      <path value="$PROJECT_DIR$/SocketServer/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/SocketServer/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/SocketServer/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/SocketServer/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/SocketServer/vendor/sebastian/lines-of-code" />
+      <path value="$PROJECT_DIR$/SocketServer/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/SocketServer/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/SocketServer/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/SocketServer/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/SocketServer/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/SocketServer/vendor/sebastian/type" />
+      <path value="$PROJECT_DIR$/SocketServer/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/SocketServer/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/SocketServer/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/SocketServer/vendor/composer" />
+      <path value="$PROJECT_DIR$/SocketServer/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/SocketServer/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/SocketServer/vendor/react/cache" />
+      <path value="$PROJECT_DIR$/SocketServer/vendor/react/dns" />
+      <path value="$PROJECT_DIR$/SocketServer/vendor/react/event-loop" />
+      <path value="$PROJECT_DIR$/SocketServer/vendor/react/promise" />
+      <path value="$PROJECT_DIR$/SocketServer/vendor/react/promise-timer" />
+      <path value="$PROJECT_DIR$/SocketServer/vendor/react/socket" />
+      <path value="$PROJECT_DIR$/SocketServer/vendor/react/stream" />
+      <path value="$PROJECT_DIR$/SocketServer/vendor/cboden/ratchet" />
+      <path value="$PROJECT_DIR$/SocketServer/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/SocketServer/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/SocketServer/vendor/ratchet/rfc6455" />
+      <path value="$PROJECT_DIR$/SocketServer/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/SocketServer/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/SocketServer/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/SocketServer/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/SocketServer/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/SocketServer/vendor/evenement/evenement" />
+      <path value="$PROJECT_DIR$/SocketServer/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/SocketServer/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/SocketServer/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/SocketServer/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/SocketServer/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/SocketServer/vendor/phpunit/php-invoker" />
+      <path value="$PROJECT_DIR$/SocketServer/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/SocketServer/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/SocketServer/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/SocketServer/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/SocketServer/vendor/phpdocumentor/reflection-docblock" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.0">
     <option name="suggestChangeDefaultLanguageLevel" value="false" />
+  </component>
+  <component name="PhpUnit">
+    <phpunit_settings>
+      <PhpUnitSettings custom_loader_path="$PROJECT_DIR$/SocketServer/vendor/autoload.php" />
+    </phpunit_settings>
   </component>
 </project>
