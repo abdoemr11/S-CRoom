@@ -1,6 +1,8 @@
 <?php
 
 use App\WebSocket\SocketServer;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
 /*
@@ -20,6 +22,24 @@ Route::get('/', function () {
 
 Route::get('register', function (){
    return view('register');
+});
+Route::get('login', function (){
+    return view('login');
+});
+Route::post('login', function (Request $request){
+    $credentials = $request->validate([
+        'student_id' => ['required'],
+        'password' => ['required'],
+    ]);
+
+    if (Auth::guard('students')->attempt($credentials)) {
+        $request->session()->regenerate();
+        dd('You are mf');
+    }
+
+    return back()->withErrors([
+        'student_id' => 'The provided credentials do not match our records.',
+    ])->onlyInput('email');
 });
 //Route::post('register/cam', 'RegisterController@open_cam');
 Route::post('register/cam', [RegisterController::class, 'open_cam']);
