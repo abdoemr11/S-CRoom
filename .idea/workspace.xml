@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ee614767-cd45-418e-a06e-f46a68b34b31" name="Changes" comment="Finished the ability to send welcome message and open cam">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocketServer/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/.gitignore" afterDir="false" />
-    </list>
+    <list default="true" id="ee614767-cd45-418e-a06e-f46a68b34b31" name="Changes" comment="gitignored vendor folder on the socket server" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -116,7 +113,7 @@
       <workItem from="1648119562485" duration="338000" />
       <workItem from="1648283372993" duration="4181000" />
       <workItem from="1648306911704" duration="216000" />
-      <workItem from="1653380072589" duration="1525000" />
+      <workItem from="1653380072589" duration="2161000" />
     </task>
     <task id="LOCAL-00001" summary="Finished the ability to send welcome message and open cam">
       <created>1648307115306</created>
@@ -125,7 +122,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648307115306</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="gitignored vendor folder on the socket server">
+      <created>1653381833781</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1653381833781</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,6 +148,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Finished the ability to send welcome message and open cam" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished the ability to send welcome message and open cam" />
+    <MESSAGE value="gitignored vendor folder on the socket server" />
+    <option name="LAST_COMMIT_MESSAGE" value="gitignored vendor folder on the socket server" />
   </component>
 </project>
