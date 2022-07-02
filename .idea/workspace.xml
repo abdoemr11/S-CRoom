@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ee614767-cd45-418e-a06e-f46a68b34b31" name="Changes" comment="ready to collaborate with goda and gad">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/S-CRoom.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/S-CRoom.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocketServer/tests/TestSudent.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/tests/TestSudent.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SocketServer/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,17 +88,20 @@
     </include_path>
   </component>
   <component name="ProjectId" id="26kB7WFiZ7euJ72r6XDd8P7LNYe" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "WebServerToolWindowFactoryState": "false",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/3enginnering/elect4/term2/project/New folder/S-CRoom&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\3enginnering\elect4\term2\project\S-CRoom\SocketServer\src\Controller" />
@@ -149,6 +154,8 @@
       <workItem from="1653766150110" duration="44000" />
       <workItem from="1656746095613" duration="610000" />
       <workItem from="1656768388892" duration="3465000" />
+      <workItem from="1656775061037" duration="32000" />
+      <workItem from="1656776309759" duration="14000" />
     </task>
     <task id="LOCAL-00001" summary="Finished the ability to send welcome message and open cam">
       <created>1648307115306</created>
