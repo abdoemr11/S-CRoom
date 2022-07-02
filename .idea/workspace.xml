@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ee614767-cd45-418e-a06e-f46a68b34b31" name="Changes" comment="gitignored vendor folder on the socket server" />
+    <list default="true" id="ee614767-cd45-418e-a06e-f46a68b34b31" name="Changes" comment="ready to collaborate with goda and gad">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SocketServer/tests/TestSudent.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/tests/TestSudent.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -90,6 +93,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "WebServerToolWindowFactoryState": "false",
+    "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -97,6 +101,32 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\3enginnering\elect4\term2\project\S-CRoom\SocketServer\src\Controller" />
     </key>
+  </component>
+  <component name="RunManager" selected="PHPUnit.TestSudent.testAttachDeviceToNetwork">
+    <configuration name="TestSudent.testAttachDeviceToNetwork" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="PHP" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <TestRunner class="TestSudent" file="$PROJECT_DIR$/SocketServer/tests/TestSudent.php" method="testAttachDeviceToNetwork" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestSudent.testOpenCamFromStudent" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="PHP" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <TestRunner class="TestSudent" file="$PROJECT_DIR$/SocketServer/tests/TestSudent.php" method="testOpenCamFromStudent" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHPUnit.TestSudent.testAttachDeviceToNetwork" />
+        <item itemvalue="PHPUnit.TestSudent.testOpenCamFromStudent" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -114,6 +144,11 @@
       <workItem from="1648283372993" duration="4181000" />
       <workItem from="1648306911704" duration="216000" />
       <workItem from="1653380072589" duration="2161000" />
+      <workItem from="1653477826641" duration="655000" />
+      <workItem from="1653665638612" duration="210000" />
+      <workItem from="1653766150110" duration="44000" />
+      <workItem from="1656746095613" duration="610000" />
+      <workItem from="1656768388892" duration="3465000" />
     </task>
     <task id="LOCAL-00001" summary="Finished the ability to send welcome message and open cam">
       <created>1648307115306</created>
@@ -129,7 +164,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653381833781</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="ready to collaborate with goda and gad">
+      <created>1653477883623</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1653477883623</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -149,6 +191,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Finished the ability to send welcome message and open cam" />
     <MESSAGE value="gitignored vendor folder on the socket server" />
-    <option name="LAST_COMMIT_MESSAGE" value="gitignored vendor folder on the socket server" />
+    <MESSAGE value="ready to collaborate with goda and gad" />
+    <option name="LAST_COMMIT_MESSAGE" value="ready to collaborate with goda and gad" />
   </component>
 </project>

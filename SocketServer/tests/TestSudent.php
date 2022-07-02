@@ -8,7 +8,7 @@ class TestSudent extends \PHPUnit\Framework\TestCase
     private string $service_port = "8080";
     public function testOpenCamFromStudent()
     {
-//        $this->markTestSkipped("waiting to sign new student first");
+        $this->markTestSkipped("waiting to sign new student first");
         $arr = array('from' => 'admin',
             'to' => '152',
             'action' => 'open_cam',
@@ -26,7 +26,7 @@ class TestSudent extends \PHPUnit\Framework\TestCase
     }
     public function testAttachDeviceToNetwork()
     {
-        $this->markTestSkipped("waiting to sign new student first");
+//        $this->markTestSkipped("waiting to sign new student first");
 
         $arr = array(
             'action' => 'connect',
