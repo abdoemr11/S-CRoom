@@ -3,6 +3,8 @@ namespace MyApp;
 use MyApp\Controller\ServerController;
 use Ratchet\ConnectionInterface;
 use Ratchet\MessageComponentInterface;
+use MyApp\Utilities\Message_Handler;
+
 //TODO build student and staff class
 
 class Message implements MessageComponentInterface {
@@ -17,6 +19,8 @@ class Message implements MessageComponentInterface {
     {
         $this->clients->attach($conn);
         echo "New connection! ({$conn->resourceId})\n";
+        $conn->send(Message_Handler::encode_msg(array('msg' => 'hello')));
+//        $conn->close();
 //        foreach ($this->clients as $client) {
 //
 //                // The sender is not the receiver, send to each client connected

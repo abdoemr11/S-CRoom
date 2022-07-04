@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ee614767-cd45-418e-a06e-f46a68b34b31" name="Changes" comment="ready to collaborate with goda and gad">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/S-CRoom.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/S-CRoom.iml" afterDir="false" />
+    <list default="true" id="ee614767-cd45-418e-a06e-f46a68b34b31" name="Changes" comment="added composer files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocketServer/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.phpunit.result.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.phpunit.result.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SocketServer/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SocketServer/src/Controller/ServerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/src/Controller/ServerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SocketServer/src/Controller/Student.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/src/Controller/Student.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SocketServer/src/message.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/src/message.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SocketServer/tests/TestSudent.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/tests/TestSudent.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +110,7 @@
       <recent name="D:\3enginnering\elect4\term2\project\S-CRoom\SocketServer\src\Controller" />
     </key>
   </component>
-  <component name="RunManager" selected="PHPUnit.TestSudent.testAttachDeviceToNetwork">
+  <component name="RunManager" selected="PHPUnit.TestSudent.testOpenCamForRecognition">
     <configuration name="TestSudent.testAttachDeviceToNetwork" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <CommandLine>
         <PhpTestInterpreterSettings>
@@ -115,6 +118,33 @@
         </PhpTestInterpreterSettings>
       </CommandLine>
       <TestRunner class="TestSudent" file="$PROJECT_DIR$/SocketServer/tests/TestSudent.php" method="testAttachDeviceToNetwork" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestSudent.testExam" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="PHP" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <TestRunner class="TestSudent" file="$PROJECT_DIR$/SocketServer/tests/TestSudent.php" method="testExam" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestSudent.testOpenCamForRecognition" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="PHP" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <TestRunner class="TestSudent" file="$PROJECT_DIR$/SocketServer/tests/TestSudent.php" method="testOpenCamForRecognition" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestSudent.testOpenCamForRegisteration" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="PHP" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <TestRunner class="TestSudent" file="$PROJECT_DIR$/SocketServer/tests/TestSudent.php" method="testOpenCamForRegisteration" scope="Method" />
       <method v="2" />
     </configuration>
     <configuration name="TestSudent.testOpenCamFromStudent" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
@@ -128,7 +158,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="PHPUnit.TestSudent.testOpenCamForRecognition" />
+        <item itemvalue="PHPUnit.TestSudent.testOpenCamForRegisteration" />
         <item itemvalue="PHPUnit.TestSudent.testAttachDeviceToNetwork" />
+        <item itemvalue="PHPUnit.TestSudent.testExam" />
         <item itemvalue="PHPUnit.TestSudent.testOpenCamFromStudent" />
       </list>
     </recent_temporary>
@@ -155,7 +188,8 @@
       <workItem from="1656746095613" duration="610000" />
       <workItem from="1656768388892" duration="3465000" />
       <workItem from="1656775061037" duration="32000" />
-      <workItem from="1656776309759" duration="14000" />
+      <workItem from="1656776309759" duration="68000" />
+      <workItem from="1656839293867" duration="18522000" />
     </task>
     <task id="LOCAL-00001" summary="Finished the ability to send welcome message and open cam">
       <created>1648307115306</created>
@@ -178,7 +212,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653477883623</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="added composer files">
+      <created>1656776368162</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1656776368162</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -199,6 +240,7 @@
     <MESSAGE value="Finished the ability to send welcome message and open cam" />
     <MESSAGE value="gitignored vendor folder on the socket server" />
     <MESSAGE value="ready to collaborate with goda and gad" />
-    <option name="LAST_COMMIT_MESSAGE" value="ready to collaborate with goda and gad" />
+    <MESSAGE value="added composer files" />
+    <option name="LAST_COMMIT_MESSAGE" value="added composer files" />
   </component>
 </project>
