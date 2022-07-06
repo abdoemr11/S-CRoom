@@ -32,6 +32,9 @@ class ServerController
         } else if ($msg_obj['action'] == 'done') {
             //
         }
+        else if ($msg_obj['action'] == 'done') {
+            $this->order_admin($msg_obj[])
+        }
 //        array(6) {
 //        ["action"]=>
 //  string(4) "Done"
