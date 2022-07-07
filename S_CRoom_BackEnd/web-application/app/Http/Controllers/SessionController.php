@@ -15,19 +15,20 @@ class SessionController extends Controller
             'password' => ['required'],
         ]);
 
-//        dd($credentials);
         switch (\request('role'))
         {
             case 'STUDENT':
                 $credentials = [
-                    'student_id' => $credentialsOld['id'],
+                    'id' => $credentialsOld['id'],
                     'password'=> $credentialsOld['password']
                 ];
+
                 if (Auth::guard('students')->attempt($credentials)) {
-                    \request()->session()->regenerate();
+                    session()->regenerate();
                     return redirect('student-profile')->with([
                         'user' => Auth::guard('students')->user()
                     ]);
+
                 }
                 break;
             case 'PROFESSOR':
@@ -40,8 +41,9 @@ class SessionController extends Controller
                     'role' => 'Select proper role to log in',
                 ]);
         }
+
         if (Auth::guard('students')->attempt($credentials)) {
-            $request->session()->regenerate();
+            \request()->session()->regenerate();
             return redirect('test');
         }
 //    Auth::guard()->();
@@ -52,5 +54,11 @@ class SessionController extends Controller
     public function create()
     {
         return view('login');
+    }
+    public function destroy($role)
+    {
+        auth()->guard($role)->logout();
+
+        return redirect('/')->with('success', 'Goodbye!');
     }
 }

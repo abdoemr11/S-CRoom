@@ -2,51 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ee614767-cd45-418e-a06e-f46a68b34b31" name="Changes" comment="working with goda">
-      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/app/Http/Controllers/SessionController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/README.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/css/aos.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/css/main.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/images/cc-bg-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/images/cloud-database.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/images/graphic-design-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/images/graphic-design-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/images/graphic-design-3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/images/graphic-design-4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/images/pexels-pixabay-270640.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/images/profile.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/images/project-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/images/project-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/images/project-3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/images/project-4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/images/staticmap.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/js/aos.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/js/core/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/js/core/jquery.3.2.1.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/js/core/popper.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/js/now-ui-kit.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/js/plugins/bootstrap-datepicker.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/js/plugins/bootstrap-switch.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/js/plugins/jquery.sharrre.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/js/plugins/nouislider.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/scripts/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/views/admin.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/views/goda.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/views/pp.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/views/profLive.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/views/profLog.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/views/student-profile.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/views/studentLive.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/views/studentLog.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/views/test.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SocketServer.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SocketServer/Commands/responce_cam_admin.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SocketServer/Commands/responce_cam_prof.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SocketServer/Commands/responce_exam.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SocketServer/Commands/responce_train.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SocketServer/Commands/responce_vote.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/app/Http/Controllers/SessionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/app/Http/Controllers/SessionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/app/Models/Student.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/app/Models/Student.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/views/student-profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/views/student-profile.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -259,7 +220,7 @@
       <workItem from="1657099969443" duration="2608000" />
       <workItem from="1657122703273" duration="6317000" />
       <workItem from="1657132132581" duration="732000" />
-      <workItem from="1657188617025" duration="7410000" />
+      <workItem from="1657188617025" duration="9797000" />
     </task>
     <task id="LOCAL-00001" summary="Finished the ability to send welcome message and open cam">
       <created>1648307115306</created>
@@ -310,7 +271,21 @@
       <option name="project" value="LOCAL" />
       <updated>1657196673923</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="working with goda">
+      <created>1657196768672</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1657196768672</updated>
+    </task>
+    <task id="LOCAL-00009" summary="working with goda">
+      <created>1657196776166</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1657196776166</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

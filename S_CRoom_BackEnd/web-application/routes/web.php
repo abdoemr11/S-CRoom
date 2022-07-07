@@ -29,9 +29,10 @@ Route::get('register', function (){
 });
 Route::get('login', [SessionController::class, 'create']);
 Route::post('login', [SessionController::class, 'store']);
+Route::get('logout/{role}', [SessionController::class, 'destroy']);
+
 //Route::post('register/cam', 'RegisterController@open_cam');
 Route::post('register/cam', [RegisterController::class, 'open_cam']);
-
 
 //Route::get('/main', function () {
 //    return view('main');
