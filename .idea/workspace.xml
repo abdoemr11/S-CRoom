@@ -1,14 +1,123 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ee614767-cd45-418e-a06e-f46a68b34b31" name="Changes" comment="added composer files">
+    <list default="true" id="ee614767-cd45-418e-a06e-f46a68b34b31" name="Changes" comment="working with goda">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/MIMO.pptx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/add.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/assets/css/boot.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/assets/css/buttons.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/assets/css/flex-slider.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/assets/css/fontawesome.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/assets/css/lightbox.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/assets/css/owl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/assets/css/templatemo-edu-meeting.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/assets/fonts/Flaticon.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/assets/fonts/FontAwesome.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/assets/fonts/flexslider-icon.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/assets/fonts/flexslider-icon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/assets/fonts/flexslider-icon.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/assets/fonts/flexslider-icon.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/assets/fonts/fontawesome-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/assets/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/assets/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/assets/fonts/fontawesome-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/assets/fonts/fontawesome-webfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/assets/fonts/slick.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/assets/fonts/slick.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/assets/fonts/slick.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/assets/fonts/slick.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/assets/images/close.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/assets/images/course-01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/assets/images/course-02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/assets/images/course-03.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/assets/images/course-04.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/assets/images/image.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/assets/images/loading.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/assets/images/meeting-04.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/assets/images/meetings-bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/assets/images/meetings-page-bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/assets/images/next.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/assets/images/pexels-lumn-298660.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/assets/images/pexels-pixabay-256517.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/assets/images/pexels-pixabay-270640.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/assets/images/play-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/assets/images/prev.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/assets/images/school.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/assets/images/service-icon-01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/assets/images/service-icon-02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/assets/images/service-icon-03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/assets/images/service-item-bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/assets/images/vv.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/assets/js/custom.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/assets/js/isotope.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/assets/js/isotope.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/assets/js/lightbox.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/assets/js/owl-carousel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/assets/js/slick-slider.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/assets/js/tabs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/assets/js/video.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/attendant-list.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/bonus.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/boot.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/buttons.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/checked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/clipboard.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/delete.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/edit.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/false.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/flex-slider.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/fontawesome.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/information.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/keyboard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/lightbox.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/online-course.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/owl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/plus.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/profile.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/question.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/quiz.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/remove.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/service-item-bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/stand-out.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/templatemo-edu-meeting.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/test.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/true.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/try.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/try.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/vendor/bootstrap/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/vendor/bootstrap/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/vendor/jquery/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/vendor/jquery/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/vendor/jquery/jquery.min.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/vendor/jquery/jquery.slim.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/vendor/jquery/jquery.slim.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/vendor/jquery/jquery.slim.min.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/voice-recorder.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/vote.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.phpunit.result.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.phpunit.result.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/factories/ProfessorFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/factories/ProfessorFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/factories/StudentFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/factories/StudentFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/factories/SubjectFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/factories/SubjectFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/migrations/2022_05_17_153755_create_students_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/migrations/2022_05_17_153755_create_students_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/migrations/2022_05_18_150905_create_professors_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/migrations/2022_05_18_150905_create_professors_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/migrations/2022_07_04_115102_create_attendents_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/migrations/2022_07_04_115102_create_attendents_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/migrations/2022_07_04_115535_create_bonuses_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/migrations/2022_07_04_115535_create_bonuses_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/migrations/2022_07_04_121018_create_notes_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/migrations/2022_07_04_121018_create_notes_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/migrations/2022_07_04_121620_create_subjects_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/migrations/2022_07_04_101620_create_subjects_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/migrations/2022_07_04_121634_create_exams_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/migrations/2022_07_04_121634_create_exams_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/migrations/2022_07_04_124334_create_lectures_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/migrations/2022_07_04_104334_create_lectures_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/migrations/2022_07_04_124912_student_subject.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/migrations/2022_07_04_124912_student_subject.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/migrations/2022_07_04_125520_student_exam.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/migrations/2022_07_04_125520_student_exam.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/migrations/2022_07_04_125840_student_attendant.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/migrations/2022_07_04_125840_student_attendant.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/views/login.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/routes/web.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SocketServer/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocketServer/src/Controller/ServerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/src/Controller/ServerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocketServer/src/Controller/Student.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/src/Controller/Student.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocketServer/src/message.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/src/message.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocketServer/tests/TestSudent.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/tests/TestSudent.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +129,11 @@
     <execution />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="goda_branch" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitSEFilterConfiguration">
@@ -100,17 +214,21 @@
   &quot;keyToString&quot;: {
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/3enginnering/elect4/term2/project/New folder/S-CRoom&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/3enginnering/elect4/term2/project/S-CRoom/S_CRoom_BackEnd/web-application/artisan&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\3enginnering\elect4\term2\project\S-CRoom\S_CRoom_BackEnd\web-application\public" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\3enginnering\elect4\term2\project\S-CRoom\SocketServer\src\Controller" />
     </key>
   </component>
-  <component name="RunManager" selected="PHPUnit.TestSudent.testOpenCamForRecognition">
+  <component name="RunManager" selected="PHP Script.Unnamed">
     <configuration name="TestSudent.testAttachDeviceToNetwork" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <CommandLine>
         <PhpTestInterpreterSettings>
@@ -156,13 +274,29 @@
       <TestRunner class="TestSudent" file="$PROJECT_DIR$/SocketServer/tests/TestSudent.php" method="testOpenCamFromStudent" scope="Method" />
       <method v="2" />
     </configuration>
+    <configuration name="Unnamed" type="PhpLocalRunConfigurationType" factoryName="PHP Console" nameIsGenerated="true" path="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/artisan" scriptParameters="serve">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="PHP" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="PHP Script.Unnamed" />
+      <item itemvalue="PHPUnit.TestSudent.testAttachDeviceToNetwork" />
+      <item itemvalue="PHPUnit.TestSudent.testExam" />
+      <item itemvalue="PHPUnit.TestSudent.testOpenCamForRecognition" />
+      <item itemvalue="PHPUnit.TestSudent.testOpenCamForRegisteration" />
+      <item itemvalue="PHPUnit.TestSudent.testOpenCamFromStudent" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="PHPUnit.TestSudent.testOpenCamForRecognition" />
-        <item itemvalue="PHPUnit.TestSudent.testOpenCamForRegisteration" />
-        <item itemvalue="PHPUnit.TestSudent.testAttachDeviceToNetwork" />
-        <item itemvalue="PHPUnit.TestSudent.testExam" />
         <item itemvalue="PHPUnit.TestSudent.testOpenCamFromStudent" />
+        <item itemvalue="PHPUnit.TestSudent.testOpenCamForRegisteration" />
+        <item itemvalue="PHPUnit.TestSudent.testOpenCamForRecognition" />
+        <item itemvalue="PHPUnit.TestSudent.testExam" />
+        <item itemvalue="PHPUnit.TestSudent.testAttachDeviceToNetwork" />
       </list>
     </recent_temporary>
   </component>
@@ -190,6 +324,13 @@
       <workItem from="1656775061037" duration="32000" />
       <workItem from="1656776309759" duration="68000" />
       <workItem from="1656839293867" duration="18522000" />
+      <workItem from="1656927914926" duration="7373000" />
+      <workItem from="1657020253538" duration="616000" />
+      <workItem from="1657057057340" duration="1156000" />
+      <workItem from="1657099969443" duration="2608000" />
+      <workItem from="1657122703273" duration="6317000" />
+      <workItem from="1657132132581" duration="732000" />
+      <workItem from="1657188617025" duration="7311000" />
     </task>
     <task id="LOCAL-00001" summary="Finished the ability to send welcome message and open cam">
       <created>1648307115306</created>
@@ -219,7 +360,21 @@
       <option name="project" value="LOCAL" />
       <updated>1656776368162</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="working on jquery">
+      <created>1656928433420</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1656928433420</updated>
+    </task>
+    <task id="LOCAL-00006" summary="for gad">
+      <created>1657132427357</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1657132427357</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -241,6 +396,9 @@
     <MESSAGE value="gitignored vendor folder on the socket server" />
     <MESSAGE value="ready to collaborate with goda and gad" />
     <MESSAGE value="added composer files" />
-    <option name="LAST_COMMIT_MESSAGE" value="added composer files" />
+    <MESSAGE value="working on jquery" />
+    <MESSAGE value="for gad" />
+    <MESSAGE value="working with goda" />
+    <option name="LAST_COMMIT_MESSAGE" value="working with goda" />
   </component>
 </project>

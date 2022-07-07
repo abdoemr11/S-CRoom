@@ -14,10 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::create('notes', function (Blueprint $table) {
-            $table->id('note_id');
+            $table->id();
             $table->foreignId('student_id')->constrained('students');
-            $table->foreignId('professor_id')->constrained('professor');
-            $table->timestamp();
+            $table->foreignId('professor_id')->constrained('professors');
+            $table->timestamps();
 
         });
     }

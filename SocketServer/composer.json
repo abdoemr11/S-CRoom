@@ -1,6 +1,6 @@
 {
     "autoload": {
-        "tests": "tests/TestSudent.php",
+        "tests": "tests/TestProfessor.php",
         "psr-4": {
             "MyApp\\": "src"
         }

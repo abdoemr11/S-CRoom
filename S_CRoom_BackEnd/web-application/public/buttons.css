@@ -1,0 +1,26 @@
+.students {
+	display: none;
+}
+.prof {
+	display: none;
+}
+.course {
+	display: none;
+}
+#add_form1 {
+	display: none;
+	background-color: lightyellow;
+}
+#add_form2 {
+	display: none;
+	background-color: lightyellow;
+}
+#add_form3 {
+	display: none;
+	background-color: lightyellow;
+}
+.form_control
+{
+	width: 50%;
+	height: 50%;
+}

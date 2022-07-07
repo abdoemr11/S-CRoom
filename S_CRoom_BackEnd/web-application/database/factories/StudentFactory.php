@@ -17,7 +17,7 @@ class StudentFactory extends Factory
     public function definition()
     {
         return [
-            'student_id' =>$this->faker->randomNumber(3),
+            'id' =>$this->faker->randomNumber(3),
             'national_id' => $this->faker->numerify('###########'),
             'first_name'=> $this->faker->firstName,
             'second_name'=> $this->faker->lastName,
@@ -29,7 +29,8 @@ class StudentFactory extends Factory
             'city' => $this->faker->city,
             'governorate' => $this->faker->city,
             'phone' => $this->faker->phoneNumber(),
-            'image_auth'=> $this->faker->numerify('####')
+            'image_auth'=> $this->faker->numerify('####'),
+            'department' => 'Electricity'
         ];
     }
 }

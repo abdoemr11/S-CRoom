@@ -14,14 +14,14 @@ return new class extends Migration
     public function up()
     {
         Schema::create('bonuses', function (Blueprint $table) {
-            $table->id('bonus_id');
+            $table->id();
 
             $table->foreignId('student_id')->constrained('students');
-            $table->foreignId('professor_id')->constrained('professor');
-            $table->foreignId('lecture_id')->constrained('lecture');
+            $table->foreignId('professor_id')->constrained('professors');
+            $table->foreignId('lecture_id')->constrained('lectures');
 
             $table->decimal('bonus_value');
-            $table->timestamp();
+            $table->timestamps();
 
         });
     }
