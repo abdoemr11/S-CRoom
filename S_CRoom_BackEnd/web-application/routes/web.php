@@ -54,7 +54,7 @@ Route::get('/pp', function () {
 });
 Route::get('student-profile', function () {
     return view('student-profile');
-});
+})->middleware('student');
 
 Route::get('/admin', function () {
     return view('admin');
