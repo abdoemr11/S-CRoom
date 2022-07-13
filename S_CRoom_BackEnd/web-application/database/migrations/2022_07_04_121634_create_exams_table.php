@@ -19,6 +19,11 @@ return new class extends Migration
             $table->foreignId('student_id')->constrained('students');
             $table->foreignId('professor_id')->constrained('professors');
             $table->foreignId('subjects_id')->constrained('subjects');
+            $table->enum('exam_type', ['final', 'quiz', 'midterm']);
+            $table->integer('exam-mark');
+            $table->integer('exam_max_degree');
+            $table->integer('exam_min_degree');
+            $table->string('exam_year');
 
             $table->timestamps();
         });

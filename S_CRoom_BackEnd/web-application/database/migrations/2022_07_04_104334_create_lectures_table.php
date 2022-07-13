@@ -19,6 +19,8 @@ return new class extends Migration
 
             $table->foreignId('professor_id')->constrained('professors');
             $table->foreignId('subjects_id')->constrained('subjects');
+            $table->integer('lecture_week');
+            $table->string('lecture_location');
 
 
             $table->timestamps();

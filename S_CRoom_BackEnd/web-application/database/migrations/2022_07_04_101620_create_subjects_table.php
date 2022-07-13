@@ -17,6 +17,9 @@ return new class extends Migration
 
             $table->id();
             $table->foreignId('professor_id')->constrained('professors');
+            $table->integer('subject_degree');
+            $table->string('subject_year');
+            $table->integer('subject_min_mark');
             $table->timestamps();
         });
     }
