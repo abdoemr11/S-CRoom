@@ -2,10 +2,11 @@
 
 namespace Database\Factories;
 
+use App\Models\Professor;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\subject>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Subject>
  */
 class SubjectFactory extends Factory
 {
@@ -17,7 +18,8 @@ class SubjectFactory extends Factory
     public function definition()
     {
         return [
-            ''
+            'id' => 12,
+            'professor_id' => Professor::factory()
         ];
     }
 }

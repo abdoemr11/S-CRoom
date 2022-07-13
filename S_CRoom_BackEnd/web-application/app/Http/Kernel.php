@@ -2,6 +2,8 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\MustBeAdmin;
+use App\Http\Middleware\MustBeProfessor;
 use App\Http\Middleware\MustBeStudent;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -61,6 +63,8 @@ class Kernel extends HttpKernel
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'student'=>MustBeStudent::class,
+        'professor' => MustBeProfessor::class,
+        'admin' => MustBeAdmin::class,
         'password.confirm' => \Illuminate\Auth\Middleware\RequirePassword::class,
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,

@@ -57,7 +57,9 @@
                         <li><a href="#about">About</a></li>
                         <li class="scroll-to-section"><a href="#contact">Contact Us</a></li>
                         <li>
+                            @unless(\Illuminate\Support\Facades\Auth::check())
                             <a href="/login"><button class="btn btn-primary">Log in</button></a>
+                            @endunless
                         </li>
                     </ul>
                     <a class='menu-trigger'>

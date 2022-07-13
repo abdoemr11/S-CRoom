@@ -32,25 +32,43 @@ class SessionController extends Controller
                 }
                 break;
             case 'PROFESSOR':
+                $credentials = [
+                    'id' => $credentialsOld['id'],
+                    'password'=> $credentialsOld['password']
+                ];
 
+                if (Auth::guard('professors')->attempt($credentials)) {
+                    session()->regenerate();
+                    return redirect('proflog');
+
+                }
                 break;
             case 'ADMIN':
+                $credentials = [
+                    'id' => $credentialsOld['id'],
+                    'password'=> $credentialsOld['password']
+                ];
+
+                if (Auth::guard('admins')->attempt($credentials)) {
+                    session()->regenerate();
+                    return redirect('admin');
+
+                }
                 break;
+
             default:
                 return back()->withErrors([
-                    'role' => 'Select proper role to log in',
+                    'id' => 'Select proper role to log in',
                 ]);
         }
 
-        if (Auth::guard('students')->attempt($credentials)) {
-            \request()->session()->regenerate();
-            return redirect('test');
+        return back()->withErrors([
+            'id' => 'ID or password is wrong',
+        ]);
         }
 //    Auth::guard()->();
-        return back()->withErrors([
-            'student_id' => 'The provided credentials do not match our records.',
-        ])->onlyInput('email');
-    }
+
+
     public function create()
     {
         return view('login');

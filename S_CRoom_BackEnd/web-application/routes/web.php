@@ -42,7 +42,7 @@ Route::get('stdlog', function () {
 });
 Route::get('/proflog', function () {
     return view('profLog');
-});
+})->middleware('professor');
 Route::get('/proflive', function () {
     return view('profLive');
 });
@@ -51,11 +51,11 @@ Route::get('/stdlive', function () {
 });
 Route::get('/pp', function () {
     return view('pp');
-});
+})->middleware('professor');
 Route::get('student-profile', function () {
     return view('student-profile');
 })->middleware('student');
 
 Route::get('/admin', function () {
     return view('admin');
-});
+})->middleware('admin');

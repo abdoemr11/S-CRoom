@@ -13,7 +13,7 @@ class ServerController
 
     public function handleMsg(ConnectionInterface $from,  $msg)
     {
-//        echo $msg;
+        echo $msg;
 
         $msg_obj = Message_Handler::decode_msg($msg);
         var_dump($msg_obj);
@@ -33,7 +33,7 @@ class ServerController
             //
         }
         else if ($msg_obj['action'] == 'done') {
-            $this->order_admin($msg_obj[])
+            $this->order_admin($msg_obj[]);
         }
 //        array(6) {
 //        ["action"]=>
