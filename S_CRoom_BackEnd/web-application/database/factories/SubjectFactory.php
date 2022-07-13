@@ -16,8 +16,12 @@ class SubjectFactory extends Factory
      */
     public function definition()
     {
-        return [
-            //
+        return
+        [
+
+            'subjects_id' =>12,
+            'professor_id'=>professor ::factory(),
+
         ];
     }
 }

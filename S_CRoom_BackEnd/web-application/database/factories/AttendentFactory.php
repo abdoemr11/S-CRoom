@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\lecture;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -16,8 +17,14 @@ class AttendentFactory extends Factory
      */
     public function definition()
     {
-        return [
-            //
+
+
+        return
+        [
+
+        'attendant_id'=> $this->faker->id(),
+        'lecture_id'=> lecture::factory(),
+        'is_attendant'=> true
         ];
     }
 }

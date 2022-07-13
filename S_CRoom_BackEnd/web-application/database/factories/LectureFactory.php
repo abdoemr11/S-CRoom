@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\lecture;
+use App\Models\subject;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -16,8 +18,14 @@ class LectureFactory extends Factory
      */
     public function definition()
     {
-        return [
-            //
+        return
+        [
+            'lectures_id' =>12,
+            'subjects_id'  =>subject  ::factory(),
+            'professor_id'=>professor ::factory(),
+            'lecture_id'  =>lecture   ::factory(),
+            'bonus_value' =>19
+
         ];
     }
 }

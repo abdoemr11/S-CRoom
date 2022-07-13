@@ -16,7 +16,8 @@ class ProfessorFactory extends Factory
      */
     public function definition()
     {
-        return [
+        return
+        [
             'professor_id' => $this->faker->numerify('####'),
             'first_name' => $this->faker->firstName,
             'second_name' => $this->faker->lastName,

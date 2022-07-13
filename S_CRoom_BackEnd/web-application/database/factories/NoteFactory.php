@@ -16,8 +16,13 @@ class NoteFactory extends Factory
      */
     public function definition()
     {
-        return [
-            //
+        return
+        [
+          'note_id' =>12,
+          'subjects_id'  =>subject  ::factory(),
+          'professor_id'=>professor ::factory(),
+
+
         ];
     }
 }

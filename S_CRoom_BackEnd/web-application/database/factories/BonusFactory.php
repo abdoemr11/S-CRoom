@@ -16,8 +16,13 @@ class BonusFactory extends Factory
      */
     public function definition()
     {
-        return [
-            //
-        ];
+     return
+      [
+          'bonus_id'    =>12                   ,
+          'student_id'  =>students  ::factory(),
+          'professor_id'=>professor ::factory(),
+          'lecture_id'  =>professor ::factory(),
+          'bonus_value' =>19
+      ];
     }
 }
