@@ -1,31 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ee614767-cd45-418e-a06e-f46a68b34b31" name="Changes" comment="ready for gad database seeding">
+    <list default="true" id="ee614767-cd45-418e-a06e-f46a68b34b31" name="Changes" comment="make the login for admin and professor&#10;creat admin migration&#10;many to many seems to work now">
+      <change afterPath="$PROJECT_DIR$/Book/mainsocket.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Book/socket-draft.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/S-CRoom.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/S-CRoom.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.phpunit.result.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.phpunit.result.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/app/Http/Controllers/SessionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/app/Http/Controllers/SessionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/app/Models/Professor.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/app/Models/Professor.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/app/Models/Student.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/app/Models/Student.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/app/Models/attendent.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/app/Models/Attendent.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/app/Models/bonus.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/app/Models/Bonus.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/app/Models/exam.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/app/Models/Exam.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/app/Models/lecture.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/app/Models/Lecture.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/app/Models/note.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/app/Models/Note.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/app/Models/subject.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/app/Models/Subject.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/config/auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/factories/AttendentFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/factories/AttendentFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/factories/BonusFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/factories/BonusFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/factories/ExamFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/factories/ExamFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/factories/LectureFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/factories/LectureFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/factories/NoteFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/factories/NoteFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/factories/SubjectFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/factories/SubjectFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/migrations/2022_07_04_124912_student_subject.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/migrations/2022_07_04_124912_student_subject.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/views/welcome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocketServer/src/Controller/ServerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/src/Controller/ServerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SocketServer/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SocketServer/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SocketServer/src/server.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/src/server.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SocketServer/tests/TestStudent.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/tests/TestStudent.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SocketServer/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/vendor/composer/autoload_psr4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SocketServer/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SocketServer/vendor/composer/installed.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/vendor/composer/installed.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +27,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="goda_branch" />
+        <entry key="$PROJECT_DIR$" value="update_factory_gad" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -55,7 +43,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP">
+  <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
       <path value="$PROJECT_DIR$/SocketServer/vendor/phpspec/prophecy" />
       <path value="$PROJECT_DIR$/SocketServer/vendor/phpdocumentor/type-resolver" />
@@ -110,6 +98,8 @@
       <path value="$PROJECT_DIR$/SocketServer/vendor/phpunit/phpunit" />
       <path value="$PROJECT_DIR$/SocketServer/vendor/phpdocumentor/reflection-common" />
       <path value="$PROJECT_DIR$/SocketServer/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/SocketServer/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/SocketServer/vendor/textalk/websocket" />
     </include_path>
   </component>
   <component name="ProjectId" id="26kB7WFiZ7euJ72r6XDd8P7LNYe" />
@@ -118,20 +108,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/3enginnering/elect4/term2/project/S-CRoom/S_CRoom_BackEnd/web-application/artisan",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "reference.webide.settings.project.settings.php",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/3enginnering/elect4/term2/project/New folder/S-CRoom&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\3enginnering\elect4\term2\project\S-CRoom\S_CRoom_BackEnd\web-application\public" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\3enginnering\elect4\term2\project\S-CRoom\SocketServer\src\Controller" />
     </key>
@@ -177,16 +163,7 @@
       <TestRunner class="TestSudent" file="$PROJECT_DIR$/SocketServer/tests/TestSudent.php" method="testOpenCamFromStudent" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="Unnamed" type="PhpLocalRunConfigurationType" factoryName="PHP Console" nameIsGenerated="true" path="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/artisan" scriptParameters="serve">
-      <CommandLine>
-        <PhpTestInterpreterSettings>
-          <option name="interpreterName" value="PHP" />
-        </PhpTestInterpreterSettings>
-      </CommandLine>
-      <method v="2" />
-    </configuration>
     <list>
-      <item itemvalue="PHP Script.Unnamed" />
       <item itemvalue="PHPUnit.TestServer.testConnect" />
       <item itemvalue="PHPUnit.TestSudent.testExam" />
       <item itemvalue="PHPUnit.TestSudent.testOpenCamForRecognition" />
@@ -195,11 +172,11 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="PHPUnit.TestServer.testConnect" />
         <item itemvalue="PHPUnit.TestSudent.testOpenCamFromStudent" />
         <item itemvalue="PHPUnit.TestSudent.testOpenCamForRegisteration" />
         <item itemvalue="PHPUnit.TestSudent.testOpenCamForRecognition" />
         <item itemvalue="PHPUnit.TestSudent.testExam" />
+        <item itemvalue="PHPUnit.TestServer.testConnect" />
       </list>
     </recent_temporary>
   </component>
@@ -227,15 +204,7 @@
       <workItem from="1656775061037" duration="32000" />
       <workItem from="1656776309759" duration="68000" />
       <workItem from="1656839293867" duration="18522000" />
-      <workItem from="1656927914926" duration="7373000" />
-      <workItem from="1657020253538" duration="616000" />
-      <workItem from="1657057057340" duration="1156000" />
-      <workItem from="1657099969443" duration="2608000" />
-      <workItem from="1657122703273" duration="6317000" />
-      <workItem from="1657132132581" duration="732000" />
-      <workItem from="1657188617025" duration="11702000" />
-      <workItem from="1657229885604" duration="1329000" />
-      <workItem from="1657707318070" duration="9496000" />
+      <workItem from="1657888986726" duration="1386000" />
     </task>
     <task id="LOCAL-00001" summary="Finished the ability to send welcome message and open cam">
       <created>1648307115306</created>
@@ -265,63 +234,7 @@
       <option name="project" value="LOCAL" />
       <updated>1656776368162</updated>
     </task>
-    <task id="LOCAL-00005" summary="working on jquery">
-      <created>1656928433420</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1656928433420</updated>
-    </task>
-    <task id="LOCAL-00006" summary="for gad">
-      <created>1657132427357</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1657132427357</updated>
-    </task>
-    <task id="LOCAL-00007" summary="working with goda">
-      <created>1657196673923</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1657196673923</updated>
-    </task>
-    <task id="LOCAL-00008" summary="working with goda">
-      <created>1657196768672</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1657196768672</updated>
-    </task>
-    <task id="LOCAL-00009" summary="working with goda">
-      <created>1657196776166</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1657196776166</updated>
-    </task>
-    <task id="LOCAL-00010" summary="implemented logout for student">
-      <created>1657199389488</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1657199389488</updated>
-    </task>
-    <task id="LOCAL-00011" summary="applyed middleware for student">
-      <created>1657199886290</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1657199886290</updated>
-    </task>
-    <task id="LOCAL-00012" summary="ready for gad database seeding">
-      <created>1657708071297</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1657708071297</updated>
-    </task>
-    <option name="localTasksCounter" value="13" />
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -343,12 +256,6 @@
     <MESSAGE value="gitignored vendor folder on the socket server" />
     <MESSAGE value="ready to collaborate with goda and gad" />
     <MESSAGE value="added composer files" />
-    <MESSAGE value="working on jquery" />
-    <MESSAGE value="for gad" />
-    <MESSAGE value="working with goda" />
-    <MESSAGE value="implemented logout for student" />
-    <MESSAGE value="applyed middleware for student" />
-    <MESSAGE value="ready for gad database seeding" />
-    <option name="LAST_COMMIT_MESSAGE" value="ready for gad database seeding" />
+    <option name="LAST_COMMIT_MESSAGE" value="added composer files" />
   </component>
 </project>

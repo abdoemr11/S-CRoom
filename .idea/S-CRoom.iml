@@ -58,6 +58,8 @@
       <excludeFolder url="file://$MODULE_DIR$/SocketServer/vendor/phpunit/php-file-iterator" />
       <excludeFolder url="file://$MODULE_DIR$/SocketServer/vendor/sebastian/cli-parser" />
       <excludeFolder url="file://$MODULE_DIR$/SocketServer/vendor/sebastian/diff" />
+      <excludeFolder url="file://$MODULE_DIR$/SocketServer/vendor/psr/log" />
+      <excludeFolder url="file://$MODULE_DIR$/SocketServer/vendor/textalk/websocket" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

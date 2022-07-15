@@ -25,6 +25,7 @@ class ComposerStaticInitd765188b16b1d76daba4a4c2b9e5eea1
         'W' => 
         array (
             'Webmozart\\Assert\\' => 17,
+            'WebSocket\\' => 10,
         ),
         'S' => 
         array (
@@ -47,6 +48,7 @@ class ComposerStaticInitd765188b16b1d76daba4a4c2b9e5eea1
         ),
         'P' => 
         array (
+            'Psr\\Log\\' => 8,
             'Psr\\Http\\Message\\' => 17,
             'Prophecy\\' => 9,
             'PhpParser\\' => 10,
@@ -76,6 +78,10 @@ class ComposerStaticInitd765188b16b1d76daba4a4c2b9e5eea1
         'Webmozart\\Assert\\' => 
         array (
             0 => __DIR__ . '/..' . '/webmozart/assert/src',
+        ),
+        'WebSocket\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/textalk/websocket/lib',
         ),
         'Symfony\\Polyfill\\Mbstring\\' => 
         array (
@@ -128,6 +134,10 @@ class ComposerStaticInitd765188b16b1d76daba4a4c2b9e5eea1
         'Ratchet\\' => 
         array (
             0 => __DIR__ . '/..' . '/cboden/ratchet/src/Ratchet',
+        ),
+        'Psr\\Log\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/log/src',
         ),
         'Psr\\Http\\Message\\' => 
         array (

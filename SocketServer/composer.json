@@ -8,6 +8,7 @@
     "require": {
         "cboden/ratchet": "^0.4.4",
         "phpunit/phpunit": "^9.5",
-      "ext-sockets": "*"
+      "ext-sockets": "*",
+        "textalk/websocket": "^1.5"
     }
 }

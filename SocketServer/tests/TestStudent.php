@@ -14,17 +14,20 @@ class TestServer extends TestCase
     'action' => 'connect',
     'from' => 'student', //|prof|admin
     'device_id' => '12345');
-
-    $socket = new Socket($this->address, $this->service_port);
-    $socket->connect();
+        $client = new WebSocket\Client("ws://127.0.0.1:8080");
+        $client->text(Message_Handler::encode_msg($arr));
+//        echo $client->receive();
+        $client->close();
+//    $socket = new Socket($this->address, $this->service_port);
+//    $socket->connect();
+//    //        sleep(5);
+//    $socket->send(Message_Handler::encode_msg($arr));
     //        sleep(5);
-    $socket->send(Message_Handler::encode_msg($arr));
-    //        sleep(5);
-    $out = $socket->recv();
-    echo "\n".$out. "\n";
-    echo "Closing socket...";
-    sleep(20);
-    $this->assertEquals('you have been  in', Message_Handler::decode_msg($out)['data']);
+//    $out = $socket->recv();
+//    echo "\n".$out. "\n";
+//    echo "Closing socket...";
+//    sleep(20);
+//    $this->assertEquals('you have been  in', Message_Handler::decode_msg($out)['data']);
 
     }
 //    public function testResponseStartExam           ()
