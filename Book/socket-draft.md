@@ -17,4 +17,3 @@ protocol
 how whatsapp tweek xmpp for its need and how we used the same approach
 building the socket server
     using ratchet library [main page](https://web.archive.org/web/20220315034020/http://socketo.me/)
-
