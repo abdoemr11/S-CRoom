@@ -1,31 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ee614767-cd45-418e-a06e-f46a68b34b31" name="Changes" comment="ready for gad database seeding">
+    <list default="true" id="ee614767-cd45-418e-a06e-f46a68b34b31" name="Changes" comment="removing bad things from changes">
+      <change afterPath="$PROJECT_DIR$/SocketServer/src/Controller/Professor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/S-CRoom.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/S-CRoom.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.phpunit.result.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.phpunit.result.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/app/Http/Controllers/SessionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/app/Http/Controllers/SessionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/app/Models/Professor.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/app/Models/Professor.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/app/Models/Student.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/app/Models/Student.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/app/Models/attendent.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/app/Models/Attendent.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/app/Models/bonus.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/app/Models/Bonus.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/app/Models/exam.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/app/Models/Exam.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/app/Models/lecture.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/app/Models/Lecture.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/app/Models/note.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/app/Models/Note.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/app/Models/subject.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/app/Models/Subject.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/config/auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/factories/AttendentFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/factories/AttendentFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/factories/BonusFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/factories/BonusFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/factories/ExamFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/factories/ExamFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/factories/LectureFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/factories/LectureFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/factories/NoteFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/factories/NoteFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/factories/SubjectFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/factories/SubjectFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/migrations/2022_07_04_124912_student_subject.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/migrations/2022_07_04_124912_student_subject.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/views/welcome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SocketServer/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SocketServer/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SocketServer/src/Controller/ServerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/src/Controller/ServerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SocketServer/src/Utilities/Message_Handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/src/Utilities/Message_Handler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SocketServer/src/server.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/src/server.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SocketServer/tests/TestStudent.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/tests/TestStudent.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SocketServer/vendor/autoload.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/vendor/autoload.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SocketServer/vendor/composer/ClassLoader.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/vendor/composer/ClassLoader.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SocketServer/vendor/composer/InstalledVersions.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/vendor/composer/InstalledVersions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SocketServer/vendor/composer/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/vendor/composer/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SocketServer/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SocketServer/vendor/composer/autoload_files.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/vendor/composer/autoload_files.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SocketServer/vendor/composer/autoload_namespaces.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/vendor/composer/autoload_namespaces.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SocketServer/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/vendor/composer/autoload_psr4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SocketServer/vendor/composer/autoload_real.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/vendor/composer/autoload_real.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SocketServer/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SocketServer/vendor/composer/installed.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/vendor/composer/installed.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SocketServer/vendor/composer/platform_check.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/vendor/composer/platform_check.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +37,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="goda_branch" />
+        <entry key="$PROJECT_DIR$" value="saber_test_http" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -110,6 +108,8 @@
       <path value="$PROJECT_DIR$/SocketServer/vendor/phpunit/phpunit" />
       <path value="$PROJECT_DIR$/SocketServer/vendor/phpdocumentor/reflection-common" />
       <path value="$PROJECT_DIR$/SocketServer/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/SocketServer/vendor/defuse/php-encryption" />
+      <path value="$PROJECT_DIR$/SocketServer/vendor/paragonie/random_compat" />
     </include_path>
   </component>
   <component name="ProjectId" id="26kB7WFiZ7euJ72r6XDd8P7LNYe" />
@@ -118,16 +118,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/3enginnering/elect4/term2/project/S-CRoom/S_CRoom_BackEnd/web-application/artisan",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "reference.webide.settings.project.settings.php",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/3enginnering/elect4/term2/project/S-CRoom/S_CRoom_BackEnd/web-application/artisan&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.webide.settings.project.settings.php&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\3enginnering\elect4\term2\project\S-CRoom\S_CRoom_BackEnd\web-application\public" />
@@ -195,11 +197,11 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="PHPUnit.TestServer.testConnect" />
         <item itemvalue="PHPUnit.TestSudent.testOpenCamFromStudent" />
         <item itemvalue="PHPUnit.TestSudent.testOpenCamForRegisteration" />
         <item itemvalue="PHPUnit.TestSudent.testOpenCamForRecognition" />
         <item itemvalue="PHPUnit.TestSudent.testExam" />
+        <item itemvalue="PHPUnit.TestServer.testConnect" />
       </list>
     </recent_temporary>
   </component>
@@ -236,6 +238,8 @@
       <workItem from="1657188617025" duration="11702000" />
       <workItem from="1657229885604" duration="1329000" />
       <workItem from="1657707318070" duration="9496000" />
+      <workItem from="1658011112103" duration="467000" />
+      <workItem from="1658031958055" duration="6996000" />
     </task>
     <task id="LOCAL-00001" summary="Finished the ability to send welcome message and open cam">
       <created>1648307115306</created>

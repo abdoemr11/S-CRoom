@@ -5,64 +5,53 @@ use MyApp\Utilities\Message_Handler;
 use \Ratchet\ConnectionInterface;
 class ServerController
 {
-    private array $students;
-
+    private array $students = array();
+    private array $professors = array();
     public function __construct()
     {
     }
 
-    public function handleMsg(ConnectionInterface $from,  $msg)
+    public function handleMsg(ConnectionInterface $origin_connection, $msg)
     {
-        echo $msg;
+        echo "\nreciveing message \n";
+        $msg_obj = json_decode($msg, true);
+        //TODO validate the message more correctly
+        //TODO handle exception
+        if (!$msg_obj)
+        {
+            echo "invaild message";//should through error
+            return;
+        }
 
-        $msg_obj = Message_Handler::decode_msg($msg);
-        var_dump($msg_obj);
-        //TODO verify the message it has correct format
-        //Messages from student
+
         if ($msg_obj['action'] == 'connect')
-            $this->connect($from, $msg_obj);
-        else if ($msg_obj['action'] == 'open_cam_for_admin') {
-            $this->order_student($msg_obj['device_id'], $msg_obj['action'], $msg_obj['execute'], $msg_obj['from']);
-        } else if ($msg_obj['action'] == 'open_cam_for_prof') {
-            $this->order_student($msg_obj['device_id'], $msg_obj['action'], $msg_obj['execute'], $msg_obj['from']);
-        } else if ($msg_obj['action'] == 'exam') {
-            echo 'send exams to students';
-            $this->order_student($msg_obj['to'], $msg_obj['action'],
-                array('exam_contents' => $msg_obj['exam_contents']));
-        } else if ($msg_obj['action'] == 'done') {
-            //
+        {
+
+            $this->connect($origin_connection, $msg_obj);
+
         }
-        else if ($msg_obj['action'] == 'done') {
-            $this->order_admin($msg_obj[]);
+        if($msg_obj['from'] == 'professor' && $msg_obj['action'] != 'connect')
+        {
+            echo "professor is sending an anction \n";
+            $professor = $this->isProfConnectionExist($origin_connection);
+//            echo $professor . "professor is\n";
+            if(!is_object($professor))
+            {
+                echo "professor is not here\n";
+                $plain_repsonse = (Professor::DENIED_ACCESS);
+                $response = ['action'=> $plain_repsonse[0],'to'=>'professor', 'from'=>$plain_repsonse[1],
+                'execute' => $plain_repsonse[2]
+                ];
+                $origin_connection->send(Message_Handler::encode_msg($response));
+                return;
+
+            }
+            $action_array = Message_Handler::decrypt_msg($msg, $professor->getToken());
+            $this->handle_professor_command($professor, $action_array);
+
         }
-//        array(6) {
-//        ["action"]=>
-//  string(4) "Done"
-//        ["to"]=>
-//  string(12) "adminstrator"
-//        ["from"]=>
-//  string(7) "student"
-//        ["student_name"]=>
-//  string(6) "hossam"
-//        ["device_id"]=>
-//  string(1) "1"
-//        ["execute"]=>
-//  string(4) "none"
-//    }
-//        array(6) {
-//        ["action"]=>
-//  string(4) "Done"
-//        ["to"]=>
-//  string(10) "proffessor"
-//        ["from"]=>
-//  string(7) "student"
-//        ["student_name"]=>
-//  string(6) "hossam"
-//        ["device_id"]=>
-//  string(1) "1"
-//        ["execute"]=>
-//  string(4) "none"
-//}
+        if($msg_obj['to'] == 'student')
+            $this->order_student($msg_obj['device_id'], $msg_obj['action'], $msg_obj['execute'], $msg_obj['from']);
 
 
     }
@@ -72,10 +61,28 @@ class ServerController
         if($msg_obj["from"] == 'student')
         {
             //create new student
-            $this->students[] = new Student($from, $msg_obj['device_id']);
+            $this->students[] = new Professor($from, $msg_obj['device_id']);
+        }
+        if ($msg_obj['from'] == 'professor')
+        {
+            $this->professors[] = new Professor($from, $msg_obj['execute']['token'], $msg_obj['device_id']);
+            //TODO throw error
         }
     }
+    private function handle_professor_command($professor, $prof_command)
+    {
+        var_dump($prof_command);
+        switch ($prof_command['action'])
+        {
+            case 'getStudents':
 
+                break;
+            default:
+                echo 'invalid action\n';
+                $professor->send_to(...Professor::BAD_REQUEST);
+
+        }
+    }
     private function order_student(mixed $device_id, mixed $action, array $options, $origin)
     {
         if($device_id == '00000')
@@ -99,4 +106,15 @@ class ServerController
        }
     }
 
+    private function isProfConnectionExist(ConnectionInterface $origin_connection)
+    {
+        foreach ($this->professors as  $professor)
+        {
+            if($origin_connection == $professor->getConnectionInterface())
+            {
+                return $professor;
+            }
+        }
+        return false;
+    }
 }

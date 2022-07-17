@@ -62,6 +62,7 @@ class ComposerStaticInitd765188b16b1d76daba4a4c2b9e5eea1
         'D' => 
         array (
             'Doctrine\\Instantiator\\' => 22,
+            'Defuse\\Crypto\\' => 14,
             'DeepCopy\\' => 9,
         ),
     );
@@ -153,6 +154,10 @@ class ComposerStaticInitd765188b16b1d76daba4a4c2b9e5eea1
         'Doctrine\\Instantiator\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator',
+        ),
+        'Defuse\\Crypto\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/defuse/php-encryption/src',
         ),
         'DeepCopy\\' => 
         array (

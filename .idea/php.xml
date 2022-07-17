@@ -55,6 +55,8 @@
       <path value="$PROJECT_DIR$/SocketServer/vendor/phpunit/phpunit" />
       <path value="$PROJECT_DIR$/SocketServer/vendor/phpdocumentor/reflection-common" />
       <path value="$PROJECT_DIR$/SocketServer/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/SocketServer/vendor/defuse/php-encryption" />
+      <path value="$PROJECT_DIR$/SocketServer/vendor/paragonie/random_compat" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.0">

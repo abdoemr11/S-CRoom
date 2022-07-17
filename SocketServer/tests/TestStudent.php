@@ -6,14 +6,16 @@ class TestServer extends TestCase
 {
     private $address = '127.0.0.1';
     private $service_port = '8080';
+    private $device_id = '12345';
+
     public function testConnect                     ()
     {
     //        $this->markTestSkipped("waiting to sign new student first");
 
-    $arr = array(
+        $arr = array(
     'action' => 'connect',
     'from' => 'student', //|prof|admin
-    'device_id' => '12345');
+    'device_id' => $this->device_id);
 
     $socket = new Socket($this->address, $this->service_port);
     $socket->connect();
