@@ -1,29 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ee614767-cd45-418e-a06e-f46a68b34b31" name="Changes" comment="removing bad things from changes">
-      <change afterPath="$PROJECT_DIR$/SocketServer/src/Controller/Professor.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/S-CRoom.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/S-CRoom.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="ee614767-cd45-418e-a06e-f46a68b34b31" name="Changes" comment="implemented the first scenario">
+      <change afterPath="$PROJECT_DIR$/SocketServer/src/Controller/Person.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocketServer/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocketServer/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SocketServer/src/Controller/Professor.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/src/Controller/Professor.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SocketServer/src/Controller/ServerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/src/Controller/ServerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocketServer/src/Utilities/Message_Handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/src/Utilities/Message_Handler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocketServer/src/server.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/src/server.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocketServer/tests/TestStudent.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/tests/TestStudent.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocketServer/vendor/autoload.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/vendor/autoload.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocketServer/vendor/composer/ClassLoader.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/vendor/composer/ClassLoader.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocketServer/vendor/composer/InstalledVersions.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/vendor/composer/InstalledVersions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocketServer/vendor/composer/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/vendor/composer/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocketServer/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/vendor/composer/autoload_classmap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocketServer/vendor/composer/autoload_files.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/vendor/composer/autoload_files.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocketServer/vendor/composer/autoload_namespaces.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/vendor/composer/autoload_namespaces.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocketServer/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/vendor/composer/autoload_psr4.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocketServer/vendor/composer/autoload_real.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/vendor/composer/autoload_real.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocketServer/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/vendor/composer/autoload_static.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocketServer/vendor/composer/installed.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/vendor/composer/installed.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocketServer/vendor/composer/platform_check.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/vendor/composer/platform_check.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SocketServer/src/Controller/Student.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/src/Controller/Student.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -239,7 +222,7 @@
       <workItem from="1657229885604" duration="1329000" />
       <workItem from="1657707318070" duration="9496000" />
       <workItem from="1658011112103" duration="467000" />
-      <workItem from="1658031958055" duration="6996000" />
+      <workItem from="1658031958055" duration="11439000" />
     </task>
     <task id="LOCAL-00001" summary="Finished the ability to send welcome message and open cam">
       <created>1648307115306</created>
@@ -325,7 +308,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657708071297</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="implemented the first scenario">
+      <created>1658039399147</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1658039399147</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -353,6 +343,7 @@
     <MESSAGE value="implemented logout for student" />
     <MESSAGE value="applyed middleware for student" />
     <MESSAGE value="ready for gad database seeding" />
-    <option name="LAST_COMMIT_MESSAGE" value="ready for gad database seeding" />
+    <MESSAGE value="implemented the first scenario" />
+    <option name="LAST_COMMIT_MESSAGE" value="implemented the first scenario" />
   </component>
 </project>

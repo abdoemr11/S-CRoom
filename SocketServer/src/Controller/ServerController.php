@@ -33,7 +33,7 @@ class ServerController
         if($msg_obj['from'] == 'professor' && $msg_obj['action'] != 'connect')
         {
             echo "professor is sending an anction \n";
-            $professor = $this->isProfConnectionExist($origin_connection);
+            $professor = $this->getProfessorByConnection($origin_connection);
 //            echo $professor . "professor is\n";
             if(!is_object($professor))
             {
@@ -46,6 +46,7 @@ class ServerController
                 return;
 
             }
+            echo "professor has valid connection\n";
             $action_array = Message_Handler::decrypt_msg($msg, $professor->getToken());
             $this->handle_professor_command($professor, $action_array);
 
@@ -61,21 +62,42 @@ class ServerController
         if($msg_obj["from"] == 'student')
         {
             //create new student
-            $this->students[] = new Professor($from, $msg_obj['device_id']);
+            $this->students[] = new Student($from,"",$msg_obj['device_id'], $msg_obj['execute']['name']);
         }
         if ($msg_obj['from'] == 'professor')
         {
-            $this->professors[] = new Professor($from, $msg_obj['execute']['token'], $msg_obj['device_id']);
+            $this->professors[] = new Professor($from, $msg_obj['execute']['token'], $msg_obj['device_id'], $msg_obj['execute']['name']);
             //TODO throw error
         }
     }
-    private function handle_professor_command($professor, $prof_command)
+    private function handle_professor_command($professor, $prof_command): void
     {
         var_dump($prof_command);
         switch ($prof_command['action'])
         {
             case 'getStudents':
+                $student_names = array();
+                echo "number of unverified stduents". count($this->students) . "\n";
+                foreach ($this->students as $student)
+                {
+                    echo $student->get_name() . "\n";
+                    $student_names[] = $student->get_name();
 
+                }
+                $professor->send_to('responseStudents', 'server', ['studentNames' => $student_names]);
+
+                break;
+            case 'verifyStudents':
+                if(!$this->orderStudents('open cam for prof', 'professor', array(), $prof_command['device_id']))
+                    $professor->send_to(...Professor::BAD_REQUEST);
+                break;
+            case 'startExam':
+                if(!$this->orderStudents('startExam', 'professor', $prof_command['execute'], $prof_command['device_id']))
+                    $professor->send_to(...Professor::BAD_REQUEST);
+                break;
+            case 'sendFile':
+                if(!$this->orderStudents('sendFile', 'professor', $prof_command['execute'], $prof_command['device_id']))
+                    $professor->send_to(...Professor::BAD_REQUEST);
                 break;
             default:
                 echo 'invalid action\n';
@@ -83,30 +105,28 @@ class ServerController
 
         }
     }
-    private function order_student(mixed $device_id, mixed $action, array $options, $origin)
+    private function orderStudents($action, $origin, $execute, $id): bool
     {
-        if($device_id == '00000')
+        if($id == '00000')
         {
-            //send to all students
-            foreach ($this->students as $std)
+            echo "sending to all student\n";
+            foreach ( $this->students as $student)
             {
-                $std->send_to_student_device($action, $options, $origin);
+                $student->send_to($action, $origin, $execute);
             }
-            return;
-        }
-       foreach ($this->students as $std)
-       {
-           echo $std->device_id . "  " . $device_id;
-           if($std->device_id == $device_id)
-           {
-               echo 'sendin' . '\n';
-               $std->send_to_student_device($action, $options, $origin);
+            return true;
 
-           }
-       }
+        }
+        $student = $this->getPersonByDeviceId($this->students, $id);
+        if (!is_object($student))
+        {
+            return false;
+        }
+        $student->send_to($action, $origin, $execute);
+        return true;
     }
 
-    private function isProfConnectionExist(ConnectionInterface $origin_connection)
+    private function getProfessorByConnection(ConnectionInterface $origin_connection)
     {
         foreach ($this->professors as  $professor)
         {
@@ -117,4 +137,15 @@ class ServerController
         }
         return false;
     }
+    private function getPersonByDeviceId($persons, $id)
+    {
+        foreach ($persons as $person)
+        {
+            if($person->getDeviceId == $id)
+                return $person;
+        }
+        return false;
+    }
+
+
 }
