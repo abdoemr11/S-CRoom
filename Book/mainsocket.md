@@ -338,8 +338,88 @@ make test and manipulate other information in the session.
 Students are the main user of the system, Our Smart Classroom target
 them mainly to enhance their education experience.
 
+### Software design and object-oriented
+As we mentioned earlier Ratchet is event-based system so when message
+hit the system we redirect it ``handle_message`` method of ``ServerController``
+object.  
+-- code--
+After that we validate the message if it's correct we proceed 
+into inspecting the message action type and perform the necessary operations. 
+Here is the object UML diagram:
+-- image--
+
+As you can see the `Person` provide the common properties and methods
+that are inherited by `Student`, `Professor`, `Admin`. `SeverController`
+contain lists of these objects to validate them and handle their operation.
+
+The following section contains object design artifacts
+
+### System usecase diagrams
+In the Unified Modeling Language (UML), a use case diagram can summarize the details of your system's users (also known as actors) and their interactions with the system. <br/>
+the use case usually contains:
+- Scenarios in which the system or application interacts with people, organizations, or external systems
+- Goals that your system or application helps those entities (known as actors) achieve
+
+The scope of your system
 
 
+#### Professor USECASE  
+1. Professor Login to the system  
+2. if login failed go to step 1  
+3. Professor connect to the websocket server and provide his login
+token
+4. If The professor try to connect again, he get an error.
+5. Professor ask for the list of students in the class.
+6. Professor ask to verify these students and get a list of verified student.
+7. Professor can verify single student. 
+8. professor can send files and attachment. 
+9. Professor can send exams/quiz to the student.
+10. Professor submit the session result to the database.
+
+#### Professor interaction diagram. 
+
+--image--
+#### Admin USECASE
+1. Admin Login to the system
+2. if login failed go to step 1
+3. Admin connect to the websocket server and provide his login
+   token
+4. If The admin try to connect again, he gets an error.
+5. Admin ask for the list of students in the class that need registration.
+6. Admin ask to begin the recognition phase.
+10. Admin submit the session result to the database.
+
+#### Admin interaction diagram.
+
+--image--
+
+#### Admin USECASE
+1. Admin Login to the system
+2. if login failed go to step 1
+3. Admin connect to the websocket server and provide his login
+   token
+4. If The admin try to connect again, he gets an error.
+5. Admin ask for the list of students in the class that need registration.
+6. Admin ask to begin the recognition phase.
+10. Admin submit the session result to the database.
+
+#### Admin interaction diagram.
+
+--image--
+#### Admin USECASE
+1. Admin Login to the system
+2. if login failed go to step 1
+3. Admin connect to the websocket server and provide his login
+   token
+4. If The admin try to connect again, he gets an error.
+5. Admin ask for the list of students in the class that need registration.
+6. Admin ask to begin the recognition phase.
+10. Admin submit the session result to the database.
+
+#### Admin interaction diagram.
+
+--image--
 
 
+After defining the usecase of the user of the system we 
 [1]: https://xmpp.org/rfcs/rfc6120.html
