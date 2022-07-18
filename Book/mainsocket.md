@@ -238,19 +238,105 @@ Next we will discuss the customized connection sequence that we applied.
 
 ### Main connection sequence
 The client has to perform the following step to utilize the server
-operations: 
+operations:  
 1- Use IP address and port to connect the socket server.  
 2- perform two-way handshake using json encoded instructions.  
-3- wait for commands from the server.  
-4- when a command came, perform the operations requested from the server.  
-5- send message to the server containing the results of the operation over
-JSON sanitized format.  
-6- close the connection.
+3- wait for commands from the server in a JSON sanitized format.   
+    a - when a command came, perform the operations requested from the server.  
+    b - send message to the server containing the results of the operation over
+JSON sanitized format. 
+4- send Commands to the server in a JSON santizied format.
+6- close the connection.  
+
+In the next few lines we will discuss each of these operations in a more details
+
+#### Operation 1
+The client needs to connect to the server using IP address and Port
+these may be fixed system or dynamically changed. In the latter case
+the client need to consult a DNS server to get the needed credentials.
+
+#### Operation 2
+The client need to advertise itself to the server to inform it about
+its physical properties like device id and the client role. The server
+then check if the client had previously advertised itself if so return
+an error message, else identify the client then send it confirmation
+message.
+
+#### Operation 3 && Operation 4
+The two opertation is main building block of the system. The server and
+the client can communicate to each other in real-time bidirectional tunnel.  
+The clients can also use the server as a gateway to communicate with
+other clients either they have the same role or not.
+
+## WebSocket Implementation
+So far we have discussed theoretical aspect of websocket in our 
+Smart Classroom project. Next we will take about how we implemented
+the websocket server using Ratchet PHP library.  
+Ratchet is a loosely coupled PHP library providing developers with tools to create real time, bi-directional applications between clients and servers over WebSockets.  
+### Ratchet main features
+1- Open-souce:  
+Ratchet is community driven not a proprietary of certain company or enterprise. 
+It is also free compared to other paid solutions.  
+2- Event-driven:  
+After understanding "the new flow" - event driven programming, compared to traditional HTTP request/response - writing any application on top of Ratchet becomes fast and easy.  
+3- Structured Component:  
+The core of Ratchet is made up of Components. Each component implements a version of the ComponentInterface. If you follow that link you can see each of the classes that implement ComponentInterface.
+
+Each class is instantiated when the script is launched, then enters an event loop, where I/O listens and calls the class on top of it. (it does not trigger a global event, it passes the event on to one class attached to [below] it).
+
+An event is triggered at the top of the table (seen below) from a client on the other side of the socket. The client connection associated with the event then propagates up the structure along with any information sent.
+
+Each class defines which interface it accepts, then propagating its own events. This structure allows developers to add or subtract class components to create different functionality. For example, one may want to add a logging component between WebSocket and WAMP to log raw JSON messages received by the client.
+
+Below is an example of an Application put together using various components. You can see how by adding more layers, Components are able to extend and further define raw data into more specific events. As seen below WAMP accepts a data event, it then parses that data (JSON) and propagates its own events based on the data received.
 
 
+|Component Class|	Event| triggered by Client (JavaScript)|
+|I/O (socket transport)|	open|	close|	data|	error|
+|HTTP Protocol Handler|	open|	close|	data|	error|
+|WebSocket Protocol Handler|	open|	close|	data|	error|
+|Session Provider|	open|	close|	data|	error|
+|WAMP Protocol Handler|	open|	close|	publish|	subscribe|	unsubscribe	call|	prefix|	error|
 
 
+--table here--
+https://web.archive.org/web/20220509192025/http://socketo.me/docs/design
 
+### Message Format
+The standard JSON message format is as follow:  
+```json
+
+{
+  "action"     :  "xxxxx",
+  "to"         : "xxxxx",
+  "from"       : "xxxxx",
+  "device_id": "xxxxx",
+  "execute"    : {
+  }
+}
+
+```
+If we compare it to the standard XMPP XML such as 
+```xml
+<message to="34123456789@s.whatsapp.net" type="text" id="message-1417651059-2" from="1417651059">
+   <body>Test</body>
+</message>
+```
+We will find out that that fields ``form, to, device_id`` correspond
+to ``from, to, id`` respectively, whereas `action` act as `type`
+and ``execute`` as `body`.  
+
+The actual value of these fields is related directly to the application
+but first let us devote more time at details of system design. 
+
+
+The users of the application fall into three categories students, professors,
+admins.  
+Admin should use Websocket server to add new students into the system.  
+Professor should use the server to verify the students record attanedance, 
+make test and manipulate other information in the session.  
+Students are the main user of the system, Our Smart Classroom target
+them mainly to enhance their education experience.
 
 
 

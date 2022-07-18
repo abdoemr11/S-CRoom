@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ee614767-cd45-418e-a06e-f46a68b34b31" name="Changes" comment="gad book">
-      <change afterPath="$PROJECT_DIR$/Book/socketImages/SocketWebSocket.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Book/mainsocket.md" beforeDir="false" afterPath="$PROJECT_DIR$/Book/mainsocket.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Book/socket-draft.md" beforeDir="false" afterPath="$PROJECT_DIR$/Book/socket-draft.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,6 +90,8 @@
       <path value="$PROJECT_DIR$/SocketServer/vendor/phpdocumentor/reflection-docblock" />
       <path value="$PROJECT_DIR$/SocketServer/vendor/psr/log" />
       <path value="$PROJECT_DIR$/SocketServer/vendor/textalk/websocket" />
+      <path value="$PROJECT_DIR$/SocketServer/vendor/defuse/php-encryption" />
+      <path value="$PROJECT_DIR$/SocketServer/vendor/paragonie/random_compat" />
     </include_path>
   </component>
   <component name="ProjectId" id="26kB7WFiZ7euJ72r6XDd8P7LNYe" />
@@ -100,16 +100,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Git.Branch.Popup.ShowAllRemotes": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/3enginnering/elect4/term2/project/S-CRoom/Book/socketImages/funxmpp.png",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Git.Branch.Popup.ShowAllRemotes&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/3enginnering/elect4/term2/project/S-CRoom/Book/socketImages/funxmpp.png&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\3enginnering\elect4\term2\project\S-CRoom\Book\socketImages" />
