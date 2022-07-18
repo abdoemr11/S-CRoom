@@ -19,6 +19,7 @@ class Professor extends Person
         [
          'response',
         'server',
+            'professor',
         [
             'status' => 'BAD_REQUEST'
         ]
@@ -27,6 +28,7 @@ class Professor extends Person
         [
             'response',
             'server',
+            'professor',
             [
                 'status' => 'DENIED_ACCESS'
             ]

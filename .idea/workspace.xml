@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ee614767-cd45-418e-a06e-f46a68b34b31" name="Changes" comment="implemented the first scenario">
-      <change afterPath="$PROJECT_DIR$/SocketServer/src/Controller/Person.php" afterDir="false" />
+    <list default="true" id="ee614767-cd45-418e-a06e-f46a68b34b31" name="Changes" comment="implemented all commands from professor">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SocketServer/src/Controller/Person.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/src/Controller/Person.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SocketServer/src/Controller/Professor.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/src/Controller/Professor.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SocketServer/src/Controller/ServerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/src/Controller/ServerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocketServer/src/Controller/Student.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/src/Controller/Student.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,7 +19,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="saber_test_http" />
+        <entry key="$PROJECT_DIR$" value="testoldsocket" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -121,7 +120,7 @@
       <recent name="D:\3enginnering\elect4\term2\project\S-CRoom\SocketServer\src\Controller" />
     </key>
   </component>
-  <component name="RunManager" selected="PHPUnit.TestServer.testConnect">
+  <component name="RunManager" selected="PHP Script.Unnamed">
     <configuration name="TestServer.testConnect" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="TestServer" file="$PROJECT_DIR$/SocketServer/tests/TestStudent.php" method="testConnect" scope="Method" />
       <method v="2" />
@@ -222,7 +221,8 @@
       <workItem from="1657229885604" duration="1329000" />
       <workItem from="1657707318070" duration="9496000" />
       <workItem from="1658011112103" duration="467000" />
-      <workItem from="1658031958055" duration="11439000" />
+      <workItem from="1658031958055" duration="15577000" />
+      <workItem from="1658127421593" duration="2996000" />
     </task>
     <task id="LOCAL-00001" summary="Finished the ability to send welcome message and open cam">
       <created>1648307115306</created>
@@ -315,7 +315,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658039399147</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="implemented all commands from professor">
+      <created>1658043907757</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1658043907757</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -344,6 +351,7 @@
     <MESSAGE value="applyed middleware for student" />
     <MESSAGE value="ready for gad database seeding" />
     <MESSAGE value="implemented the first scenario" />
-    <option name="LAST_COMMIT_MESSAGE" value="implemented the first scenario" />
+    <MESSAGE value="implemented all commands from professor" />
+    <option name="LAST_COMMIT_MESSAGE" value="implemented all commands from professor" />
   </component>
 </project>

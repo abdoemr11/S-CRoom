@@ -51,5 +51,8 @@ class Person
     {
         return $this->name;
     }
-
+    public function getId ()
+    {
+        return $this->device_id;
+    }
 }
