@@ -10,11 +10,11 @@ CHANGELOG
 
 * 0.4.4 (2021-12-11)
   * Correct and update dependencies for forward compatibility
-  * Added context for React Socket server to App
+  * Added context for React Socket server to Index
   * Use non-deprecated Guzzle API calls
 
 * 0.4.3 (2020-06-04)
-  * BF: Fixed interface acceptable regression in `App`
+  * BF: Fixed interface acceptable regression in `Index`
   * Update RFC6455 library with latest fixes
 
 * 0.4.2 (2020-01-27)
@@ -24,7 +24,7 @@ CHANGELOG
   * Stop using `LoopInterface::tick()` for testing
 
 * 0.4.1 (2017-12-11)
-  * Only enableKeepAlive in App if no WsServer passed allowing user to set their own timeout duration
+  * Only enableKeepAlive in Index if no WsServer passed allowing user to set their own timeout duration
   * Support Symfony 4
   * BF: Plug NOOP controller in connection from router in case of misbehaving client
   * BF: Raise error from invalid WAMP payload
@@ -66,19 +66,19 @@ CHANGELOG
   * BF: No messages after closing handshake (fixed rare race condition causing 100% CPU)
   * BF: Fixed accidental BC break from v0.3.1
   * Added autoDelete parameter to Topic to destroy when empty of connections
-  * Exposed React Socket on IoServer (allowing FlashPolicy shutdown in App)
+  * Exposed React Socket on IoServer (allowing FlashPolicy shutdown in Index)
   * Normalized Exceptions in WAMP
 
 * 0.3.1 (2014-05-26)
   * Added query parameter support to Router, set in HTTP request (ws://server?hello=world)
   * HHVM compatibility
   * BF: React/0.4 support; CPU starvation bug fixes
-  * BF: Allow App::route to ignore Host header
+  * BF: Allow Index::route to ignore Host header
   * Added expected filters to WAMP Topic broadcast method
   * Resource cleanup in WAMP TopicManager
 
 * 0.3.0 (2013-10-14)
-  * Added the `App` class to help making Ratchet so easy to use it's silly
+  * Added the `Index` class to help making Ratchet so easy to use it's silly
   * BC: Require hostname to do HTTP Host header match and do Origin HTTP header check, verify same name by default, helping prevent CSRF attacks
   * Added Symfony/2.2 based HTTP Router component to allowing for a single Ratchet server to handle multiple apps -> Ratchet\Http\Router
   * BC: Decoupled HTTP from WebSocket component -> Ratchet\Http\HttpServer

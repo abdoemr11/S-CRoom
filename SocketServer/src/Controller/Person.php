@@ -55,4 +55,8 @@ class Person
     {
         return $this->device_id;
     }
+    public function setConnection($newConnection)
+    {
+        $this->connection =$newConnection;
+    }
 }

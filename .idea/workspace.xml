@@ -1,11 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ee614767-cd45-418e-a06e-f46a68b34b31" name="Changes" comment="implemented all commands from professor">
+    <list default="true" id="ee614767-cd45-418e-a06e-f46a68b34b31" name="Changes" comment="implemented some of frontend tasks">
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/css/app.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/js/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/mix-manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/js/src/Components/App.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/js/src/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/js/src/professor-commands.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/js/src/reducers/students.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/js/src/socket.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/js/src/store.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/js/src/worker-builder.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/views/professor-socket.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/app/Providers/AuthServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/seeders/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/routes/channels.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/routes/channels.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/webpack.mix.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SocketServer/src/Controller/Person.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/src/Controller/Person.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocketServer/src/Controller/Professor.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/src/Controller/Professor.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SocketServer/src/Controller/ServerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/src/Controller/ServerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SocketServer/vendor/cboden/ratchet/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/vendor/cboden/ratchet/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SocketServer/vendor/cboden/ratchet/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/vendor/cboden/ratchet/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SocketServer/vendor/symfony/routing/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/vendor/symfony/routing/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,7 +42,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="testoldsocket" />
+        <entry key="$PROJECT_DIR$" value="book" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -223,6 +246,7 @@
       <workItem from="1658011112103" duration="467000" />
       <workItem from="1658031958055" duration="15577000" />
       <workItem from="1658127421593" duration="2996000" />
+      <workItem from="1658344957480" duration="581000" />
     </task>
     <task id="LOCAL-00001" summary="Finished the ability to send welcome message and open cam">
       <created>1648307115306</created>
@@ -352,6 +376,7 @@
     <MESSAGE value="ready for gad database seeding" />
     <MESSAGE value="implemented the first scenario" />
     <MESSAGE value="implemented all commands from professor" />
-    <option name="LAST_COMMIT_MESSAGE" value="implemented all commands from professor" />
+    <MESSAGE value="implemented some of frontend tasks" />
+    <option name="LAST_COMMIT_MESSAGE" value="implemented some of frontend tasks" />
   </component>
 </project>

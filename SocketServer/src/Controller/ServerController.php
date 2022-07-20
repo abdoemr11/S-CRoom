@@ -17,6 +17,7 @@ class ServerController
         var_dump($msg);
         echo "\nreciveing message \n";
         $msg_obj = json_decode($msg, true);
+        var_dump($msg_obj);
         //TODO validate the message more correctly
         //TODO handle exception
         if ($this->isEncrypted)
@@ -56,7 +57,7 @@ class ServerController
             $action_array = $msg_obj;
 
             $person_type = $action_array['from'];
-            $person = $this->getPersonByConnection(array_merge($this->professors, $this->students), $origin_connection);
+            $person = $this->getPersonByToken(array_merge($this->professors, $this->students), $msg_obj['execute']['token']);
 //            echo $professor . "professor is\n";
             if(!is_object($person))
             {
@@ -108,6 +109,7 @@ class ServerController
         {
             if($this->isDuplicate($this->professors, $from, $msg_obj['device_id']))
             {
+
                 $plain_repsonse = (['response', 'server', 'professor',$msg_obj['device_id'],['status'=> 'DUPLICATE_CONNECTION']]);
 
                 $this->sendToConnection($from, ...$plain_repsonse);
@@ -132,6 +134,7 @@ class ServerController
                     $student_names[] = $student->get_name();
 
                 }
+                echo $professor->getToken(). "\n";
                 $professor->send_to('responseStudents', 'server', ['studentNames' => $student_names]);
 
                 break;
@@ -194,6 +197,17 @@ class ServerController
         }
         return false;
     }
+    private function getPersonByToken(array $persons, string $token)
+    {
+        foreach ($persons as  $person)
+        {
+            if($token == $person->getToken())
+            {
+                return $person;
+            }
+        }
+        return false;
+    }
     private function getPersonByDeviceId($persons, $id)
     {
         foreach ($persons as $person)
@@ -209,6 +223,7 @@ class ServerController
         {
             if($origin_connection == $person->getConnectionInterface() || $id == $person->getId())
             {
+                $person->setConnection($origin_connection);
                 return true;
             }
         }
