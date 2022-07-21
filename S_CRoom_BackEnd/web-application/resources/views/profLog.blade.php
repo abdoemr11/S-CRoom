@@ -180,6 +180,7 @@
                 <p class="h6">Exam number:</p>
                 <input class="form-control" type="number" placeholder="The exam number ?" maxlength="2"> <br>
                 <p class="h6">Questions and answers</p>
+                <p class="h6">Write the symbol '-' before the right answer.</p>
                 <div class="container4">
                   <ul id="demo"></ul>
                   <hr color="white" width="70%" size="20" align="center">
@@ -236,10 +237,10 @@
 
         var ul = document.getElementById("demo");
          var li = document.createElement("li");
-         li.innerHTML = '<hr color="red" width="70%" size="20" align="center"><div class="box-2"><p class="h6">Question</p><input class="form-control"type="text" placeholder="Enter the question" id = "question'+question_num+'"><br><p class="h6">Answer 1</p><input type="text" id = "answer_num'+answer_num+'"><p class="h6">Answer 2</p><input type="text" id = "answer_num'+answer_num+1+'"><p class="h6">Answer 3</p><input type="text" id = "answer_num'+(answer_num+2)+'"><p class="h6">Answer 4</p><input type="text" id = "answer_num'+(answer_num+4)'+"><br>';
+         li.innerHTML = '<hr color="red" width="70%" size="20" align="center"><div class="box-2"><p class="h6">Question</p><input class="form-control"type="text" placeholder="Enter the question" id = "question'+question_num+'"><br><p class="h6">Answer 1</p><input type="text" id = "answer_num1'+answer_num+'"><p class="h6">Answer 2</p><input type="text" id = "answer_num2'+answer_num+'"><p class="h6">Answer 3</p><input type="text" id = "answer_num3'+answer_num+'"><p class="h6">Answer 4</p><input type="text" id = "answer_num4'+answer_num+'+"><br>';
          ul.appendChild(li);
          question_num +=1;
-         answer_num +=4;
+         answer_num +=1;
     }
     function delq() {
         var listItems = document.getElementById("demo");
@@ -254,10 +255,10 @@
         if(document.getElementById("answer"+j).value[0]=='-')
           {
             document.getElementById("answer"+j).value[0] =[];
-            correct[i] = document.getElementById("answer"+j).value[0];
-            wrong[i][0] = document.getElementById("answer"+((j+1)/3)).value;
-            wrong[i][1] = document.getElementById("answer"+((j+2)/3)).value;
-            wrong[i][2] = document.getElementById("answer"+((j+3)/3)).value;
+            correct[i] = document.getElementById("answer_num1"+j).value[0];
+            wrong[i][0] = document.getElementById("answer_num2"+j).value;
+            wrong[i][1] = document.getElementById("answer_num3"+j).value;
+            wrong[i][2] = document.getElementById("answer_num4"+j).value;
           }
       }
     }
@@ -265,7 +266,7 @@
       questions[i] = { //All questions created will be in this array to send it to database.
         "question":document.getElementById("question1").value,
         "correct_answer" : correct[i],
-        "incorrect_answers" : wrong[i][]
+        "incorrect_answers" : [wrong[i][0],wrong[i][1],wrong[i][2]]
       }
 
     }
