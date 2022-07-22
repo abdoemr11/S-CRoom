@@ -1,0 +1,7 @@
+device id will be sent on connect packet in the execute array
+when
+empty execute is empty array not "null"
+when student is verified instead of the student_id field will be "token"
+"token" should be sent with every request except connect request
+response messsage is standard with their execute must contain beside other
+ {status: FAILED| OK, type: original command, msg: addition information  }

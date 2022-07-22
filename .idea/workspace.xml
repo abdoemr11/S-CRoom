@@ -2,33 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ee614767-cd45-418e-a06e-f46a68b34b31" name="Changes" comment="implemented some of frontend tasks">
-      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/css/app.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/js/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/mix-manifest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/js/src/Components/App.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/js/src/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/js/src/professor-commands.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/js/src/reducers/students.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/js/src/socket.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/js/src/store.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/js/src/worker-builder.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/views/professor-socket.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SocketServer/Commands/notes" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/app/Providers/AuthServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/seeders/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/routes/channels.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/routes/channels.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/webpack.mix.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocketServer/src/Controller/Person.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/src/Controller/Person.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocketServer/src/Controller/ServerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/src/Controller/ServerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocketServer/vendor/cboden/ratchet/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/vendor/cboden/ratchet/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocketServer/vendor/cboden/ratchet/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/vendor/cboden/ratchet/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocketServer/vendor/symfony/routing/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/vendor/symfony/routing/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,6 +90,8 @@
       <path value="$PROJECT_DIR$/SocketServer/vendor/phpdocumentor/reflection-docblock" />
       <path value="$PROJECT_DIR$/SocketServer/vendor/defuse/php-encryption" />
       <path value="$PROJECT_DIR$/SocketServer/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/SocketServer/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/SocketServer/vendor/textalk/websocket" />
     </include_path>
   </component>
   <component name="ProjectId" id="26kB7WFiZ7euJ72r6XDd8P7LNYe" />
