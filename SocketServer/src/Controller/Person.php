@@ -8,16 +8,17 @@ use Ratchet\ConnectionInterface;
 class Person
 {
     protected $destination;
-    protected $device_id;
     protected $token;
     protected $name = "abdo";
+    protected $id;
     public function __construct(private ConnectionInterface $connection, string $token, $id, $name)
     {
         $execute = [
             'status' => "OK",
-//            'token' => $this->token,
+            'type' => 'connectProfessor',
+            'id' => $id
         ];
-        $this->device_id = $id;
+        $this->id = $id;
         $this->destination = 'professor';
         $this->token = $token;
         $this->name = $name;
@@ -29,7 +30,6 @@ class Person
             array('action' => $action,
                 'from'      => $origin, //admon| prof
                 'to'        => $this->destination, //student|prof
-                'device_id' => $this->device_id, //device id of rasperry pi
                 'execute'=> $execute
 //                   ...
                 //optional there might be data
@@ -47,16 +47,25 @@ class Person
     {
         return $this->token;
     }
-    public function get_name ()
+    public function getName ()
     {
         return $this->name;
     }
     public function getId ()
     {
-        return $this->device_id;
+        return $this->id;
     }
     public function setConnection($newConnection)
     {
         $this->connection =$newConnection;
+    }
+    public static function getPersonById($persons, $id)
+    {
+        foreach ($persons as $person)
+        {
+            if($person->getId() == $id)
+                return $person;
+        }
+        return false;
     }
 }

@@ -1,6 +1,7 @@
 <?php
 
 namespace MyApp\Controller;
+use MyApp\Utilities\CommandHelper;
 use MyApp\Utilities\Message_Handler;
 use \Ratchet\ConnectionInterface;
 class ServerController
@@ -95,43 +96,50 @@ class ServerController
 
         if($msg_obj["from"] == 'student')
         {
-            //create new student
-            if($this->isDuplicate($this->students, $from, $msg_obj['device_id']))
+            //TODO how the server know that certain javascript connection know about certain rasperry pi
+            $professor  = Professor::getPersonById($this->professors,$msg_obj['execute']['professor_id']);
+            if(!is_object($professor))
             {
-                $plain_repsonse = (['response', 'server', 'student',$msg_obj['device_id'],['status'=> 'DUPLICATE_CONNECTION']]);
-                $this->sendToConnection($from, ...$plain_repsonse);
+                $plain_repsonse = CommandHelper::response('FAILED', "connectStudent",
+                "No professor is found with this id", []);
+                $this->sendToConnection($from, $plain_repsonse);
                 return;
 
             }
-            $this->students[] = new Student($from,"",$msg_obj['device_id'], $msg_obj['execute']['name']);
+
+            $professor->addStudent($from,$msg_obj['execute']['device_id'], $msg_obj['execute']['student_id'],$msg_obj['execute']['name']);
         }
         if ($msg_obj['from'] == 'professor')
         {
-            if($this->isDuplicate($this->professors, $from, $msg_obj['device_id']))
+            $professor  = $this->getPersonByToken($this->professors,$msg_obj['execute']['token']);
+            if(is_object($professor))
             {
 
-                $plain_repsonse = (['response', 'server', 'professor',$msg_obj['device_id'],['status'=> 'DUPLICATE_CONNECTION']]);
+                $plain_repsonse = CommandHelper::response('FAILED', 'connectProfessor', " h"
+                ,["id" => $professor->getId()]);
 
-                $this->sendToConnection($from, ...$plain_repsonse);
+                $this->sendToConnection($from, $plain_repsonse);
                 return;
 
             }
-            $this->professors[] = new Professor($from, $msg_obj['execute']['token'], $msg_obj['device_id'], $msg_obj['execute']['name']);
+            $randomId = "123456";
+            $this->professors[] = new Professor($from, $msg_obj['execute']['token'], $randomId, $msg_obj['execute']['name']);
             //TODO throw error
         }
     }
     private function handle_professor_command($professor, $prof_command): void
     {
         var_dump($prof_command);
+        $students = $professor->getStudents();
         switch ($prof_command['action'])
         {
             case 'getStudents':
                 $student_names = array();
-                echo "number of unverified stduents". count($this->students) . "\n";
-                foreach ($this->students as $student)
+                echo "number of unverified stduents". count($students) . "\n";
+                foreach ($students as $student)
                 {
-                    echo $student->get_name() . "\n";
-                    $student_names[] = $student->get_name();
+                    echo $student->getName() . "\n";
+                    $student_names[] = $student->getName();
 
                 }
                 echo $professor->getToken(). "\n";
@@ -139,7 +147,7 @@ class ServerController
 
                 break;
             case 'verifyStudents':
-                if(!$this->orderStudents('open cam for prof', 'professor', array(), $prof_command['device_id']))
+                if(!$this->orderStudents($students,'open cam for prof', 'professor', $prof_command['execute']['student_id']))
                     $professor->send_to(...Professor::BAD_REQUEST);
                 break;
             case 'startExam':
@@ -165,19 +173,19 @@ class ServerController
                 $student->send_to('response', 'server', ['status'=>'BAD_REQUEST']);
         }
     }
-    private function orderStudents($action, $origin, $execute, $id): bool
+    private function orderStudents($students, $action, $origin,  $id): bool
     {
         if($id == '00000')
         {
             echo "sending to all student\n";
             foreach ( $this->students as $student)
             {
-                $student->send_to($action, $origin, $execute);
+                $student->send_to($action, $origin, array("name"=> $student->getName()));
             }
             return true;
 
         }
-        $student = $this->getPersonByDeviceId($this->students, $id);
+        $student = $this->getPersonById($students, $id);
         if (!is_object($student))
         {
             return false;
@@ -208,15 +216,7 @@ class ServerController
         }
         return false;
     }
-    private function getPersonByDeviceId($persons, $id)
-    {
-        foreach ($persons as $person)
-        {
-            if($person->getDeviceId == $id)
-                return $person;
-        }
-        return false;
-    }
+
     private function isDuplicate($persons, $origin_connection, $id): bool
     {
         foreach ($persons as  $person)
@@ -234,12 +234,13 @@ class ServerController
      * @param ConnectionInterface $from
      * @return void
      */
-    private function sendToConnection(ConnectionInterface $from, $action, $origin, $destination, $device_id,$execute): void
+    private function sendToConnection(ConnectionInterface $from, string $response): void
     {
-        $response = ['action' => $action, 'to' => $destination, 'from' => $origin, 'device_id' => $device_id,
-            'execute' => $execute
-        ];
-        $from->send(Message_Handler::encode_msg($response));
+//        $response = ['action' => $action, 'to' => $destination, 'from' => $origin, 'device_id' => $device_id,
+//            'execute' => $execute
+//        ];
+//        $from->send(Message_Handler::encode_msg($response));
+        $from->send($response);
     }
 
 
