@@ -53,12 +53,12 @@ class ServerController
 
         }
         //if the message is not plain object, it will be encrypted
-        if($msg_obj['action'] != 'connect')
+        if($msg_obj['action'] != 'connect' && $msg_obj['from'] == 'professor')
         {
             $action_array = $msg_obj;
 
             $person_type = $action_array['from'];
-            $person = $this->getPersonByToken(array_merge($this->professors, $this->students), $msg_obj['execute']['token']);
+            $person = $this->getPersonByToken($this->professors, $msg_obj['execute']['token']);
 //            echo $professor . "professor is\n";
             if(!is_object($person))
             {
@@ -81,6 +81,27 @@ class ServerController
             }
 
 
+        }
+        if ($msg_obj['from'] == 'student' && $msg_obj['action'] != 'connect')
+        {
+            $professor = Person::getPersonById($this->professors, $msg_obj['execute']['professor_id']);
+            if(!is_object($professor))
+            {
+                $origin_connection->send(CommandHelper::response('FAILED', $msg_obj['action'],
+                    'bad professor id', []));
+                return;
+            }
+            echo " find student professor\n";
+            $student = Person::getPersonById($professor->getStudents(), $msg_obj['execute']['student_id']);
+            if (!is_object($student))
+            {
+                $origin_connection->send(CommandHelper::response('FAILED', $msg_obj['action'],
+                    "student doesn't exist", []));
+                return;
+            }
+            echo " find student\n";
+
+            $this->handle_student_command($student, $professor, $msg_obj);
         }
 //        if($msg_obj['to'] == 'student')
 //            $this->order_student($msg_obj['device_id'], $msg_obj['action'], $msg_obj['execute'], $msg_obj['from']);
@@ -143,12 +164,43 @@ class ServerController
 
                 }
                 echo $professor->getToken(). "\n";
-                $professor->send_to('responseStudents', 'server', ['studentNames' => $student_names]);
+                $professor->send_to('response', 'server', ['studentNames' => $student_names]);
 
                 break;
             case 'verifyStudents':
-                if(!$this->orderStudents($students,'open cam for prof', 'professor', $prof_command['execute']['student_id']))
-                    $professor->send_to(...Professor::BAD_REQUEST);
+                foreach ($students as $student)
+                {
+                    $student->send_to('open_cam_for_prof', 'professor', ["name"=> $student->getName()]);
+                }
+                break;
+            case 'vote':
+                foreach ($students as $student)
+                {
+                    $student->send_to('vote', 'professor', ["name"=> $student->getName()]);
+                }
+                break;
+            case 'resultVote':
+                $resultAr= array();
+                foreach ($students as $student)
+                {
+                    echo "vote value ". $student->getVote() . "\n";
+                    $resultAr[] = $student->getVote();
+                }
+                print_r(array_count_values($resultAr));
+                $executeAr = [
+                    "status" => "OK",
+                    "type"=> "resultVote",
+                    "msg"=> "Sucessfully Vote",
+                    "asnwer"=> array_count_values($resultAr)
+                ];
+                $professor->send_to('response', 'server', $executeAr);
+                break;
+            case 'mute_all':
+                foreach ($students as $student)
+                {
+                    $student->send_to('mute_all', 'professor', []);
+
+                }
                 break;
             case 'startExam':
                 if(!$this->orderStudents('startExam', 'professor', $prof_command['execute'], $prof_command['device_id']))
@@ -158,19 +210,30 @@ class ServerController
                 if(!$this->orderStudents('sendFile', 'professor', $prof_command['execute'], $prof_command['device_id']))
                     $professor->send_to(...Professor::BAD_REQUEST);
                 break;
+            case 'response':
+//                $professor->send_to('response', 'server', $prof_command['execute']);
+                break;
             default:
                 echo 'invalid action\n';
                 $professor->send_to('response', 'server', ['status'=>'BAD_REQUEST']);
 
         }
     }
-    private function handle_student_command(Student $student, array $student_command)
+    private function handle_student_command(Student $student, Professor $professor,array $student_command)
     {
         switch ($student_command['action'])
         {
+            case 'vote':
+                echo $student->getName()." voting ". $student_command['execute']['choice'] . "\n";
+                $student->setVote($student_command['execute']['choice']);
+                break;
+
+            case 'response':
+                $this->handle_student_response($student, $professor, $student_command);
+                break;
             default:
                 echo 'bad request for student'. "\n";
-                $student->send_to('response', 'server', ['status'=>'BAD_REQUEST']);
+                $student->send_to('response', 'server', ['status'=>'FAILED']);
         }
     }
     private function orderStudents($students, $action, $origin,  $id): bool
@@ -243,7 +306,23 @@ class ServerController
         $from->send($response);
     }
 
+    private function handle_student_response(Student $student, Professor $professor, array $student_command)
+    {
+        switch ($student_command['execute']['type'])
+        {
+            case 'verify':
+                $professor->send_to('response', 'student', $student_command);
 
+                break;
+            case 'mute_all':
+                $professor->send_to('response', 'student', $student_command);
+
+                break;
+            case 'vote':
+
+                break;
+        }
+    }
 
 
 }

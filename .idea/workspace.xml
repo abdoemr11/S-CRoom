@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ee614767-cd45-418e-a06e-f46a68b34b31" name="Changes" comment="ready to work on updated server commands">
-      <change afterPath="$PROJECT_DIR$/SocketServer/src/Utilities/CommandHelper.php" afterDir="false" />
+    <list default="true" id="ee614767-cd45-418e-a06e-f46a68b34b31" name="Changes" comment="working on verify students">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocketServer/Commands/notes" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/Commands/notes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocketServer/src/Controller/Person.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/src/Controller/Person.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocketServer/src/Controller/Professor.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/src/Controller/Professor.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SocketServer/src/Controller/ServerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/src/Controller/ServerController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SocketServer/src/Controller/Student.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/src/Controller/Student.php" afterDir="false" />
     </list>
@@ -229,7 +225,7 @@
       <workItem from="1658031958055" duration="15577000" />
       <workItem from="1658127421593" duration="2996000" />
       <workItem from="1658344957480" duration="581000" />
-      <workItem from="1658487904650" duration="5383000" />
+      <workItem from="1658487904650" duration="11293000" />
     </task>
     <task id="LOCAL-00001" summary="Finished the ability to send welcome message and open cam">
       <created>1648307115306</created>
@@ -336,7 +332,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658487959535</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="working on verify students">
+      <created>1658494847504</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1658494847504</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -368,6 +371,7 @@
     <MESSAGE value="implemented all commands from professor" />
     <MESSAGE value="implemented some of frontend tasks" />
     <MESSAGE value="ready to work on updated server commands" />
-    <option name="LAST_COMMIT_MESSAGE" value="ready to work on updated server commands" />
+    <MESSAGE value="working on verify students" />
+    <option name="LAST_COMMIT_MESSAGE" value="working on verify students" />
   </component>
 </project>
