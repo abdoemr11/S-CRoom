@@ -55,8 +55,8 @@
                       <!-- ***** Menu Start ***** -->
                       <ul class="nav">
                           <li class="scroll-to-section"><a href="#about"><img src="online-course.png" width="30" height="30" title="Lecture or Exam"></a></li>
-                          <li><a href="Profile page/PP.html"><img src="profile.png" width="30" height="30" title="Personal page"></a></li> 
-                      </ul>        
+                          <li><a href="Profile page/PP.html"><img src="profile.png" width="30" height="30" title="Personal page"></a></li>
+                      </ul>
                       <a class='menu-trigger'>
                           <span>Menu</span>
                       </a>
@@ -80,7 +80,7 @@
           <div class="row">
             <div class="col-lg-12">
               <div class="caption">
-              <h3>Hello Prof. <?php echo $rows['username'];?></h3>
+              <h3>Hello Prof.  {{"  ".Auth::guard('professors')->user()->first_name}}</h3>
               </div>
               </div>
             </div>
@@ -90,7 +90,7 @@
   </section>
   <!-- ***** Main Banner Area End ***** -->
 <section class="services" id="about">
-    
+
     <br> <br>
     <div class="container">
       <div class="row">
@@ -102,11 +102,11 @@
             </div>
         </div>
     <div class="footer">
-      <p>Copyright © 2022 Benha Faculty Of Engineering All Rights Reserved. 
+      <p>Copyright © 2022 Benha Faculty Of Engineering All Rights Reserved.
     </div>
   </section>
   <section class="services" id="lecs">
-    
+
     <br> <br>
     <div class="container">
       <div class="row">
@@ -141,11 +141,11 @@
       </div>
     </div>
    <div class="footer">
-      <p>Copyright © 2022 Benha Faculty Of Engineering All Rights Reserved. 
+      <p>Copyright © 2022 Benha Faculty Of Engineering All Rights Reserved.
     </div>
   </section>
 <section class="services" id="exams">
-    
+
     <br> <br>
     <div class="container">
       <div class="row">
@@ -193,7 +193,7 @@
       </div>
     </div>
    <div class="footer">
-      <p>Copyright © 2022 Benha Faculty Of Engineering All Rights Reserved. 
+      <p>Copyright © 2022 Benha Faculty Of Engineering All Rights Reserved.
     </div>
   </section>
   <!-- Scripts -->
@@ -218,7 +218,7 @@
       function lec() {
         lecs.style.display="none";
         exams.style.display="none";
-        if (lecs.style.display=="none") 
+        if (lecs.style.display=="none")
           {lecs.style.display = "block";}
         else
           {lecs.style.display = "none";}
@@ -226,11 +226,11 @@
       function exam() {
         lecs.style.display="none";
         exams.style.display="none";
-        if (exams.style.display=="none") 
+        if (exams.style.display=="none")
           {exams.style.display = "block";}
         else
           {exams.style.display = "none";}
-        
+
       }
 
       function addq() {

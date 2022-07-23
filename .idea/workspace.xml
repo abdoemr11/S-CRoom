@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ee614767-cd45-418e-a06e-f46a68b34b31" name="Changes" comment="working on verify students">
+    <list default="true" id="ee614767-cd45-418e-a06e-f46a68b34b31" name="Changes" comment="finished vote mute">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/views/profLog.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/views/profLog.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SocketServer/src/Controller/ServerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/src/Controller/ServerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocketServer/src/Controller/Student.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/src/Controller/Student.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -225,7 +225,8 @@
       <workItem from="1658031958055" duration="15577000" />
       <workItem from="1658127421593" duration="2996000" />
       <workItem from="1658344957480" duration="581000" />
-      <workItem from="1658487904650" duration="11293000" />
+      <workItem from="1658487904650" duration="13649000" />
+      <workItem from="1658578191342" duration="518000" />
     </task>
     <task id="LOCAL-00001" summary="Finished the ability to send welcome message and open cam">
       <created>1648307115306</created>
@@ -339,7 +340,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658494847504</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="finished vote mute">
+      <created>1658500767118</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1658500767118</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -372,6 +380,7 @@
     <MESSAGE value="implemented some of frontend tasks" />
     <MESSAGE value="ready to work on updated server commands" />
     <MESSAGE value="working on verify students" />
-    <option name="LAST_COMMIT_MESSAGE" value="working on verify students" />
+    <MESSAGE value="finished vote mute" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished vote mute" />
   </component>
 </project>

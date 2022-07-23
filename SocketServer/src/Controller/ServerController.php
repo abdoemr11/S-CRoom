@@ -202,9 +202,34 @@ class ServerController
 
                 }
                 break;
+            case 'EndSession':
+                foreach ($students as $student)
+                {
+                    $student->send_to('endSession', 'professor', $prof_command['execute']);
+
+                }
+                break;
+            case 'EndExam':
+                foreach ($students as $student)
+                {
+                    $student->send_to('EndExam', 'professor', $prof_command['execute']);
+
+                }
+                break;
+            case 'startSession':
+                foreach ($students as $student)
+                {
+                    $student->send_to('startSession', 'professor', $prof_command['execute']);
+
+                }
+                break;
+
             case 'startExam':
-                if(!$this->orderStudents('startExam', 'professor', $prof_command['execute'], $prof_command['device_id']))
-                    $professor->send_to(...Professor::BAD_REQUEST);
+                foreach ($students as $student)
+                {
+                    $student->send_to('startExam', 'professor', $prof_command['execute']);
+
+                }
                 break;
             case 'sendFile':
                 if(!$this->orderStudents('sendFile', 'professor', $prof_command['execute'], $prof_command['device_id']))
@@ -227,7 +252,9 @@ class ServerController
                 echo $student->getName()." voting ". $student_command['execute']['choice'] . "\n";
                 $student->setVote($student_command['execute']['choice']);
                 break;
-
+            case 'cheat':
+                    $professor->send_to('cheat', 'student', $student_command['execute']);
+                break;
             case 'response':
                 $this->handle_student_response($student, $professor, $student_command);
                 break;
@@ -321,6 +348,8 @@ class ServerController
             case 'vote':
 
                 break;
+            default:
+                $professor->send_to('response', 'student', $student_command);
         }
     }
 
