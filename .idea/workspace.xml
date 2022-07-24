@@ -1,25 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ee614767-cd45-418e-a06e-f46a68b34b31" name="Changes" comment="ready for goda work">
-      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/loginRasp.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/proftry.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/style1.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/views/loginRasp.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/views/timer.blade.php" afterDir="false" />
+    <list default="true" id="ee614767-cd45-418e-a06e-f46a68b34b31" name="Changes" comment="implemented some of the server features">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/app/Models/Subject.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/app/Models/Subject.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/migrations/2022_07_04_121634_create_exams_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/migrations/2022_07_04_121634_create_exams_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/views/profLive.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/views/profLive.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/views/profLog.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/views/profLog.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/views/studentLive.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/views/studentLive.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocketServer/src/Controller/Person.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/src/Controller/Person.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocketServer/src/Controller/Professor.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/src/Controller/Professor.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SocketServer/src/Controller/ServerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/src/Controller/ServerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocketServer/src/Controller/Student.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/src/Controller/Student.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocketServer/src/Utilities/CommandHelper.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/src/Utilities/CommandHelper.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -246,6 +232,7 @@
       <workItem from="1658344957480" duration="581000" />
       <workItem from="1658487904650" duration="13649000" />
       <workItem from="1658578191342" duration="12057000" />
+      <workItem from="1658653989315" duration="3715000" />
     </task>
     <task id="LOCAL-00001" summary="Finished the ability to send welcome message and open cam">
       <created>1648307115306</created>
@@ -373,7 +360,21 @@
       <option name="project" value="LOCAL" />
       <updated>1658579081802</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="implemented some of the server features">
+      <created>1658654026736</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1658654026736</updated>
+    </task>
+    <task id="LOCAL-00020" summary="implemented some of the server features">
+      <created>1658654130880</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1658654130880</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -408,6 +409,7 @@
     <MESSAGE value="working on verify students" />
     <MESSAGE value="finished vote mute" />
     <MESSAGE value="ready for goda work" />
-    <option name="LAST_COMMIT_MESSAGE" value="ready for goda work" />
+    <MESSAGE value="implemented some of the server features" />
+    <option name="LAST_COMMIT_MESSAGE" value="implemented some of the server features" />
   </component>
 </project>

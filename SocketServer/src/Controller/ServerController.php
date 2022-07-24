@@ -164,7 +164,9 @@ class ServerController
 
                 }
                 echo $professor->getToken(). "\n";
-                $professor->send_to('response', 'server', ['studentNames' => $student_names]);
+                $professor->send_to('response', 'server', ['status'=> 'OK',
+                    'type' => 'getStudents',
+                    'studentNames' => $student_names]);
 
                 break;
             case 'verifyStudents':

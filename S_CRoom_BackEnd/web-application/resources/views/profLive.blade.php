@@ -84,6 +84,8 @@
 
     }
     function get_all() {
+        let ul = document.getElementById("std_names");
+        ul.innerHTML = '';
         ws.send(JSON.stringify({
             "action": "getStudents",
             "to": "server",
@@ -113,13 +115,13 @@
         document.getElementById("quiz").style.display = "none";
     }
     function send_vote() {
-        vote_q = document.getElementById("vote_q").value;
+        let vote_q = document.getElementById("vote_q").value;
         ch1 = document.getElementById("ch1").value;
         ch2 = document.getElementById("ch2").value;
         ch3 = document.getElementById("ch3").value;
         ch4 = document.getElementById("ch4").value;
-        var n1=0,n2=0,n3=0,n4=0;
-        var vote = {"action" : "vote",
+        let n1=0,n2=0,n3=0,n4=0;
+        let vote = {"action" : "vote",
             "to" : "student",
             "from" : "professor",
             "execute" :
@@ -140,25 +142,25 @@
 
     }
     function send_quiz() {
-        quiz_q = document.getElementById("quiz_q").value;
-        an1 = document.getElementById("an1").value;
-        an2 = document.getElementById("an2").value;
-        an3 = document.getElementById("an3").value;
-        an4 = document.getElementById("an4").value;
+        let quiz_q = document.getElementById("quiz_q").value;
+        let an1 = document.getElementById("an1").value;
+        let an2 = document.getElementById("an2").value;
+        let an3 = document.getElementById("an3").value;
+        let an4 = document.getElementById("an4").value;
         var right_ans,wrong_ans;
-        if(an1[0]=='-')
+        if(an1[0]==='-')
         {an1[0]==[];right_ans = an1;
             wrong_ans = [an2,an3,an4];}
-        else if (an2[0]=='-')
+        else if (an2[0]==='-')
         {an2[0]==[];right_ans = an2;
             wrong_ans = [an1,an3,an4];}
-        else if (an3[0]=='-')
-        {an3[0]==[];right_ans = an3;
+        else if (an3[0]==='-')
+        {an3[0]===[];right_ans = an3;
             wrong_ans = [an2,an1,an4];}
-        else if (an4[0]=='-')
+        else if (an4[0]==='-')
         {an4[0]==[];right_ans = an4;
             wrong_ans = [an2,an3,an1];}
-        var quiz_form = {
+        let quiz_form = {
             "action" : "quiz",
             "to" : "student",
             "from" : "professor",
@@ -190,7 +192,7 @@
             "token" : "{{$token}}",
             "device_id" : "xxxxxx",
             "student_id" : "xxxxx"}};
-        ws.send(JSON.stringify(bonus_form));
+        ws.send(JSON.stringify(minus_form));
     }
     function MuteAll() {
         document.getElementById("unmute").style.display="block";
@@ -209,7 +211,7 @@
     function UnMuteAll() {
         document.getElementById("unmute").style.display="none";
         document.getElementById("mute").style.display="block";
-        var muteAll_form = {
+        let unmuteAll_form = {
             "action": "unmute_all",
             "to": "student",
             "from": "professor",
@@ -217,7 +219,7 @@
                 "token" : "{{$token}}"
             }
         };
-        ws.send(JSON.stringify(muteAll_form));
+        ws.send(JSON.stringify(unmuteAll_form));
     }
     function end() {
         recv_msg = {
@@ -237,46 +239,45 @@
 
 
     ws.onmessage = function (event) {
+        let i;
         console.log(event.data)
         let received_msg = JSON.parse(event.data);
-        if (received_msg.action === "response" && received_msg.execute.type == "connectProfessor") {
+        if (received_msg.action === "response" && received_msg.execute.type === "connectProfessor") {
             if (received_msg.execute.status === "OK") {
                 alert("Connetion succeeded");
             }
         }
-        else if (received_msg.action == "response" && received_msg.execute.type == "getStudents") {
-            names = received_name.execute.studentNames;
+        else if (received_msg.action === "response" && received_msg.execute.type === "getStudents") {
+            names = received_msg.execute.studentNames;
             let ul = document.getElementById("std_names");
-            for (var i = names.length - 1; i >= 0; i--) {
-                var li = document.createElement("li");
-                li.innerHTML = '# ' + names[i];
+            for (i = names.length - 1; i >= 0; i--) {
+                let li = document.createElement("li");
+                li.innerHTML = '<p>  ' + names[i] + '</p>';
                 ul.appendChild(li);
             }
         }
-        else if (received_msg.action == "response" && received_msg.execute.type == "verify")
+        else if (received_msg.action === "response" && received_msg.execute.type === "verify")
         {
             let x = -1;
             x+=1;
-            name_v[x] = received_name.execute.student_name;
+            name_v[x] = received_msg.execute.student_name;
             let ul = document.getElementById("std_names");
-            while( ul.hasChildNodes ){
-                ul.removeChild('li');
-            }
+            ul.innerHTML = '';
             let li = document.createElement("li");
-            li.innerHTML = '# ' + name_v[x] + '<<button class="img-rounded" type="button onclick="bonus()">Bonus</button><button class="img-rounded" type="button" onclick="minus()">Minus</button>';
+            li.innerHTML = name_v[x] + '<button class="img-rounded" type="button onclick="bonus()">Bonus</button><button class="img-rounded" type="button" onclick="minus()">Minus</button>';
             ul.appendChild(li);
             for (var k = names.length - 1; k >= 0; k--) {
-                if(names[k]==name_v[x]) {names[k]==[];}
+                if(names[k]===name_v[x]) {names[k]===[];}
             }
 
-            for (var i = names.length - 1; i >= 0; i--) {
+            for (let i = names.length - 1; i >= 0; i--) {
                 let li = document.createElement("li");
                 li.innerHTML = '# ' + names[i];
                 ul.appendChild(li);
             }
 
         }
-        else if (received_msg.action == "response" && received_msg.execute.type == "std_msg")
+        else if (received_msg.action === "response" && received_msg.execute.type === "std_msg")
         {
             studentt = received_msg.studentName;
             question = received_msg.execute.questions;
@@ -285,46 +286,46 @@
             li.innerHTML = '# Student Name : ' + studentt + '/n' + 'Qustion : ' + question + '<hr>';
             ul.appendChild(li);
         }
-        else if (received_msg.execute.status == "OK" && received_msg.execute.type == "result_vote")
+        else if (received_msg.execute.status === "OK" && received_msg.execute.type === "result_vote")
         {
             document.getElementById("vote_choices").style.display = "none";
             vote_result = document.getElementById("vote_result");
             vote_result.innerHTML = ch1 + ' : ' + received_msg.answer[0] + '/n' + ch2 + ' : ' + received_msg.answer[1] + '/n' + ch3 + ' : ' + received_msg.answer[2] + '/n' +ch4 + ' : ' + received_msg.answer[3] + '/n';
 
         }
-        else if (received_msg.action == "response" && received_msg.execute.type == "mute_all")
+        else if (received_msg.action === "response" && received_msg.execute.type === "mute_all")
         {
             alert("All students are muted");
         }
-        else if (received_msg.action == "response" && received_msg.execute.type == "unmute_all")
+        else if (received_msg.action === "response" && received_msg.execute.type === "unmute_all")
         {
             alert("All students are unmuted");
         }
-        else if  (received_msg.action == "response" && received_msg.execute.type == "quiz")
+        else if  (received_msg.action === "response" && received_msg.execute.type === "quiz")
         {
             let x = 0;
             quiz_degrees[x] =  {
-                "student_id" : received_name.execute.student_id,
+                "student_id" : received_msg.execute.student_id,
                 //"professor_id" : ,
                 //"subject_id" : ,
-                "exam_type" : received_name.execute.type,
-                "exam-mark" : received_name.execute.exam_mark,
+                "exam_type" : received_msg.execute.type,
+                "exam-mark" : received_msg.execute.exam_mark,
 
             };
             x+=1;
 
         }
-        else if (received_msg.execute.type=="endSession")
+        else if (received_msg.execute.type==="endSession")
         {location.replace("wss://wss://127.0.0.1/proflogin");}
-        else if(received_msg.action=="response_Self_end")
+        else if(received_msg.action==="response_Self_end")
         {
             alert("A student left the session");
         }
-        else if(received_msg.action=="response_mute")
+        else if(received_msg.action==="response_mute")
         {
             alert("A student Muted himself");
         }
-        else if(received_msg.action=="raise_hand")
+        else if(received_msg.action==="raise_hand")
         {
             alert("A student raised his hand with name : " + received_msg.student_name);
         }
