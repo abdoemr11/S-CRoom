@@ -10,7 +10,6 @@
 <header>
     <h1 id="header">Here Professor can control the lecture</h1>
     <button onclick="conncet()" class="btn btn-success">Connect</button>
-    <button>Submit session</button>
     <button onclick="end()" class="btn btn-danger">End</button>
     <hr>
 </header>
