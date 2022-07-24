@@ -70,7 +70,7 @@
     </div>
 </main>
 <script>
-    var names,name_v;
+    var names,name_v,ch1,ch2,ch3,ch4;
     let ws = new WebSocket("ws://127.0.0.1:8080");
 
     function conncet()
@@ -162,7 +162,6 @@
             "action" : "quiz",
             "to" : "student",
             "from" : "professor",
-            "device_id" : "xxxxxx",
             "execute" : {
                 "token" : "{{$token}}",
                 'qustion' : quiz_q,'correct_answer' : right_ans,
@@ -277,7 +276,7 @@
             }
 
         }
-            else if (received_msg.action == "response" && received_msg.execute.type == "std_msg")
+        else if (received_msg.action == "response" && received_msg.execute.type == "std_msg")
         {
             studentt = received_msg.studentName;
             question = received_msg.execute.questions;
@@ -286,28 +285,17 @@
             li.innerHTML = '# Student Name : ' + studentt + '/n' + 'Qustion : ' + question + '<hr>';
             ul.appendChild(li);
         }
-            else if (received_msg.execute.status == "OK" && received_msg.execute.type == "vote")
+        else if (received_msg.execute.status == "OK" && received_msg.execute.type == "result_vote")
         {
-            switch(received_msg.choice)
-            {
-                case ch1 :
-                    n1+=1;break;
-                case ch2 :
-                    n2+=1;break;
-                case ch3 :
-                    n3+=1;break;
-                case ch4 :
-                    n4+=1;break;
-            }
             document.getElementById("vote_choices").style.display = "none";
             vote_result = document.getElementById("vote_result");
-            vote_result.innerHTML = ch1 + ' : ' + n1 + '/n' + ch2 + ' : ' + n2 + '/n' + ch3 + ' : ' + n3 + '/n' +ch4 + ' : ' + n4 + '/n';
+            vote_result.innerHTML = ch1 + ' : ' + received_msg.answer[0] + '/n' + ch2 + ' : ' + received_msg.answer[1] + '/n' + ch3 + ' : ' + received_msg.answer[2] + '/n' +ch4 + ' : ' + received_msg.answer[3] + '/n';
 
         }
-            else if (received_msg.action == "response" && received_msg.execute.type == "mute_all")
-            {
-                alert("All students are muted");
-            }
+        else if (received_msg.action == "response" && received_msg.execute.type == "mute_all")
+        {
+            alert("All students are muted");
+        }
         else if (received_msg.action == "response" && received_msg.execute.type == "unmute_all")
         {
             alert("All students are unmuted");
