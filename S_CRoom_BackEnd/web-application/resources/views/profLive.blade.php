@@ -1,7 +1,7 @@
 <head>
     <title>Prof Live</title>
     <link rel="stylesheet" type="text/css" href="proftry.css">
-    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="..\bootstrap.min.css">
     @php
     $professor = Auth::guard('professors')->user()
     @endphp
@@ -18,7 +18,7 @@
     <div>
 
     </div>
-    <div id="main-box">
+    <div id="main-box" style="padding-top: 10px;border-width: thick;border-style: double;border-color: black;width: 50%;">
         <div>
             <button onclick="get_all()" class="btn btn-primary" >Get all</button>
             <button onclick="verify()" class="btn btn-primary" >Verify</button>
@@ -74,18 +74,46 @@
             </div>
         </div>
     </div>
+    <div style="padding-top: 10px;border-width: thick;border-style: double;border-color: black;width: 50%;">
+    	<p class="h4" style="background-color: skyblue;">Who raised his hand?</p>
+    	<ul id="raised_hand_std"></ul>
+    </div>
 
 </main>
 <script>
-    let name_v,ch1,ch2,ch3,ch4;
+    let name_v,ch1,ch2,ch3,ch4, student_ids,isAttend,bonuses,quiz_degrees;
     let students = [{
         student_name: "goda",
         student_id: "123",
         isVerified: false,
         bonus: 0
     }];
+    students.forEach( student=> {
+            student_ids[student] = student.student_id;
+        })
+    students.forEach( student=> {
+            bonuses[student] = student.bonus;
+        })
+    students.forEach( student=> {
+            if(student.isVerified ===true)
+            isAttend[student] = true;
+        })
+    let lecture_msg = [{
+    	"professor_id" : //prof_id,
+    	"subject_id" : //subject_id,
+    	"lecture_week" : //lec_number,
+    	"students_data" : {
+    		"student_ids" : {student_ids},
+    		"is_attendent" : {isAttend},
+    		"Bonuses" : {bonuses}
+       	},
+       	"exam" : {
+       		"min_degree" : 2.5,
+       		"max_degree" : 5,
+       		"info" : {quiz_degrees}
+       	}
+    }];
     let ws = new WebSocket("ws://127.0.0.1:8080");
-
     function conncet()
     {
         ws.send(JSON.stringify({"action" : "connect" ,
@@ -94,7 +122,6 @@
             "execute" : {
                 "token"   : "{{$token}}",
                 "name"    : "{{$professor->first_name ." ". $professor->second_name}}"}}));
-
     }
     function get_all() {
         let ul = document.getElementById("std_names");
@@ -120,7 +147,6 @@
         document.getElementById("vote-form").style.display = "none";
         document.getElementById("quiz").style.display = "none";
         document.getElementById("quest").style.display = "block";
-
     }
     function Vote() {
         document.getElementById("quest").style.display = "none";
@@ -153,7 +179,6 @@
         document.getElementById("quest").style.display = "none";
         document.getElementById("vote-form").style.display = "none";
         document.getElementById("quiz").style.display = "block";
-
     }
     function send_quiz() {
         let quiz_q = document.getElementById("quiz_q").value;
@@ -184,10 +209,8 @@
                 'incorrect_answers':wrong_ans}};
         ws.send(JSON.stringify(quiz_form));
         document.getElementById("quiz").style.display = "none";
-
     }
     function bonus(clicked_id) {
-
         students.forEach( student=> {
             if(student.student_id ===clicked_id)
             student.bonus +=1;
@@ -211,7 +234,6 @@
             }
         };
         ws.send(JSON.stringify(muteAll_form));
-
     }
     function UnMuteAll() {
         document.getElementById("unmute").style.display="none";
@@ -227,7 +249,7 @@
         ws.send(JSON.stringify(unmuteAll_form));
     }
     function end() {
-        recv_msg = {
+        let recv_msg = {
             "action": "end_session",
             "to": "student",
             "from": "professor",
@@ -238,16 +260,13 @@
                 }
         }
         ws.send(JSON.stringify(recv_msg));
-        fet
-        // location.replace("/proflog");
+        ws.send(JSON.stringify(lecture_mag));
+        location.replace("/proflog");
     }
     function show_vote()
     {
         document.getElementById("vote_result").style.display="block";
-
     }
-
-
     ws.onmessage = function (event) {
         let i;
         console.log(JSON.parse(event.data))
@@ -303,7 +322,6 @@
             document.getElementById("vote_choices").style.display = "none";
             vote_result = document.getElementById("vote_result");
             vote_result.innerHTML = ch1 + ' : ' + received_msg.answer[0] + '<br>' + ch2 + ' : ' + received_msg.answer[1] + '/n' + ch3 + ' : ' + received_msg.answer[2] + '/n' + ch4 + ' : ' + received_msg.answer[3] + '/n';
-
         } else if (received_msg.action === "response" && received_msg.execute.type === "mute_all") {
             alert("All students are muted");
         } else if (received_msg.action === "response" && received_msg.execute.type === "unmute_all") {
@@ -316,10 +334,8 @@
                 //"subject_id" : ,
                 "exam_type": received_msg.execute.type,
                 "exam-mark": received_msg.execute.exam_mark,
-
             };
             x += 1;
-
         } else if (received_msg.execute.type === "endSession") {
             location.replace("wss://wss://127.0.0.1/proflogin");
         } else if (received_msg.action === "response_Self_end") {
@@ -327,7 +343,16 @@
         } else if (received_msg.action === "response_mute") {
             alert("A student Muted himself");
         } else if (received_msg.action === "raise_hand") {
-            alert("A student raised his hand with name : " + received_msg.student_name);
+        	students.forEach( student=> {
+            if(student.student_id ===received_msg.execute.studen_id)
+	            {
+	            	let ul = document.getElementById("raised_hand_std");
+		            let li = document.createElement("li");
+		            li.innerHTML ="<p>A student raised his hand with name : </p>" + student.student_name;
+		            ul.appendChild(li);
+	            }
+        	})
+        	
         }
     }
 </script>
