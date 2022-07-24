@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
+use Illuminate\Support\Str;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -45,6 +47,12 @@ Route::get('/proflog', function () {
 })->middleware('professor');
 Route::get('/proflive', function () {
     return view('profLive');
+});
+Route::post('/proflive', function () {
+//    dd(\request());
+    return view('profLive')->with([
+        'token'=> Str::random(40)
+        ]);
 });
 Route::get('/stdlive', function () {
     return view('studentLive');

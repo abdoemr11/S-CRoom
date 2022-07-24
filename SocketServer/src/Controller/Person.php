@@ -11,7 +11,7 @@ class Person
     protected $token;
     protected $name = "abdo";
     protected $id;
-    public function __construct(private ConnectionInterface $connection, string $token, $id, $name)
+    public function __construct(private ConnectionInterface $connection, string $token, $id, $name, $dest)
     {
         $execute = [
             'status' => "OK",

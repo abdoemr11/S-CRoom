@@ -16,9 +16,9 @@ class CommandHelper
     "from": "server",
     "to": "professor",
     "execute": {
-        "status": $status,
-        "type": $type,
-        "msg" : $msg,
+        "status": "$status",
+        "type": "$type",
+        "msg" : "$msg",
         $remainingOp
     }
 }

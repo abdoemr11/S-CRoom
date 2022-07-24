@@ -136,7 +136,7 @@ class ServerController
             if(is_object($professor))
             {
 
-                $plain_repsonse = CommandHelper::response('FAILED', 'connectProfessor', " h"
+                $plain_repsonse = CommandHelper::response('OK', 'connectProfessor', " h"
                 ,["id" => $professor->getId()]);
 
                 $this->sendToConnection($from, $plain_repsonse);
@@ -174,9 +174,10 @@ class ServerController
                 }
                 break;
             case 'vote':
+                echo "professor is sending vote\n";
                 foreach ($students as $student)
                 {
-                    $student->send_to('vote', 'professor', ["name"=> $student->getName()]);
+                    $student->send_to('vote', 'professor', $prof_command['execute']);
                 }
                 break;
             case 'resultVote':

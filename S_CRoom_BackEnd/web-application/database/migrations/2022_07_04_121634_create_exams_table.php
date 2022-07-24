@@ -21,6 +21,9 @@ return new class extends Migration
             $table->foreignId('subjects_id')->constrained('subjects');
             $table->enum('exam_type', ['final', 'quiz', 'midterm']);
             $table->integer('exam-mark');
+            $table->date('exam_date');
+            $table->time('start_time');
+            $table->time('end_time');
             $table->integer('exam_max_degree');
             $table->integer('exam_min_degree');
             $table->string('exam_year');

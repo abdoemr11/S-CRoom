@@ -14,7 +14,7 @@ class Professor extends Person
     private array $students = array();
     public function __construct(private ConnectionInterface $connection, string $token, $id, $name)
     {
-        parent::__construct($connection, $token, $id, $name);
+        parent::__construct($connection, $token, $id, $name, 'professor');
     }
     public function addStudent($from, string $device_id, string $id, $name)
     {

@@ -1,10 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ee614767-cd45-418e-a06e-f46a68b34b31" name="Changes" comment="finished vote mute">
+    <list default="true" id="ee614767-cd45-418e-a06e-f46a68b34b31" name="Changes" comment="ready for goda work">
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/loginRasp.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/proftry.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/style1.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/views/loginRasp.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/views/timer.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/app/Models/Subject.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/app/Models/Subject.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/migrations/2022_07_04_121634_create_exams_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/migrations/2022_07_04_121634_create_exams_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/views/profLive.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/views/profLive.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/views/profLog.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/views/profLog.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/views/studentLive.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/views/studentLive.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SocketServer/src/Controller/Person.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/src/Controller/Person.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SocketServer/src/Controller/Professor.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/src/Controller/Professor.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SocketServer/src/Controller/ServerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/src/Controller/ServerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SocketServer/src/Controller/Student.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/src/Controller/Student.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SocketServer/src/Utilities/CommandHelper.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/src/Utilities/CommandHelper.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,6 +110,9 @@
       <path value="$PROJECT_DIR$/SocketServer/vendor/textalk/websocket" />
     </include_path>
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectId" id="26kB7WFiZ7euJ72r6XDd8P7LNYe" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -103,11 +121,12 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Git.Branch.Popup.ShowAllRemotes&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/3enginnering/elect4/term2/project/S-CRoom/S_CRoom_BackEnd/web-application/artisan&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/3enginnering/elect4/term2/project/S-CRoom/S_CRoom_BackEnd/web-application/public&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.webide.settings.project.settings.php&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
@@ -226,7 +245,7 @@
       <workItem from="1658127421593" duration="2996000" />
       <workItem from="1658344957480" duration="581000" />
       <workItem from="1658487904650" duration="13649000" />
-      <workItem from="1658578191342" duration="518000" />
+      <workItem from="1658578191342" duration="12057000" />
     </task>
     <task id="LOCAL-00001" summary="Finished the ability to send welcome message and open cam">
       <created>1648307115306</created>
@@ -347,7 +366,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658500767118</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="ready for goda work">
+      <created>1658579081802</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1658579081802</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -381,6 +407,7 @@
     <MESSAGE value="ready to work on updated server commands" />
     <MESSAGE value="working on verify students" />
     <MESSAGE value="finished vote mute" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished vote mute" />
+    <MESSAGE value="ready for goda work" />
+    <option name="LAST_COMMIT_MESSAGE" value="ready for goda work" />
   </component>
 </project>

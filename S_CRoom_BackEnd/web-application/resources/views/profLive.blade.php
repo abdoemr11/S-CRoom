@@ -1,241 +1,345 @@
-<!DOCTYPE html>
-<html>
 <head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://ajax.googleapis.conm/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="try.css">
-    <link rel="stylesheet" type="text/css" href="try.js">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <title>Home Page</title>
+    <title>Prof Live</title>
+    <link rel="stylesheet" type="text/css" href="proftry.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    @php
+    $professor = Auth::guard('professors')->user()
+    @endphp
 </head>
 <body>
-<h2 style="background:#302ea3; color:white; padding:10px 20px;">
-    Lecture one : Antenna Analysis and design
-</h2>
-<div id="stream"><iframe src="https://docs.google.com/presentation/d/17aFAYmf8ZUHc5y45znfZBh4o3tqJcc3K/edit?usp=sharing&ouid=101575391344746801298&rtpof=true&sd=true"></iframe></div>
+<header>
+    <h1 id="header">Here Professor can control the lecture</h1>
+    <button onclick="conncet()" class="btn btn-success">Connect</button>
+    <button onclick="end()" class="btn btn-danger">End</button>
+    <hr>
+</header>
+<main id="element" style="display: flex;">
+    <div id="main-box">
+        <div>
+            <button onclick="get_all()" class="btn btn-primary" >Get all</button>
+            <button onclick="verify()" class="btn btn-primary" >Verify</button>
 
-<div class="chat-popup" id="myForm">
-    <form  class="form-container">
-        <h2>Questions from students</h2>
-        <div id="student1" >
-            <P><h5>Question from (Get the name from the database) :</h5>
-            [The question from the database] <button type="button" class="img-center" onclick="endq1()"><img src="checked.png" class="img-center" width="25" height="25" title="Allow"></button>
-            </P>
         </div>
-        <div class="line-5"></div>
-        <div id="student2">
-            <P><h5>Question from (Get the name from the database) :</h5>
-            [The question from the database] <button type="button" class="img-center" onclick="endq2()"><img src="checked.png" class="img-center" width="25" height="25" title="Allow"></button>
-            </P>
+        <div id="stud-names">
+            <h2 style="background-color:skyblue;">Names of the students</h2><hr>
+            <div style="background-color: salmon; width: 100%;" id="names" >
+                <ul id="std_names"></ul>
+            </div>
         </div>
-        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-    </form>
-</div>
-<div class="chat-popup" id="quiz">
-    <form  class="form-container">
-        <h2>The QUESTION: ....?</h2>
-        <textarea placeholder="Type here.." class="use-keyboard-input"  name="msg" required></textarea>
-        <h2>The grade: ....?</h2>
-        <textarea placeholder="Type here.." class="use-keyboard-input" name="msg" required></textarea>
-        <button type="button" class="btn" onclick="sent_quiz()">Send the quiz</button>
-        <button type="button" class="btn cancel" onclick="closeForm1()">Close</button>
-    </form>
-</div>
-<div class="chat-popup" id="attend">
-    <form  class="form-container">
-        <h2>Check who is attending ...</h2>
-        <h3>Attendees</h3>
-        <p>Get the names from the database ....</p>
-        <p>
-            Ahmed
-            <button class="img-rounded" type="button"><img src="plus.png" width="10" height="10" title="Bonus"></button>
-            <button class="img-rounded" type="button"><img src="remove.png" width="10" height="10" title="Minus"></button>
-        </p>
-        <h3>Absentees</h3>
-        <p>Get the names from the database ....</p>
-        <button type="button" class="btn cancel" onclick="closeForm2()">Close</button>
-    </form>
-</div>
-<div class="chat-popup" id="voice">
-    <form  class="form-container">
 
-        <h2>Allow students to speek</h2><button class="img-rounded" type="button"><img src="clipboard.png" width="20" height="20" title="Allow all"></button>
-        <p>Get the names from the database ....</p>
-        <!-- As a example -->
-        <h4>Mohamed Ahmed <button id="btn" type="button"><img src="checked.png" class="img-center" width="25" height="25" title="Allow"></button></h4>
-        <button type="button" class="btn cancel" onclick="closeForm3()">Close</button>
-    </form>
-</div>
-<div class="chat-popup" id="quiz_answer">
-    <form  class="form-container">
-        <h2>Answers to the quiz</h2>
-        <!-- As example -->
-        <p>Ahmed [name from the database]</p>
-        <p>
-            The answer is : [The answer from the database]
-            <button id="bonus" type="button"><img src="true.png" class="img-center" width="25" height="25" title="Allow"></button>
-            <button id="zero" type="button"><img src="false.png" class="img-center" width="25" height="25" title="Allow"></button>
-        </p>
-        <div class="line-5"></div>
-        <p>Mohamed [name from the database]</p>
-        <p>The answer is : [The answer from the database]
-            <button id="bonus" type="button"><img src="true.png" class="img-center" width="25" height="25" title="Allow"></button>
-            <button id="zero" type="button"><img src="false.png" class="img-center" width="25" height="25" title="Allow"></button>
-        </p>
-
-
-        <button type="button" class="btn cancel" onclick="closequiz()">Close</button>
-    </form>
-</div>
-<div class="popup-vote" id="popup-vote">
-    <div >
-        <p class="h6">Question</p>
-        <input class="form-control" type="text" placeholder="Enter the question"><br>
-        <ul class="list-group" id="the_q">
-            <li>
-                <p>Answer</p>
-                <input type="text">
-            </li>
-            <li>
-                <p>Answer</p>
-                <input type="text">
-            </li>
-        </ul>
     </div>
-    <div>
-        <button type="button" onclick="add_answer()">Add</button>
-        <button type="button" onclick="del_answer()">Delete</button>
-        <button type="button" onclick="closepopup()">Send</button>
-        <button type="button" onclick="canclepop()">Cancle</button>
+    <div style="padding-top: 10px;border-width: thick;border-style: double;border-color: black;width: 50%;">
+        <div>
+            <button onclick="std_q()" class="btn btn-primary">Questions</button>
+            <button onclick="Vote()" class="btn btn-primary">Vote</button>
+            <button onclick="Quiz()" class="btn btn-primary">Quiz</button><br>
+            <button onclick="MuteAll()" class="btn btn-warning" id="mute">Mute All</button>
+            <button onclick="UnMuteAll()" class="btn btn-warning" style="display:none;" id="unmute">UnMute All</button>
+
+        </div>
+        <div style="display: none;background-color: salmon; width: 100%;" id="quest"><ul id="question"></ul></div>
+        <div id="vote-form" style="display: none;">
+            <div id="vote_choices">
+
+                <p class="h5">Question</p>
+                <input class="form-control" type="text" placeholder="Enter the question" id="vote_q"><br>
+                Choice 1 : <input type="text" id="ch1"></li><br>
+                Choice 2 : <input type="text" id="ch2"></li><br>
+                Choice 3 : <input type="text" id="ch3"></li><br>
+                Choice 4 : <input type="text" id="ch4"></li><br>
+                <button onclick="send_vote()" class="btn btn-primary" >send</button>
+            </div>
+            <div id="vote_result"></div>
+
+        </div>
+        <div id="quiz" style="display: none;">
+            <div id="quiz_choices">
+                <hr><p>Write "-" in the beginning of the right choice</p><hr>
+                <p class="h5">Question</p>
+                <input class="form-control" type="text" placeholder="Enter the question" id="quiz_q"><br>
+                Choice 1 : <input type="text" id="an1"></li><br>
+                Choice 2 : <input type="text" id="an2"></li><br>
+                Choice 3 : <input type="text" id="an3"></li><br>
+                Choice 4 : <input type="text" id="an4"></li><br>
+                <button onclick="send_quiz()" class="btn btn-primary" >send</button>
+            </div>
+            <div id="vore_result">
+
+            </div>
+        </div>
     </div>
-</div>
-<footer>
-
-    <ul>
-        <li > <button class="btn btn-dark"><img src="attendant-list.png" class="img-rounded" width="25" height="25" title="Who is attending" onclick="attend()"></button></li>
-        <li > <button onclick="voice()" class="btn btn-dark"><img src="voice-recorder.png" class="img-rounded" width="25" height="25" title="PRESS WHEN ALOWED TO TALK"></button></li>
-        <li><button onclick="chat()" class="btn btn-dark"><img src="question.png" class="img-rounded" width="25" height="25" title="QUESTIONS"></button></li>
-        <li >
-            <button class="btn btn-dark" onclick="openpopup()" title="Vote">
-                <img src="vote.png" class="img-rounded" width="25" height="25" title="Make a new test">
-            </button>
-        </li>
-        <li>
-            <button onclick="quiz()" class="btn btn-dark"><img src="quiz.png" class="img-rounded" width="25" height="25" title="QUIZ"></button>
-        </li>
-    </ul>
-</footer>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script type="text/javascript">
-    // jQuery Document
-    $(document).ready(function () {});
-</script>
-
+</main>
 <script>
-    function voice() {
-        document.getElementById("voice").style.display = "block";
-        document.getElementById("myForm").style.display = "none";
+    var names,name_v;
+    let ws = new WebSocket("ws://127.0.0.1:8080");
+
+    function conncet()
+    {
+        ws.send(JSON.stringify({"action" : "connect" ,
+            "to" : "server" ,
+            "from" : "professor",
+            "execute" : {
+                "token"   : "{{$token}}",
+                "name"    : "{{$professor->first_name ." ". $professor->second_name}}"}}));
+
+    }
+    function get_all() {
+        ws.send(JSON.stringify({
+            "action": "getStudents",
+            "to": "server",
+            "from": "professor",
+            "execute": {
+                "token": "{{$token}}"
+            }
+        }));
+    }
+    function verify() {
+        ws.send(JSON.stringify({"action" : "verifyStudents" ,
+            "to" : "server" ,
+            "from" : "professor" ,
+            "execute" : {
+                "token" : "{{$token}}"
+            }}));
+    }
+    function std_q() {
+        document.getElementById("vote-form").style.display = "none";
         document.getElementById("quiz").style.display = "none";
-        document.getElementById("attend").style.display = "none";
+        document.getElementById("quest").style.display = "block";
+
     }
-    const btn = document.getElementById('btn');
-    btn.addEventListener('click', function onclick() {
-        if(btn.style.color = "white")
-            document.getElementById("btn").style.color = "red";
-        else
-            document.getElementById("btn").style.color = "green";
-    });
-
-</script>
-
-<script>
-    function chat() {
-        document.getElementById("myForm").style.display = "block";
+    function Vote() {
+        document.getElementById("quest").style.display = "none";
+        document.getElementById("vote-form").style.display = "block";
         document.getElementById("quiz").style.display = "none";
-        document.getElementById("voice").style.display = "none";
-        document.getElementById("attend").style.display = "none";
     }
-
-    function closeForm() {
-        document.getElementById("myForm").style.display = "none";
+    function send_vote() {
+        vote_q = document.getElementById("vote_q").value;
+        ch1 = document.getElementById("ch1").value;
+        ch2 = document.getElementById("ch2").value;
+        ch3 = document.getElementById("ch3").value;
+        ch4 = document.getElementById("ch4").value;
+        var n1=0,n2=0,n3=0,n4=0;
+        var vote = {"action" : "vote",
+            "to" : "student",
+            "from" : "professor",
+            "execute" :
+                {
+                    "token" : "{{$token}}",
+                    "student_id" : "00000",
+                    "qeustion" : vote_q,
+                    "first" : ch1,
+                    "second" : ch2,
+                    "third" : ch3,
+                    "fourth" : ch4}};
+        ws.send(JSON.stringify(vote));
     }
-    function quiz() {
-        document.getElementById("myForm").style.display = "none";
+    function Quiz() {
+        document.getElementById("quest").style.display = "none";
+        document.getElementById("vote-form").style.display = "none";
         document.getElementById("quiz").style.display = "block";
-        document.getElementById("voice").style.display = "none";
-        document.getElementById("attend").style.display = "none";
 
     }
-    function attend() {
-        document.getElementById("myForm").style.display = "none";
+    function send_quiz() {
+        quiz_q = document.getElementById("quiz_q").value;
+        an1 = document.getElementById("an1").value;
+        an2 = document.getElementById("an2").value;
+        an3 = document.getElementById("an3").value;
+        an4 = document.getElementById("an4").value;
+        var right_ans,wrong_ans;
+        if(an1[0]=='-')
+        {an1[0]==[];right_ans = an1;
+            wrong_ans = [an2,an3,an4];}
+        else if (an2[0]=='-')
+        {an2[0]==[];right_ans = an2;
+            wrong_ans = [an1,an3,an4];}
+        else if (an3[0]=='-')
+        {an3[0]==[];right_ans = an3;
+            wrong_ans = [an2,an1,an4];}
+        else if (an4[0]=='-')
+        {an4[0]==[];right_ans = an4;
+            wrong_ans = [an2,an3,an1];}
+        var quiz_form = {
+            "action" : "quiz",
+            "to" : "student",
+            "from" : "professor",
+            "device_id" : "xxxxxx",
+            "execute" : {
+                "token" : "{{$token}}",
+                'qustion' : quiz_q,'correct_answer' : right_ans,
+                'incorrect_answers':wrong_ans}};
+        ws.send(JSON.stringify(quiz_form));
         document.getElementById("quiz").style.display = "none";
-        document.getElementById("voice").style.display = "none";
-        document.getElementById("attend").style.display = "block";
-    }
-    function closequiz() {
-        document.getElementById("myForm").style.display = "none";
-        document.getElementById("quiz").style.display = "none";
-        document.getElementById("voice").style.display = "none";
-        document.getElementById("attend").style.display = "none";
-        document.getElementById("quiz_answer").style.display = "none";
-    }
-    function closeForm1() {
-        document.getElementById("myForm").style.display = "none";
-        document.getElementById("quiz").style.display = "none";
-        document.getElementById("voice").style.display = "none";
-        document.getElementById("attend").style.display = "none";
 
     }
-    function sent_quiz() {
-        document.getElementById("myForm").style.display = "none";
-        document.getElementById("quiz").style.display = "none";
-        document.getElementById("voice").style.display = "none";
-        document.getElementById("attend").style.display = "none";
-        document.getElementById("quiz_answer").style.display = "block";
+    function bonus() {
+        let bonus_form = {
+            "action" : "bonus",
+            "to" : "server",
+            "from" : "professor",
+            "execute" : {
+            "token" : "{{$token}}",
+            "device_id" : "xxxxxx",
+            "student_id" : "xxxxx"}};
+        ws.send(JSON.stringify(bonus_form));
     }
-    function closeForm2() {
-        document.getElementById("attend").style.display = "none";
+    function minus() {
+        let minus_form = {
+            "action" : "minus",
+            "to" : "server",
+            "from" : "professor",
+            "execute" : {
+            "token" : "{{$token}}",
+            "device_id" : "xxxxxx",
+            "student_id" : "xxxxx"}};
+        ws.send(JSON.stringify(bonus_form));
     }
-    function closeForm3() {
-        document.getElementById("voice").style.display = "none";
-    }
-    function endq1() {
-        document.getElementById("student1").style.display = "none";
-    }
-    function endq2() {
-        document.getElementById("student2").style.display = "none";
-    }
-    let mypop = document.getElementById("popup-vote")
-    function openpopup()
-    {
-        mypop.classList.add("open-popup");
-    }
-    function closepopup()
-    {
-        mypop.classList.remove("open-popup");
-    }
-    function canclepop()
-    {
-        mypop.classList.remove("open-popup");
-    }
-    function add_answer() {
-        var ul = document.getElementById("the_q");
-        var li = document.createElement("li");
-        li.innerHTML = '<p class="h6">Answer</p><input type="text"><br>';
-        ul.appendChild(li);
+    function MuteAll() {
+        document.getElementById("unmute").style.display="block";
+        document.getElementById("mute").style.display="none";
+        let muteAll_form = {
+            "action": "mute_all",
+            "to": "student",
+            "from": "professor",
+            "execute": {
+                "token" : "{{$token}}"
+            }
+        };
+        ws.send(JSON.stringify(muteAll_form));
 
     }
-    function del_answer() {
-        var listItems = document.getElementById("the_q");
-        listItems.removeChild(listItems.lastElementChild);
+    function UnMuteAll() {
+        document.getElementById("unmute").style.display="none";
+        document.getElementById("mute").style.display="block";
+        var muteAll_form = {
+            "action": "unmute_all",
+            "to": "student",
+            "from": "professor",
+            "execute": {
+                "token" : "{{$token}}"
+            }
+        };
+        ws.send(JSON.stringify(muteAll_form));
+    }
+    function end() {
+        recv_msg = {
+            "action": "end_session",
+            "to": "student",
+            "from": "proffessor",
+            "execute" :
+                {
+                    "token" : "{{$token}}",
+                    "student_name": "all_student",
+                    "device_id": "xxxxxx",
+                    "execute": "none"
+                }
+        }
+        ws.send(JSON.stringify(recv_msg));
+    }
 
+
+    ws.onmessage = function (event) {
+        console.log(event.data)
+        let received_msg = JSON.parse(event.data);
+        if (received_msg.action === "response" && received_msg.execute.type == "connectProfessor") {
+            if (received_msg.execute.status === "OK") {
+                alert("Connetion succeeded");
+            }
+        }
+        else if (received_msg.action == "response" && received_msg.execute.type == "getStudents") {
+            names = received_name.execute.studentNames;
+            let ul = document.getElementById("std_names");
+            for (var i = names.length - 1; i >= 0; i--) {
+                var li = document.createElement("li");
+                li.innerHTML = '# ' + names[i];
+                ul.appendChild(li);
+            }
+        }
+        else if (received_msg.action == "response" && received_msg.execute.type == "verify")
+        {
+            let x = -1;
+            x+=1;
+            name_v[x] = received_name.execute.student_name;
+            let ul = document.getElementById("std_names");
+            while( ul.hasChildNodes ){
+                ul.removeChild('li');
+            }
+            let li = document.createElement("li");
+            li.innerHTML = '# ' + name_v[x] + '<<button class="img-rounded" type="button onclick="bonus()">Bonus</button><button class="img-rounded" type="button" onclick="minus()">Minus</button>';
+            ul.appendChild(li);
+            for (var k = names.length - 1; k >= 0; k--) {
+                if(names[k]==name_v[x]) {names[k]==[];}
+            }
+
+            for (var i = names.length - 1; i >= 0; i--) {
+                let li = document.createElement("li");
+                li.innerHTML = '# ' + names[i];
+                ul.appendChild(li);
+            }
+
+        }
+            else if (received_msg.action == "response" && received_msg.execute.type == "std_msg")
+        {
+            studentt = received_msg.studentName;
+            question = received_msg.execute.questions;
+            let ul = document.getElementById("question");
+            let li = document.createElement("li");
+            li.innerHTML = '# Student Name : ' + studentt + '/n' + 'Qustion : ' + question + '<hr>';
+            ul.appendChild(li);
+        }
+            else if (received_msg.execute.status == "OK" && received_msg.execute.type == "vote")
+        {
+            switch(received_msg.choice)
+            {
+                case ch1 :
+                    n1+=1;break;
+                case ch2 :
+                    n2+=1;break;
+                case ch3 :
+                    n3+=1;break;
+                case ch4 :
+                    n4+=1;break;
+            }
+            document.getElementById("vote_choices").style.display = "none";
+            vote_result = document.getElementById("vote_result");
+            vote_result.innerHTML = ch1 + ' : ' + n1 + '/n' + ch2 + ' : ' + n2 + '/n' + ch3 + ' : ' + n3 + '/n' +ch4 + ' : ' + n4 + '/n';
+
+        }
+            else if (received_msg.action == "response" && received_msg.execute.type == "mute_all")
+            {
+                alert("All students are muted");
+            }
+        else if (received_msg.action == "response" && received_msg.execute.type == "unmute_all")
+        {
+            alert("All students are unmuted");
+        }
+        else if  (received_msg.action == "response" && received_msg.execute.type == "quiz")
+        {
+            let x = 0;
+            quiz_degrees[x] =  {
+                "student_id" : received_name.execute.student_id,
+                //"professor_id" : ,
+                //"subject_id" : ,
+                "exam_type" : received_name.execute.type,
+                "exam-mark" : received_name.execute.exam_mark,
+
+            };
+            x+=1;
+
+        }
+        else if (received_msg.execute.type=="endSession")
+        {location.replace("wss://wss://127.0.0.1/proflogin");}
+        else if(received_msg.action=="response_Self_end")
+        {
+            alert("A student left the session");
+        }
+        else if(received_msg.action=="response_mute")
+        {
+            alert("A student Muted himself");
+        }
+        else if(received_msg.action=="raise_hand")
+        {
+            alert("A student raised his hand with name : " + received_msg.student_name);
+        }
     }
 </script>
-<script src="keyboard.js"></script>
 </body>
-</html>

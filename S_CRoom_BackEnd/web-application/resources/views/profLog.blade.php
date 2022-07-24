@@ -124,10 +124,11 @@
       <option value="Four"></option>
       <option value="Five"></option>
   </datalist>
-        <form id="login_form" action="lect.php" method="post">
+        <form id="login_form" action="/proflive" method="post">
+@csrf
             <p class="h6">Year</p>
             <fieldset >
-              <input class="form-control"   placeholder="The Year ?" list="list1" name="course_year"> <br>
+              <input class="form-control"   placeholder="The Year ?" list="list1" id="course_year"> <br>
             </fieldset>
             <p class="h6">Course of the lecture</p>
             <input class="form-control"type="text" placeholder="The course ?" id="course_lec">
@@ -177,8 +178,6 @@
                 <input class="form-control"type="time" placeholder="The start Time ?"><br>
                 <p class="h6">Exam time end</p>
                 <input class="form-control"type="time" placeholder="The end Time ?"><br>
-                <p class="h6">Exam number:</p>
-                <input class="form-control" type="number" placeholder="The exam number ?" maxlength="2"> <br>
                 <p class="h6">Questions and answers</p>
                 <p class="h6">Write the symbol '-' before the right answer.</p>
                 <div class="container4">
@@ -271,6 +270,16 @@
 
     }
     </script>
+<script>
+    function gotolec()
+    {
+        let lec_course_year = document.getElementById("course_year").value;
+        let lec_course_name = document.getElementById("course_lec").value;
+        let lec_name = document.getElementById("lec_name").value;
+        let lec_num =  document.getElementById("lec_num").value;
+
+    }
+</script>
 </body>
 
 </body>
