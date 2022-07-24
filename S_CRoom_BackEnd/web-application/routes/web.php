@@ -49,7 +49,7 @@ Route::get('/proflive', function () {
     return view('profLive');
 });
 Route::post('/proflive', function () {
-//    dd(\request());
+//    \request()->dd();
     return view('profLive')->with([
         'token'=> Str::random(40)
         ]);
@@ -70,4 +70,10 @@ Route::get('/admin', function () {
 
 Route::get('/prof-socket', function () {
     return view('professor-socket');
+});
+Route::get('/loginr', function () {
+    return view('loginRasp');
+});
+Route::get('/examwatch', function () {
+    return view('exam_watching');
 });

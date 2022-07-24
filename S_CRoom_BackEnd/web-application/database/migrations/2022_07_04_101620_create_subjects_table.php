@@ -20,6 +20,8 @@ return new class extends Migration
             $table->integer('subject_degree');
             $table->string('subject_year');
             $table->integer('subject_min_mark');
+            $table->string('subject_name');
+
             $table->timestamps();
         });
     }

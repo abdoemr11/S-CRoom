@@ -10,4 +10,8 @@ class Professor extends Authenticatable
 {
 
     use HasFactory;
+    public function subjects()
+    {
+        return $this->hasMany(Subject::class);
+    }
 }

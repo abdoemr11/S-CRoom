@@ -47,7 +47,7 @@
                     <div class="page-header-image" data-parallax="true" style="background-image: url('images/project-1.jpg')"></div>
                     <div class="container">
                         <div class="content-center">
-                            <div class="cc-profile-image"><a href="#"><img src="images/cloud-database.png" alt="Image"/></a></div>
+                            <div class="cc-profile-image"><a href="#"><img src="student.png" alt="Image"/></a></div>
                             <div class="h2 title">
                                 {{Auth::guard('students')->user()->first_name}}
                                 {{Auth::guard('students')->user()->second_name}}
@@ -73,10 +73,6 @@
                                 <div class="row mt-3">
                                     <div class="col-sm-4"><strong class="text-uppercase">Year:</strong></div>
                                     <div class="col-sm-8">{{$user->current_year}}</div>
-                                </div>
-                                <div class="row mt-3">
-                                    <div class="col-sm-4"><strong class="text-uppercase">Department:</strong></div>
-                                    <div class="col-sm-8">[From database]</div>
                                 </div>
                                 <div class="row mt-3">
                                     <div class="col-sm-4"><strong class="text-uppercase">Email:</strong></div>

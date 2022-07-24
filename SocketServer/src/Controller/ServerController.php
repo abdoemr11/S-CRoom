@@ -138,7 +138,7 @@ class ServerController
 
                 $plain_repsonse = CommandHelper::response('OK', 'connectProfessor', " h"
                 ,["id" => $professor->getId()]);
-
+                $professor->setConnection($from);
                 $this->sendToConnection($from, $plain_repsonse);
                 return;
 
@@ -155,18 +155,19 @@ class ServerController
         switch ($prof_command['action'])
         {
             case 'getStudents':
-                $student_names = array();
+                $student_objects = array();
                 echo "number of unverified stduents". count($students) . "\n";
                 foreach ($students as $student)
                 {
                     echo $student->getName() . "\n";
-                    $student_names[] = $student->getName();
+                    $student_objects[] = ['student_name'=> $student->getName(),
+                        'student_id' => $student->getId()];
 
                 }
                 echo $professor->getToken(). "\n";
                 $professor->send_to('response', 'server', ['status'=> 'OK',
                     'type' => 'getStudents',
-                    'studentNames' => $student_names]);
+                    'students' => $student_objects]);
 
                 break;
             case 'verifyStudents':
@@ -256,8 +257,13 @@ class ServerController
                 $student->setVote($student_command['execute']['choice']);
                 break;
             case 'cheat':
-                    $professor->send_to('cheat', 'student', $student_command['execute']);
+                $professor->send_to('cheat', 'student', $student_command['execute']);
                 break;
+            case 'std_msg':
+                $professor->send_to('std_msg', 'student', $student_command['execute']);
+                break;
+
+
             case 'response':
                 $this->handle_student_response($student, $professor, $student_command);
                 break;
@@ -341,7 +347,7 @@ class ServerController
         switch ($student_command['execute']['type'])
         {
             case 'verify':
-                $professor->send_to('response', 'student', $student_command);
+                $professor->send_to('response', 'student', $student_command['execute']);
 
                 break;
             case 'mute_all':

@@ -16,7 +16,6 @@ return new class extends Migration
         Schema::create('exams', function (Blueprint $table) {
             $table->id();
 
-            $table->foreignId('student_id')->constrained('students');
             $table->foreignId('professor_id')->constrained('professors');
             $table->foreignId('subjects_id')->constrained('subjects');
             $table->enum('exam_type', ['final', 'quiz', 'midterm']);
@@ -27,7 +26,6 @@ return new class extends Migration
             $table->integer('exam_max_degree');
             $table->integer('exam_min_degree');
             $table->string('exam_year');
-
             $table->timestamps();
         });
     }

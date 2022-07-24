@@ -18,8 +18,13 @@ class SubjectFactory extends Factory
     public function definition()
     {
         return [
-            'id' => 12,
-            'professor_id' => Professor::factory()
+            'professor_id'=>100,
+            'subject_degree' => 100,
+            'subject_year' =>4,
+            'subject_min_mark' => 50,
+            'subject_name' => "Communication"
+
+
         ];
     }
 }

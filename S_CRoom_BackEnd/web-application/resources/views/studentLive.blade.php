@@ -83,13 +83,10 @@
     }
     function send_question() {
         qustion = document.getElementById("quest").value;
-        question_msg={"action" : "raise_hand",
+        question_msg={"action" : "std_msg",
             "to": "professor",
             "from" : "student",
-            "student_id": "//student_id",
-            "studentName": "//Student_name",
-            "device_id" : "//student_id",
-            "execute" : {"token" : "{{$token}}","questions" : qustion}};
+            "execute" : {student_id: ,"token" : "{{$token}}","questions" : qustion}};
         ws.send(JSON.stringify(question_msg));
     }
     let myForm = document.getElementById("myForm");

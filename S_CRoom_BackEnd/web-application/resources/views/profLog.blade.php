@@ -25,7 +25,9 @@
   </head>
 
 <body>
-
+@php
+ $professor = \Auth::guard('professors')->user();
+@endphp
   <!-- Sub Header -->
   <div class="sub-header">
     <div class="container">
@@ -48,14 +50,14 @@
                   <nav class="main-nav">
                       <!-- ***** Logo Start ***** -->
                       <br> <br>
-                      <a href="prof_login.html" class="logo">
+                      <a href="/proflog" class="logo">
                           Benha Faculty of Engineering
                       </a>
                       <!-- ***** Logo End ***** -->
                       <!-- ***** Menu Start ***** -->
                       <ul class="nav">
                           <li class="scroll-to-section"><a href="#about"><img src="online-course.png" width="30" height="30" title="Lecture or Exam"></a></li>
-                          <li><a href="Profile page/PP.html"><img src="profile.png" width="30" height="30" title="Personal page"></a></li>
+                          <li><a href="/pp"><img src="profile.png" width="30" height="30" title="Personal page"></a></li>
                       </ul>
                       <a class='menu-trigger'>
                           <span>Menu</span>
@@ -128,15 +130,20 @@
 @csrf
             <p class="h6">Year</p>
             <fieldset >
-              <input class="form-control"   placeholder="The Year ?" list="list1" id="course_year"> <br>
+              <input class="form-control"   placeholder="The Year ?" list="list1" id="course_year" name="course_year"> <br>
             </fieldset>
             <p class="h6">Course of the lecture</p>
-            <input class="form-control"type="text" placeholder="The course ?" id="course_lec">
+            <select id="course_lec" class="form-control" name="course_id">
+                @foreach(Auth::guard('professors')->user()->subjects as $subject)
+                    <option value="{{$subject->id}}">{{$subject->subject_name}}</option>
+                @endforeach
+
+            </select>
             <p class="h6">Lecture name</p>
-            <input class="form-control"type="text" placeholder="The course ?" id="lec_name">
+            <input class="form-control"type="text" placeholder="The course ?" id="lec_name" name="lec_name">
           <br>
                 <p class="h6">Lecture number</p>
-                <input class="form-control" type="number" placeholder="The lecture number ?" maxlength="2" id="lec_num"> <br>
+                <input class="form-control" type="number" placeholder="The lecture number ?" maxlength="2" id="lec_num" name="lec_num"> <br>
                 <button class="btn btn-success" onclick="gotolec()">Go</button>
         </form>
       </div>
@@ -167,17 +174,17 @@
         <form id="login_form" action="emam.php" method="post">
                 <p class="h6">Year</p>
                 <fieldset >
-                <input class="form-control"   placeholder="The Year ?" list="list2"> <br>
+                <input class="form-control"   placeholder="The Year ?" list="list2" name="exam_year"> <br>
                 </fieldset>
                 <p class="h6">The name of the course of the exam</p>
-                <input class="form-control"type="text" placeholder="The course ?">
+                <input class="form-control"type="text" placeholder="The course ?" name="exam_course_nam">
                 <br>
                 <p class="h6">Exam date</p>
-                <input class="form-control"type="date" placeholder="The Time ?"><br>
+                <input class="form-control"type="date" placeholder="The Time ?" name="exam_date"><br>
                 <p class="h6">Exam time start</p>
-                <input class="form-control"type="time" placeholder="The start Time ?"><br>
+                <input class="form-control"type="time" placeholder="The start Time ?" name="exam_start"><br>
                 <p class="h6">Exam time end</p>
-                <input class="form-control"type="time" placeholder="The end Time ?"><br>
+                <input class="form-control"type="time" placeholder="The end Time ?" name="exam_end"><br>
                 <p class="h6">Questions and answers</p>
                 <p class="h6">Write the symbol '-' before the right answer.</p>
                 <div class="container4">
@@ -236,7 +243,7 @@
 
         var ul = document.getElementById("demo");
          var li = document.createElement("li");
-         li.innerHTML = '<hr color="red" width="70%" size="20" align="center"><div class="box-2"><p class="h6">Question</p><input class="form-control"type="text" placeholder="Enter the question" id = "question'+question_num+'"><br><p class="h6">Answer 1</p><input type="text" id = "answer_num1'+answer_num+'"><p class="h6">Answer 2</p><input type="text" id = "answer_num2'+answer_num+'"><p class="h6">Answer 3</p><input type="text" id = "answer_num3'+answer_num+'"><p class="h6">Answer 4</p><input type="text" id = "answer_num4'+answer_num+'+"><br>';
+         li.innerHTML = '<hr color="red" width="70%" size="20" align="center"><div class="box-2"><p class="h6">Question</p><input class="form-control"type="text" placeholder="Enter the question" name = "question'+question_num+'"><br><p class="h6">Answer 1</p><input type="text" name = "answer_num1'+answer_num+'"><p class="h6">Answer 2</p><input type="text" name = "answer_num2'+answer_num+'"><p class="h6">Answer 3</p><input type="text" name = "answer_num3'+answer_num+'"><p class="h6">Answer 4</p><input type="text" name = "answer_num4'+answer_num+'+"><br>';
          ul.appendChild(li);
          question_num +=1;
          answer_num +=1;

@@ -10,10 +10,14 @@
 <header>
     <h1 id="header">Here Professor can control the lecture</h1>
     <button onclick="conncet()" class="btn btn-success">Connect</button>
+    <button>Submit session</button>
     <button onclick="end()" class="btn btn-danger">End</button>
     <hr>
 </header>
 <main id="element" style="display: flex;">
+    <div>
+
+    </div>
     <div id="main-box">
         <div>
             <button onclick="get_all()" class="btn btn-primary" >Get all</button>
@@ -49,7 +53,8 @@
                 Choice 4 : <input type="text" id="ch4"></li><br>
                 <button onclick="send_vote()" class="btn btn-primary" >send</button>
             </div>
-            <div id="vote_result"></div>
+            <button style="display: none" id="result_vote" class="btn btn-secondary" onclick="show_vote()">Show result</button>
+            <div id="vote_result" style="display: none;"></div>
 
         </div>
         <div id="quiz" style="display: none;">
@@ -62,15 +67,23 @@
                 Choice 3 : <input type="text" id="an3"></li><br>
                 Choice 4 : <input type="text" id="an4"></li><br>
                 <button onclick="send_quiz()" class="btn btn-primary" >send</button>
+
             </div>
             <div id="vore_result">
 
             </div>
         </div>
     </div>
+
 </main>
 <script>
-    var names,name_v,ch1,ch2,ch3,ch4;
+    let name_v,ch1,ch2,ch3,ch4;
+    let students = [{
+        student_name: "goda",
+        student_id: "123",
+        isVerified: false,
+        bonus: 0
+    }];
     let ws = new WebSocket("ws://127.0.0.1:8080");
 
     function conncet()
@@ -120,7 +133,6 @@
         ch2 = document.getElementById("ch2").value;
         ch3 = document.getElementById("ch3").value;
         ch4 = document.getElementById("ch4").value;
-        let n1=0,n2=0,n3=0,n4=0;
         let vote = {"action" : "vote",
             "to" : "student",
             "from" : "professor",
@@ -134,6 +146,8 @@
                     "third" : ch3,
                     "fourth" : ch4}};
         ws.send(JSON.stringify(vote));
+        document.getElementById("vote_choices").style.display ="none";
+        document.getElementById("result_vote").style.display ="block";
     }
     function Quiz() {
         document.getElementById("quest").style.display = "none";
@@ -147,18 +161,18 @@
         let an2 = document.getElementById("an2").value;
         let an3 = document.getElementById("an3").value;
         let an4 = document.getElementById("an4").value;
-        var right_ans,wrong_ans;
+        let right_ans,wrong_ans;
         if(an1[0]==='-')
-        {an1[0]==[];right_ans = an1;
+        {an1.shift();right_ans = an1;
             wrong_ans = [an2,an3,an4];}
         else if (an2[0]==='-')
-        {an2[0]==[];right_ans = an2;
+        {an2.shift();right_ans = an2;
             wrong_ans = [an1,an3,an4];}
         else if (an3[0]==='-')
-        {an3[0]===[];right_ans = an3;
+        {an3.shift();right_ans = an3;
             wrong_ans = [an2,an1,an4];}
         else if (an4[0]==='-')
-        {an4[0]==[];right_ans = an4;
+        {an4.shift();right_ans = an4;
             wrong_ans = [an2,an3,an1];}
         let quiz_form = {
             "action" : "quiz",
@@ -172,27 +186,18 @@
         document.getElementById("quiz").style.display = "none";
 
     }
-    function bonus() {
-        let bonus_form = {
-            "action" : "bonus",
-            "to" : "server",
-            "from" : "professor",
-            "execute" : {
-            "token" : "{{$token}}",
-            "device_id" : "xxxxxx",
-            "student_id" : "xxxxx"}};
-        ws.send(JSON.stringify(bonus_form));
+    function bonus(clicked_id) {
+
+        students.forEach( student=> {
+            if(student.student_id ===clicked_id)
+            student.bonus +=1;
+        })
     }
-    function minus() {
-        let minus_form = {
-            "action" : "minus",
-            "to" : "server",
-            "from" : "professor",
-            "execute" : {
-            "token" : "{{$token}}",
-            "device_id" : "xxxxxx",
-            "student_id" : "xxxxx"}};
-        ws.send(JSON.stringify(minus_form));
+    function minus(clicked_id) {
+        students.forEach( student=> {
+            if(student.student_id ===clicked_id)
+                student.bonus -=1;
+        })
     }
     function MuteAll() {
         document.getElementById("unmute").style.display="block";
@@ -225,108 +230,103 @@
         recv_msg = {
             "action": "end_session",
             "to": "student",
-            "from": "proffessor",
+            "from": "professor",
             "execute" :
                 {
                     "token" : "{{$token}}",
-                    "student_name": "all_student",
-                    "device_id": "xxxxxx",
-                    "execute": "none"
+                    "student_id": "00000"
                 }
         }
         ws.send(JSON.stringify(recv_msg));
+        fet
+        // location.replace("/proflog");
+    }
+    function show_vote()
+    {
+        document.getElementById("vote_result").style.display="block";
+
     }
 
 
     ws.onmessage = function (event) {
         let i;
-        console.log(event.data)
+        console.log(JSON.parse(event.data))
         let received_msg = JSON.parse(event.data);
+        var vote_result;
         if (received_msg.action === "response" && received_msg.execute.type === "connectProfessor") {
             if (received_msg.execute.status === "OK") {
                 alert("Connetion succeeded");
             }
-        }
-        else if (received_msg.action === "response" && received_msg.execute.type === "getStudents") {
-            names = received_msg.execute.studentNames;
+        } else if (received_msg.action === "response" && received_msg.execute.type === "getStudents") {
+            let studentObjects = received_msg.execute.students;
+            console.log(studentObjects)
+            studentObjects.forEach(student => {
+                students = students.concat({
+                    student_name: student.student_name,
+                    student_id: student.student_id,
+                    isVerified: false
+                })
+            })
+            console.log(students)
             let ul = document.getElementById("std_names");
-            for (i = names.length - 1; i >= 0; i--) {
+            students.forEach(student => {
                 let li = document.createElement("li");
-                li.innerHTML = '<p>  ' + names[i] + '</p>';
+                li.innerHTML = '<p>  ' + student.student_name + '</p>';
                 ul.appendChild(li);
-            }
-        }
-        else if (received_msg.action === "response" && received_msg.execute.type === "verify")
-        {
-            let x = -1;
-            x+=1;
-            name_v[x] = received_msg.execute.student_name;
+            })
+        } else if (received_msg.action === "response" && received_msg.execute.status === "OK" && received_msg.execute.type === "verify") {
             let ul = document.getElementById("std_names");
             ul.innerHTML = '';
-            let li = document.createElement("li");
-            li.innerHTML = name_v[x] + '<button class="img-rounded" type="button onclick="bonus()">Bonus</button><button class="img-rounded" type="button" onclick="minus()">Minus</button>';
-            ul.appendChild(li);
-            for (var k = names.length - 1; k >= 0; k--) {
-                if(names[k]===name_v[x]) {names[k]===[];}
-            }
-
-            for (let i = names.length - 1; i >= 0; i--) {
-                let li = document.createElement("li");
-                li.innerHTML = '# ' + names[i];
-                ul.appendChild(li);
-            }
-
-        }
-        else if (received_msg.action === "response" && received_msg.execute.type === "std_msg")
-        {
-            studentt = received_msg.studentName;
+            let x = -1;
+            x += 1;
+            students.forEach(student => {
+                    if (student.student_id == received_msg.execute.student_id)
+                        student.isVerified = true;
+                }
+            )
+            students.forEach(student => {
+                if (student.isVerified === true) {
+                    let ul = document.getElementById("std_names");
+                    let li = document.createElement("li");
+                    li.innerHTML = student.student_name + '<button class="img-rounded" type="button onclick="bonus(this.id)" "id" ="' + student.student_id + '">Bonus</button><button class="img-rounded" type="button" onclick="minus(this.id) id="' + student.student_id + '"">Minus</button>';
+                    ul.appendChild(li);
+                }
+            })
+        } else if (received_msg.action === "std_msg") {
+            student = students.find(st => st.student_id == received_msg.execute.student_id)
             question = received_msg.execute.questions;
             let ul = document.getElementById("question");
             let li = document.createElement("li");
-            li.innerHTML = '# Student Name : ' + studentt + '/n' + 'Qustion : ' + question + '<hr>';
+            li.innerHTML = '# Student Name : ' + student.student_name + '<br>>' + 'Qustion : ' + question + '<hr>';
             ul.appendChild(li);
-        }
-        else if (received_msg.execute.status === "OK" && received_msg.execute.type === "result_vote")
-        {
+        } else if (received_msg.execute.status === "OK" && received_msg.execute.type === "result_vote") {
             document.getElementById("vote_choices").style.display = "none";
             vote_result = document.getElementById("vote_result");
-            vote_result.innerHTML = ch1 + ' : ' + received_msg.answer[0] + '/n' + ch2 + ' : ' + received_msg.answer[1] + '/n' + ch3 + ' : ' + received_msg.answer[2] + '/n' +ch4 + ' : ' + received_msg.answer[3] + '/n';
+            vote_result.innerHTML = ch1 + ' : ' + received_msg.answer[0] + '<br>' + ch2 + ' : ' + received_msg.answer[1] + '/n' + ch3 + ' : ' + received_msg.answer[2] + '/n' + ch4 + ' : ' + received_msg.answer[3] + '/n';
 
-        }
-        else if (received_msg.action === "response" && received_msg.execute.type === "mute_all")
-        {
+        } else if (received_msg.action === "response" && received_msg.execute.type === "mute_all") {
             alert("All students are muted");
-        }
-        else if (received_msg.action === "response" && received_msg.execute.type === "unmute_all")
-        {
+        } else if (received_msg.action === "response" && received_msg.execute.type === "unmute_all") {
             alert("All students are unmuted");
-        }
-        else if  (received_msg.action === "response" && received_msg.execute.type === "quiz")
-        {
+        } else if (received_msg.action === "response" && received_msg.execute.type === "quiz") {
             let x = 0;
-            quiz_degrees[x] =  {
-                "student_id" : received_msg.execute.student_id,
+            quiz_degrees[x] = {
+                "student_id": received_msg.execute.student_id,
                 //"professor_id" : ,
                 //"subject_id" : ,
-                "exam_type" : received_msg.execute.type,
-                "exam-mark" : received_msg.execute.exam_mark,
+                "exam_type": received_msg.execute.type,
+                "exam-mark": received_msg.execute.exam_mark,
 
             };
-            x+=1;
+            x += 1;
 
-        }
-        else if (received_msg.execute.type==="endSession")
-        {location.replace("wss://wss://127.0.0.1/proflogin");}
-        else if(received_msg.action==="response_Self_end")
-        {
+        } else if (received_msg.execute.type === "endSession") {
+            location.replace("wss://wss://127.0.0.1/proflogin");
+        } else if (received_msg.action === "response_Self_end") {
             alert("A student left the session");
-        }
-        else if(received_msg.action==="response_mute")
-        {
+        } else if (received_msg.action === "response_mute") {
             alert("A student Muted himself");
-        }
-        else if(received_msg.action==="raise_hand")
-        {
+        } else if (received_msg.action === "raise_hand") {
             alert("A student raised his hand with name : " + received_msg.student_name);
         }
     }
