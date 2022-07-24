@@ -92,9 +92,9 @@
             "execute" : {"token" : "{{$token}}","questions" : qustion}};
         ws.send(JSON.stringify(question_msg));
     }
-    let myForm = document.getElementById("myForm")
-    let quizz = document.getElementById("quiz")
-    let mypop = document.getElementById("popup-vote")
+    let myForm = document.getElementById("myForm");
+    let quizz = document.getElementById("quiz");
+    let mypop = document.getElementById("popup-vote");
     function chat() {
         myForm.classList.add("open-popup");
 
