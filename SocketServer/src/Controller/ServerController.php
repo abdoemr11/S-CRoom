@@ -9,6 +9,7 @@ class ServerController
     private array $professors = array();
     private array $admins = array();
     private bool $isEncrypted = false;
+    private $unknownStudents = array();
     public function __construct()
     {
     }
