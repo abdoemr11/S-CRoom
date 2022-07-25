@@ -97,10 +97,7 @@
 
     let quiz_degrees = {
         "student_id": "1234",
-        "professor_id" : "456" ,
-        "subject_id" : "789",
-        "exam_type": "quiz",
-        "exam-mark": 5,
+        "exam_mark": 5
     };
     let lecture_msg = [{
     	"professor_id" : "{{$professor->id}}",
@@ -110,6 +107,7 @@
        	"exam" : {
        		"min_degree" : 2.5,
        		"max_degree" : 5,
+            "type" : "quiz",
        		"info" : quiz_degrees
        	}
     }];
@@ -333,9 +331,6 @@
         } else if (received_msg.action === "response" && received_msg.execute.type === "quiz") {
             quiz_degrees[x] = {
                 "student_id": received_msg.execute.student_id,
-                //"professor_id" : ,
-                //"subject_id" : ,
-                "exam_type": received_msg.execute.type,
                 "exam-mark": received_msg.execute.exam_mark,
             };
             x += 1;
