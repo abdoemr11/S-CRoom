@@ -59,6 +59,15 @@ class Person
     {
         $this->connection =$newConnection;
     }
+    public static function getPersonByDeviceId($persons, $id)
+    {
+        foreach ($persons as $person)
+        {
+            if($person->getId() == $id)
+                return $person;
+        }
+        return false;
+    }
     public static function getPersonById($persons, $id)
     {
         foreach ($persons as $person)

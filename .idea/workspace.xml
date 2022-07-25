@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ee614767-cd45-418e-a06e-f46a68b34b31" name="Changes" comment="modified some table &#10;begin professor session pass now parameter to request">
+    <list default="true" id="ee614767-cd45-418e-a06e-f46a68b34b31" name="Changes" comment="hossam modification">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SocketServer/src/Controller/Person.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/src/Controller/Person.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SocketServer/src/Controller/ServerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/src/Controller/ServerController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SocketServer/src/Controller/Student.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/src/Controller/Student.php" afterDir="false" />
     </list>
@@ -233,7 +234,7 @@
       <workItem from="1658578191342" duration="12057000" />
       <workItem from="1658653989315" duration="19706000" />
       <workItem from="1658689761302" duration="5919000" />
-      <workItem from="1658743732003" duration="6037000" />
+      <workItem from="1658743732003" duration="10251000" />
     </task>
     <task id="LOCAL-00001" summary="Finished the ability to send welcome message and open cam">
       <created>1648307115306</created>
@@ -396,7 +397,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658746615349</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="hossam modification">
+      <created>1658751647278</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1658751647278</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -433,6 +441,7 @@
     <MESSAGE value="ready for goda work" />
     <MESSAGE value="implemented some of the server features" />
     <MESSAGE value="modified some table &#10;begin professor session pass now parameter to request" />
-    <option name="LAST_COMMIT_MESSAGE" value="modified some table &#10;begin professor session pass now parameter to request" />
+    <MESSAGE value="hossam modification" />
+    <option name="LAST_COMMIT_MESSAGE" value="hossam modification" />
   </component>
 </project>

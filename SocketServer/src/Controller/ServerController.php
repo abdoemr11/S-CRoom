@@ -9,7 +9,7 @@ class ServerController
     private array $professors = array();
     private array $admins = array();
     private bool $isEncrypted = false;
-    private $unknownStudents = array();
+    private $unknownStudents = array(); //[device_id: , connection_interface]
     public function __construct()
     {
     }
@@ -94,7 +94,7 @@ class ServerController
                 return;
             }
             echo " find student professor\n";
-            $student = Person::getPersonById($professor->getStudents(), $msg_obj['execute']['student_id']);
+            $student = Person::getPersonByDeviceId($professor->getStudents(), $msg_obj['execute']['student_id']);
             if (!is_object($student))
             {
                 $origin_connection->send(CommandHelper::response('FAILED', $msg_obj['action'],
@@ -113,24 +113,40 @@ class ServerController
 /*
  * connect:
  * we need to check duplicate first
+ * if there is a connection
  */
     private function connect(ConnectionInterface $from, $msg_obj)
     {
 
         if($msg_obj["from"] == 'student')
         {
-            //TODO how the server know that certain javascript connection know about certain rasperry pi
-            $professor  = Professor::getPersonById($this->professors,$msg_obj['execute']['professor_id']);
-            if(!is_object($professor))
+            if($msg_obj['execute']['origin'] == 'javascript')
             {
-                $plain_repsonse = CommandHelper::response('FAILED', "connectStudent",
-                "No professor is found with this id", []);
-                $this->sendToConnection($from, $plain_repsonse);
-                return;
+                    //TODO how the server know that certain javascript connection know about certain rasperry pi
+                $professor  = Professor::getPersonById($this->professors,$msg_obj['execute']['professor_id']);
+                if(!is_object($professor))
+                {
+                    $plain_repsonse = CommandHelper::response('FAILED', "connectStudent",
+                        "No professor is found with this id", []);
+                    $this->sendToConnection($from, $plain_repsonse);
+                    return;
+
+                }
+                $professor->addStudent($from,$msg_obj['execute']['device_id']
+                        , $msg_obj['execute']['student_id'],
+                        $msg_obj['execute']['name'],
+                        $this->unknownStudents[$msg_obj['execute']['device_id']]
+                        );
+
+            }
+            //python socket first
+            if($msg_obj['execute']['origin'] == 'python')
+            {
+                $this->unknownStudents = [$msg_obj['execute']['device_id'] => $from];
+                echo "get connected from python";
 
             }
 
-            $professor->addStudent($from,$msg_obj['execute']['device_id'], $msg_obj['execute']['student_id'],$msg_obj['execute']['name']);
         }
         if ($msg_obj['from'] == 'professor' || $msg_obj['from'] == 'adminstrator')
         {
@@ -183,7 +199,9 @@ class ServerController
                 echo "professor is sending vote\n";
                 foreach ($students as $student)
                 {
-                    $student->send_to('vote', 'professor', $prof_command['execute']);
+//                    $student->send_to('vote', 'professor', $prof_command['execute']);
+                    $student->sendToPython('vote', 'professor', $prof_command['execute']);
+
                 }
                 break;
             case 'resultVote':
@@ -203,9 +221,10 @@ class ServerController
                 $professor->send_to('response', 'server', $executeAr);
                 break;
             case 'mute_all':
+                //send to python
                 foreach ($students as $student)
                 {
-                    $student->send_to('mute_all', 'professor', []);
+                    $student->sendToPython('mute_all', 'professor', []);
 
                 }
                 break;
@@ -213,6 +232,7 @@ class ServerController
                 foreach ($students as $student)
                 {
                     $student->send_to('endSession', 'professor', $prof_command['execute']);
+                    $student->sendToPython('endSession', 'professor', $prof_command['execute']);
 
                 }
                 break;
@@ -249,14 +269,14 @@ class ServerController
             case 'open_cam_for_admin':
                 foreach ($students as $student)
                 {
-                    $student->send_to('open_cam_for_admin', 'professor', $prof_command['execute']);
+                    $student->sendToPython('open_cam_for_admin', 'professor', $prof_command['execute']);
 
                 }
                 break;
             case 'train':
                 foreach ($students as $student)
                 {
-                    $student->send_to('train', 'professor', $prof_command['execute']);
+                    $student->sendToPython('train', 'professor', $prof_command['execute']);
 
                 }
                 break;
@@ -366,6 +386,7 @@ class ServerController
         {
             case 'verify':
                 $professor->send_to('response', 'student', $student_command['execute']);
+                $student->sendToPython('response', 'student', $student_command['execute']);
 
                 break;
             case 'mute_all':

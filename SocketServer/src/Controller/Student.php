@@ -31,6 +31,22 @@ public function setVote($choice)
 public function setPythonConnection($conn) {
         $this->pythonConnection = $conn;
 }
+public function sendToPython(string $action,  string $origin,  array $execute)
+{
+    echo "sending to python device\n";
+    $ecnrypted_msg = Message_Handler::encrypt_msg(
+        array('action' => $action,
+            'from'      => $origin, //admon| prof
+            'to'        => $this->destination, //student|prof
+            'execute'=> $execute
+//                   ...
+            //optional there might be data
+        ), $this->token);
+    echo 'from send to professor' . $ecnrypted_msg;
+//        echo $this->connection;
+    echo $this->pythonConnection->resourceId;
+    $this->pythonConnection->send($ecnrypted_msg);
+}
 public function getVote()
 {
     return $this->vote_value;
