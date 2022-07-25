@@ -41,7 +41,7 @@ Route::post('register/cam', [RegisterController::class, 'open_cam']);
 //});
 Route::get('stdlog', function () {
     return view('studentLog');
-});
+})->middleware('student');
 Route::get('/proflog', function () {
     return view('profLog');
 })->middleware('professor');
@@ -65,7 +65,7 @@ Route::post('/professor-session', function (){
 });
 Route::get('/stdlive', function () {
     return view('studentLive');
-});
+})->middleware('student');
 Route::get('/pp', function () {
     return view('pp');
 })->middleware('professor');
@@ -85,4 +85,7 @@ Route::get('/loginr', function () {
 });
 Route::get('/examwatch', function () {
     return view('exam_watching');
-});
+})->middleware('professor');
+Route::get('/wait', function () {
+    return view('timer');
+})->middleware('student');
