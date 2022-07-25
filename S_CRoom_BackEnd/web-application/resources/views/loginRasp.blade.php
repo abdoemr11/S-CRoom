@@ -18,6 +18,7 @@
             <button class="submit_class" form="login_form" onclick="sub()">Submit</button>
         </div>
     <img src="wait.png" style="display: none; height: 200px; width: 200px" id="waiting_img">
+    <h2 style="display: none;" id="msg_for_no_std"></h2>
 </main>
 <script src="keyboard.js"></script>
 <script>
@@ -44,6 +45,12 @@
             let received_msg = JSON.parse(event.data);
             if (received_msg.execute.type ==="verify" && received_msg.execute.status === "OK") {
                 location.href = "/stdlive";
+            }
+            else if (received_msg.execute.type ==="verify" && received_msg.execute.status === "FAILED") {
+                alert("You are not recognized");
+                document.getElementById("login_form").style.display="none";
+                document.getElementById("msg_for_no_std").innerHTML = "Ask the admin to register yourself.";
+                document.getElementById("msg_for_no_std").style.display = "block";
             }
 
         }

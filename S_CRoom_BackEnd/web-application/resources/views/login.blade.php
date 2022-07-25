@@ -39,6 +39,6 @@
 </main>
 <footer>
     <br><br>
-    <p>Keep</a></p>
+    <p>Keep Learning</p>
 </footer>
 </body>

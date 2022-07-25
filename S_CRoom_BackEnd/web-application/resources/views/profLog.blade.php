@@ -144,7 +144,7 @@
           <br>
                 <p class="h6">Lecture number</p>
                 <input class="form-control" type="number" placeholder="The lecture number ?" maxlength="2" required name="lec_num"> <br>
-                <button class="btn btn-success" onclick="gotolec()">Go</button>
+                <button class="btn btn-success" type="submit">Go</button>
         </form>
       </div>
     </div>
@@ -171,13 +171,17 @@
       <option value="Four"></option>
       <option value="Five"></option>
   </datalist>
-        <form id="login_form" action="emam.php" method="post">
+        <form id="login_form" action="/proflive" method="post">
                 <p class="h6">Year</p>
                 <fieldset >
                 <input class="form-control"   placeholder="The Year ?" list="list2" name="exam_year"> <br>
                 </fieldset>
-                <p class="h6">The name of the course of the exam</p>
-                <input class="form-control"type="text" placeholder="The course ?" name="exam_course_nam">
+                <select id="course_lec" class="form-control" name="course_id" required>
+                    @foreach(Auth::guard('professors')->user()->subjects as $subject)
+                        <option value="{{$subject->id}}">{{$subject->subject_name}}</option>
+                    @endforeach
+
+                </select>
                 <br>
                 <p class="h6">Exam date</p>
                 <input class="form-control"type="date" placeholder="The Time ?" name="exam_date"><br>
@@ -218,13 +222,13 @@
       lecs = document.getElementById("lecs");
       exams = document.getElementById("exams");
       quest = document.getElementById("quest");
-      var question_num = 0;
-      var answer_num = 0;
-      var c=0;
+      let question_num = 0;
+      let answer_num = 0;
+      let c=0;
       function lec() {
         lecs.style.display="none";
         exams.style.display="none";
-        if (lecs.style.display=="none")
+        if (lecs.style.display==="none")
           {lecs.style.display = "block";}
         else
           {lecs.style.display = "none";}
@@ -232,7 +236,7 @@
       function exam() {
         lecs.style.display="none";
         exams.style.display="none";
-        if (exams.style.display=="none")
+        if (exams.style.display==="none")
           {exams.style.display = "block";}
         else
           {exams.style.display = "none";}
@@ -241,53 +245,53 @@
 
       function addq() {
 
-        var ul = document.getElementById("demo");
-         var li = document.createElement("li");
+         let ul = document.getElementById("demo");
+         let li = document.createElement("li");
          li.innerHTML = '<hr color="red" width="70%" size="20" align="center"><div class="box-2"><p class="h6">Question</p><input class="form-control"type="text" placeholder="Enter the question" name = "question'+question_num+'"><br><p class="h6">Answer 1</p><input type="text" name = "answer_num1'+answer_num+'"><p class="h6">Answer 2</p><input type="text" name = "answer_num2'+answer_num+'"><p class="h6">Answer 3</p><input type="text" name = "answer_num3'+answer_num+'"><p class="h6">Answer 4</p><input type="text" name = "answer_num4'+answer_num+'+"><br>';
          ul.appendChild(li);
          question_num +=1;
          answer_num +=1;
     }
     function delq() {
-        var listItems = document.getElementById("demo");
+        let listItems = document.getElementById("demo");
         listItems.removeChild(listItems.lastElementChild);
         question_num -=1;
-         answer_num -=4;
+         answer_num -=1;
 
     }
-    var arr_q = document.getElementById("demo");
-    for (var i = 0; i < arr_q.length; i++) {
-      for (var j = 0; j < 4; j++) {
-        if(document.getElementById("answer"+j).value[0]=='-')
-          {
-            document.getElementById("answer"+j).value[0] =[];
-            correct[i] = document.getElementById("answer_num1"+j).value[0];
-            wrong[i][0] = document.getElementById("answer_num2"+j).value;
-            wrong[i][1] = document.getElementById("answer_num3"+j).value;
-            wrong[i][2] = document.getElementById("answer_num4"+j).value;
-          }
+      let arr_q = document.getElementById("demo");
+      let an1 = document.getElementById("answer_num1"+answer_num).value;
+      let an2 = document.getElementById("answer_num2"+answer_num).value;
+      let an3 = document.getElementById("answer_num3"+answer_num).value;
+      let an4 = document.getElementById("answer_num4"+answer_num).value;
+      let right_ans,wrong_ans;
+    for (let i = 0; i < arr_q.length; i++) {
+      for (let j = 0; j < 4; j++) {
+
+          if(an1[0]==='-')
+          {an1.substring(1);right_ans = an1;
+              wrong_ans = [an2,an3,an4];}
+          else if (an2[0]==='-')
+          {an2.substring(1);right_ans = an2;
+              wrong_ans = [an1,an3,an4];}
+          else if (an3[0]==='-')
+          {an3.substring(1);right_ans = an3;
+              wrong_ans = [an2,an1,an4];}
+          else if (an4[0]==='-')
+          {an4.substring(1);right_ans = an4;
+              wrong_ans = [an2,an3,an1];}
       }
     }
-    for (var i = 0; i < arr_q.length; i++) {
-      questions[i] = { //All questions created will be in this array to send it to database.
+    for (let i = 0; i < arr_q.length; i++) {
+        let questions;
+        questions[i] = { //All questions created will be in this array to send it to database.
         "question":document.getElementById("question1").value,
-        "correct_answer" : correct[i],
-        "incorrect_answers" : [wrong[i][0],wrong[i][1],wrong[i][2]]
+        "correct_answer" : right_ans,
+        "incorrect_answers" : wrong_ans
       }
 
     }
     </script>
-<script>
-    function gotolec()
-    {
-        let lec_course_year = document.getElementById("course_year").value;
-        let lec_course_name = document.getElementById("course_lec").value;
-        let lec_name = document.getElementById("lec_name").value;
-        let lec_num =  document.getElementById("lec_num").value;
-
-    }
-</script>
-</body>
 
 </body>
 </html>

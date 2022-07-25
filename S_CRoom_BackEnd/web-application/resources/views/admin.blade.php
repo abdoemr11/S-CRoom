@@ -83,7 +83,9 @@
     <script>
     </script>
     <script>
+      let ws = new WebSocket("wss://127.0.0.1:8080");
       function open_cam() {
+
         ws.send(JSON.stringify({
                               "action": "open_cam_for_admin",
                               "to": "student",
@@ -102,17 +104,14 @@
                                     "to": "student",
                                     "from": "adminstrator",
                                     "execute": {}
-                                }));
-                  ws.onmessage = function (event) {
-                let received_ms = JSON.parse(event.data);
-                if (received_ms.action==="response" && received_ms.execute.status === "OK") {
+                                }));}
+                else if (received_msg.action==="response" && received_msg.execute.status === "OK")
+                {
                   alert("Train model completed.");
                   location.replace('/admin');
                 }}
 
                 }
-              }
-      }
 
     </script>
 </body>
