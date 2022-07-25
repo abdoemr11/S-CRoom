@@ -18,6 +18,7 @@
             <button class="submit_class" type="submit" form="login_form" onclick="submit()">Submit</button>
         </div>
     </form>
+    <img src="wait.png" style="display: none; height: 200px; width: 200px" id="waiting_img">
 </main>
 <script src="keyboard.js"></script>
 <script>
@@ -36,10 +37,15 @@
                 "origin" : "javascript"
             }
         }));
+        document.getElementById("login_form").style.display="none";
+        document.getElementById("waiting_img").style.display="block";
         ws.onmessage = function (event) {
-            var received_msg = JSON.parse(event.data);
-            if (received_msg.execute.status == "OK") {
+            let received_msg = JSON.parse(event.data);
+            if (received_msg.execute.type ==="verify" && received_msg.execute.status === "OK") {
                 location.href = "/stdlive";
+            }
+            else {
+
             }
 
         }
