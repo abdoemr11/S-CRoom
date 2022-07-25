@@ -25,7 +25,7 @@
     function submit() {
         std_id  = document.getElementById("std_id").value;
         prof_id = document.getElementById("prof_id").value;
-        ws.send(JSON.strigify({
+        ws.send(JSON.stringify({
             "action": "connect",
             "to": "server",
             "from": "student",
