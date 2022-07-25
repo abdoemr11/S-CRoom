@@ -186,16 +186,16 @@
         let an4 = document.getElementById("an4").value;
         let right_ans,wrong_ans;
         if(an1[0]==='-')
-        {an1.shift();right_ans = an1;
+        {an1.substring(1);right_ans = an1;
             wrong_ans = [an2,an3,an4];}
         else if (an2[0]==='-')
-        {an2.shift();right_ans = an2;
+        {an2.substring(1);right_ans = an2;
             wrong_ans = [an1,an3,an4];}
         else if (an3[0]==='-')
-        {an3.shift();right_ans = an3;
+        {an3.substring(1);right_ans = an3;
             wrong_ans = [an2,an1,an4];}
         else if (an4[0]==='-')
-        {an4.shift();right_ans = an4;
+        {an4.substring(1);right_ans = an4;
             wrong_ans = [an2,an3,an1];}
         let quiz_form = {
             "action" : "quiz",
