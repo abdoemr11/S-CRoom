@@ -80,36 +80,35 @@
 
 </main>
 <script>
-    let name_v,ch1,ch2,ch3,ch4, student_ids,isAttend,bonuses,quiz_degrees;
+    let name_v,ch1,ch2,ch3,ch4,x=0;
+    let student_ids = [{
+        "studentss" : "123",
+        "isAttending" : false,
+        "bonuss" : 0
+    }];
     let students = [{
         student_name: "goda",
         student_id: "123",
         isVerified: false,
         bonus: 0
     }];
-    students.forEach( student=> {
-            student_ids[student] = student.student_id;
-        })
-    students.forEach( student=> {
-            bonuses[student] = student.bonus;
-        })
-    students.forEach( student=> {
-            if(student.isVerified ===true)
-            isAttend[student] = true;
-        })
+
+    let quiz_degrees = {
+        "student_id": "1234",
+        "professor_id" : "456" ,
+        "subject_id" : "789",
+        "exam_type": "quiz",
+        "exam-mark": 5,
+    };
     let lecture_msg = [{
-    	"professor_id" : //prof_id,
-    	"subject_id" : //subject_id,
-    	"lecture_week" : //lec_number,
-    	"students_data" : {
-    		"student_ids" : {student_ids},
-    		"is_attendent" : {isAttend},
-    		"Bonuses" : {bonuses}
-       	},
+    	"professor_id" : "1234",
+    	"subject_id" : "5698",
+    	"lecture_week" : "4",
+    	"students_data" : students,
        	"exam" : {
        		"min_degree" : 2.5,
        		"max_degree" : 5,
-       		"info" : {quiz_degrees}
+       		"info" : quiz_degrees
        	}
     }];
     let ws = new WebSocket("ws://127.0.0.1:8080");
@@ -259,7 +258,7 @@
                 }
         }
         ws.send(JSON.stringify(recv_msg));
-        ws.send(JSON.stringify(lecture_mag));
+        ws.send(JSON.stringify(lecture_msg));
         location.replace("/proflog");
     }
     function show_vote()
@@ -270,10 +269,10 @@
         let i;
         console.log(JSON.parse(event.data))
         let received_msg = JSON.parse(event.data);
-        var vote_result;
+        let vote_result;
         if (received_msg.action === "response" && received_msg.execute.type === "connectProfessor") {
             if (received_msg.execute.status === "OK") {
-                alert("Connetion succeeded");
+                alert("Connection succeeded");
             }
         } else if (received_msg.action === "response" && received_msg.execute.type === "getStudents") {
             let studentObjects = received_msg.execute.students;
@@ -298,7 +297,7 @@
             let x = -1;
             x += 1;
             students.forEach(student => {
-                    if (student.student_id == received_msg.execute.student_id)
+                    if (student.student_id === received_msg.execute.student_id)
                         student.isVerified = true;
                 }
             )
@@ -311,8 +310,8 @@
                 }
             })
         } else if (received_msg.action === "std_msg") {
-            student = students.find(st => st.student_id == received_msg.execute.student_id)
-            question = received_msg.execute.questions;
+            let student = students.find(st => st.student_id === received_msg.execute.student_id)
+            let question = received_msg.execute.questions;
             let ul = document.getElementById("question");
             let li = document.createElement("li");
             li.innerHTML = '# Student Name : ' + student.student_name + '<br>>' + 'Qustion : ' + question + '<hr>';
@@ -326,7 +325,6 @@
         } else if (received_msg.action === "response" && received_msg.execute.type === "unmute_all") {
             alert("All students are unmuted");
         } else if (received_msg.action === "response" && received_msg.execute.type === "quiz") {
-            let x = 0;
             quiz_degrees[x] = {
                 "student_id": received_msg.execute.student_id,
                 //"professor_id" : ,
@@ -336,14 +334,14 @@
             };
             x += 1;
         } else if (received_msg.execute.type === "endSession") {
-            location.replace("wss://wss://127.0.0.1/proflogin");
+            location.replace("/proflog");
         } else if (received_msg.action === "response_Self_end") {
             alert("A student left the session");
         } else if (received_msg.action === "response_mute") {
             alert("A student Muted himself");
         } else if (received_msg.action === "raise_hand") {
         	students.forEach( student=> {
-            if(student.student_id ===received_msg.execute.studen_id)
+            if(student.student_id ===received_msg.execute.student_id)
 	            {
 	            	let ul = document.getElementById("raised_hand_std");
 		            let li = document.createElement("li");
@@ -351,7 +349,7 @@
 		            ul.appendChild(li);
 	            }
         	})
-        	
+
         }
     }
 </script>
