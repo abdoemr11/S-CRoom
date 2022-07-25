@@ -61,7 +61,7 @@
 </script>
 
 <script >
-    let ws = new WebSocket("wss://127.0.0.1:8880");
+    let ws = new WebSocket("wss://127.0.0.1:8080");
     function getLocalStream() {
         navigator.mediaDevices.getUserMedia({video: false, audio: true}).then( stream => {
             window.localStream = stream; // A

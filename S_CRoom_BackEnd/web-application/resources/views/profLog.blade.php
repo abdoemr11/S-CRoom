@@ -131,20 +131,20 @@
 
             <p class="h6">Year</p>
             <fieldset >
-              <input class="form-control"   placeholder="The Year ?" list="list1" id="course_year" name="course_year"> <br>
+              <input class="form-control" placeholder="The Year ?" list="list1" required name="course_year"> <br>
             </fieldset>
             <p class="h6">Course of the lecture</p>
-            <select id="course_lec" class="form-control" name="course_id">
+            <select id="course_lec" class="form-control" name="course_id" required>
                 @foreach(Auth::guard('professors')->user()->subjects as $subject)
                     <option value="{{$subject->id}}">{{$subject->subject_name}}</option>
                 @endforeach
 
             </select>
             <p class="h6">Lecture name</p>
-            <input class="form-control"type="text" placeholder="The course ?" id="lec_name" name="lec_name">
+            <input class="form-control"type="text" placeholder="The course ?" name="lec_name" required>
           <br>
                 <p class="h6">Lecture number</p>
-                <input class="form-control" type="number" placeholder="The lecture number ?" maxlength="2" id="lec_num" name="lec_num"> <br>
+                <input class="form-control" type="number" placeholder="The lecture number ?" maxlength="2" required name="lec_num"> <br>
                 <button class="btn btn-success" onclick="gotolec()">Go</button>
         </form>
       </div>
