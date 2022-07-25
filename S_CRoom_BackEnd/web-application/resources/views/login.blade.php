@@ -39,6 +39,6 @@
 </main>
 <footer>
     <br><br>
-    <p>Designed by: <a href="https://www.linkedin.com/in/mahmoud-gouda-409382172/" target ="_blank">Mahmoud Gouda</a></p>
+    <p>Keep</a></p>
 </footer>
 </body>
