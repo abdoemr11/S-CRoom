@@ -2,26 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ee614767-cd45-418e-a06e-f46a68b34b31" name="Changes" comment="modified some table &#10;begin professor session pass now parameter to request">
-      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/prof.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/student.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prof.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/student.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/public/axios.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/app/Http/Controllers/SessionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/app/Http/Controllers/SessionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/app/Models/Professor.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/app/Models/Professor.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/factories/SubjectFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/factories/SubjectFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/migrations/2022_07_04_101620_create_subjects_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/migrations/2022_07_04_101620_create_subjects_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/migrations/2022_07_04_121634_create_exams_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/migrations/2022_07_04_121634_create_exams_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/migrations/2022_07_04_125520_student_exam.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/migrations/2022_07_04_125520_student_exam.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/seeders/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/views/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/views/admin.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/views/goda.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/views/pp.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/views/pp.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/views/profLive.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/views/profLive.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/views/profLog.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/views/profLog.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/views/student-profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/views/student-profile.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/views/studentLive.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/views/studentLive.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/views/welcome.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/routes/web.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SocketServer/src/Controller/ServerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/src/Controller/ServerController.php" afterDir="false" />
     </list>
@@ -37,7 +21,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="book" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -251,7 +235,8 @@
       <workItem from="1658487904650" duration="13649000" />
       <workItem from="1658578191342" duration="12057000" />
       <workItem from="1658653989315" duration="19706000" />
-      <workItem from="1658689761302" duration="604000" />
+      <workItem from="1658689761302" duration="5919000" />
+      <workItem from="1658743732003" duration="2693000" />
     </task>
     <task id="LOCAL-00001" summary="Finished the ability to send welcome message and open cam">
       <created>1648307115306</created>
@@ -400,7 +385,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658659171436</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="modified some table &#10;begin professor session pass now parameter to request">
+      <created>1658690385228</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1658690385228</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

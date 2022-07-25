@@ -2,6 +2,7 @@
     <title>Prof Live</title>
     <link rel="stylesheet" type="text/css" href="proftry.css">
     <link rel="stylesheet" href="..\bootstrap.min.css">
+    <script src="\axios.min.js"></script>
     @php
     $professor = Auth::guard('professors')->user()
     @endphp
@@ -80,6 +81,7 @@
 
 </main>
 <script>
+    console.log("{{$token}}")
     let name_v,ch1,ch2,ch3,ch4,x=0;
     let student_ids = [{
         "studentss" : "123",
@@ -101,9 +103,9 @@
         "exam-mark": 5,
     };
     let lecture_msg = [{
-    	"professor_id" : "1234",
-    	"subject_id" : "5698",
-    	"lecture_week" : "4",
+    	"professor_id" : "{{$professor->id}}",
+    	"subject_id" : "{{$course_id}}",
+    	"lecture_week" : "{{$lec_num}}",
     	"students_data" : students,
        	"exam" : {
        		"min_degree" : 2.5,
@@ -257,9 +259,13 @@
                     "student_id": "00000"
                 }
         }
+        console.log(lecture_msg)
         ws.send(JSON.stringify(recv_msg));
         ws.send(JSON.stringify(lecture_msg));
-        location.replace("/proflog");
+        axios.post('/professor-session', lecture_msg)
+            // .then(data=> console.log(data))
+            // .catch(e => console.log(e))
+        // location.replace("/proflog");
     }
     function show_vote()
     {

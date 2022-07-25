@@ -45,14 +45,23 @@ Route::get('stdlog', function () {
 Route::get('/proflog', function () {
     return view('profLog');
 })->middleware('professor');
-Route::get('/proflive', function () {
-    return view('profLive');
-});
+//Route::get('/proflive', function () {
+//    return view('profLive');
+//});
 Route::post('/proflive', function () {
 //    \request()->dd();
     return view('profLive')->with([
-        'token'=> Str::random(40)
+        ...\request()->all(),
+        'token'=> \request('_token'),
+        'professor'=> Auth::guard('professors')->user()
         ]);
+});
+Route::post('/professor-session', function (){
+//    \request()->dd();
+//dd('hi');
+    return([
+        'abdo'=> 'saber'
+    ]);
 });
 Route::get('/stdlive', function () {
     return view('studentLive');

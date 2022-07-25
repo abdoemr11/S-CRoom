@@ -6,8 +6,8 @@ use MyApp\Utilities\Message_Handler;
 use \Ratchet\ConnectionInterface;
 class ServerController
 {
-    private array $students = array();
     private array $professors = array();
+    private array $admins = array();
     private bool $isEncrypted = false;
     public function __construct()
     {
@@ -53,7 +53,8 @@ class ServerController
 
         }
         //if the message is not plain object, it will be encrypted
-        if($msg_obj['action'] != 'connect' && $msg_obj['from'] == 'professor')
+        if($msg_obj['action'] != 'connect' && ($msg_obj['from'] == 'professor'
+                || $msg_obj['from'] == 'adminstrator'))
         {
             $action_array = $msg_obj;
 
@@ -130,7 +131,7 @@ class ServerController
 
             $professor->addStudent($from,$msg_obj['execute']['device_id'], $msg_obj['execute']['student_id'],$msg_obj['execute']['name']);
         }
-        if ($msg_obj['from'] == 'professor')
+        if ($msg_obj['from'] == 'professor' || $msg_obj['from'] == 'adminstrator')
         {
             $professor  = $this->getPersonByToken($this->professors,$msg_obj['execute']['token']);
             if(is_object($professor))
@@ -139,6 +140,7 @@ class ServerController
                 $plain_repsonse = CommandHelper::response('OK', 'connectProfessor', " h"
                 ,["id" => $professor->getId()]);
                 $professor->setConnection($from);
+                echo "New Connection id is : ". $professor->getConnectionInterface()->resourceId . "\n";
                 $this->sendToConnection($from, $plain_repsonse);
                 return;
 
@@ -241,6 +243,21 @@ class ServerController
                 break;
             case 'response':
 //                $professor->send_to('response', 'server', $prof_command['execute']);
+                break;
+                //admin commands
+            case 'open_cam_for_admin':
+                foreach ($students as $student)
+                {
+                    $student->send_to('open_cam_for_admin', 'professor', $prof_command['execute']);
+
+                }
+                break;
+            case 'train':
+                foreach ($students as $student)
+                {
+                    $student->send_to('train', 'professor', $prof_command['execute']);
+
+                }
                 break;
             default:
                 echo 'invalid action\n';
