@@ -4,9 +4,8 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://ajax.googleapis.conm/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="popper.min.js"></script>
+    <link rel="stylesheet" href="bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="try.css">
     <link rel="stylesheet" type="text/css" href="try.js">
     <link rel="stylesheet" type="text/css" href="style.css">
@@ -76,9 +75,8 @@
         raise_msg={"action" : "raise_hand",
             "to": "professor",
             "from" : "student",
-            "student_id": "//student_id",
-            "device_id" : "//student_id",
-            "execute" : {"token" : "{{$token}}"}};
+
+            "execute" : {"device_id" : "//student_id","student_id": "//student_id"}};
         ws.send(JSON.stringify(raise_msg));
     }
     function send_question() {
@@ -86,7 +84,7 @@
         question_msg={"action" : "std_msg",
             "to": "professor",
             "from" : "student",
-            "execute" : {student_id: ,"token" : "{{$token}}","questions" : qustion}};
+            "execute" : {"device_id" : "//student_id","student_id": "student_id","questions" : qustion}};
         ws.send(JSON.stringify(question_msg));
     }
     let myForm = document.getElementById("myForm");
@@ -131,7 +129,7 @@
             "student_id": "//student_id",
             "studentName": "//Student_name",
             "device_id" : "//student_id",
-            "execute" : {"token" : "{{$token}}","grade":grade}};
+            "execute" : {"device_id" : "//student_id","student_id": "student_id","grade":grade}};
         ws.send(JSON.stringify(grade_msg));
     }
     function close_no_quiz() {
@@ -150,7 +148,7 @@
             "to": "student",
             "from": "student",
             "execute": {
-                "token" : "{{$token}}",
+                "student_id": "hosam",
                 "device_id": "xxxxxx"
             }
         };
@@ -164,8 +162,7 @@
             "to": "student",
             "from": "student",
             "execute": {
-                "token" : "{{$token}}",
-                "student_name": "hosam",
+                "student_id": "hosam",
                 "device_id": "xxxxxxxxxx"
             }
         };
