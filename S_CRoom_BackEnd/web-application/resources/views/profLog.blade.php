@@ -198,7 +198,7 @@
                   <button type="button" class="btn btn-primary" title="Delete question" onclick="delq()"><img src="delete.png" width="20" height="25" class="img-rounded"></button>
                 <br>
                 </div><br>
-                <button class="btn btn-success" onclick="submit_exam()">Submit</button>
+                <button class="btn btn-success" type="submit">Submit</button>
         </form>
       </div>
     </div>
