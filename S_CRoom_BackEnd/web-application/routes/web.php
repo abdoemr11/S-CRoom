@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\SessionController;
 use App\WebSocket\SocketServer;
 use Illuminate\Http\Request;
@@ -76,11 +77,8 @@ Route::get('student-profile', function () {
 Route::get('/admin', function () {
     return view('admin');
 });
-//Route::post('/admin', [AdminController::class, 'create']);
-Route::post('/admin', function (){
-    \request()->dd();
-    return view('admin');
-});
+Route::post('/admin', [SessionController::class, 'test']);
+
 Route::get('/prof-socket', function () {
     return view('professor-socket');
 });

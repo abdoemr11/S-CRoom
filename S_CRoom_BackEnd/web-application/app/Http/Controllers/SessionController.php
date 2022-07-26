@@ -7,6 +7,9 @@ use Illuminate\Support\Facades\Auth;
 
 class SessionController extends Controller
 {
+    public function test() {
+        \request()->dd();
+    }
     public function store() {
         $credentialsOld = request()->validate([
             'role' => ['required'],
