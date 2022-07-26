@@ -17,12 +17,14 @@ class SubjectFactory extends Factory
      */
     public function definition()
     {
+        $ss = ['Communication', 'Algorithms', 'Data-Structures', 'Antenna', 'Logic'];
+
         return [
             'professor_id'=>100,
             'subject_degree' => 100,
             'subject_year' =>4,
             'subject_min_mark' => 50,
-            'subject_name' => "Communication"
+            'subject_name' => $ss[rand(0,5)]
 
 
         ];

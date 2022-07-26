@@ -170,7 +170,8 @@ END;
             if(is_object($professor))
             {
 
-                $plain_repsonse = CommandHelper::response('OK', 'connectProfessor', " h"
+                $plain_repsonse = CommandHelper::response('FAILED', 'connectProfessor',
+                    "You are already enrolled"
                 ,["id" => $professor->getId()]);
                 $professor->setConnection($from);
                 echo "New Connection id is : ". $professor->getConnectionInterface()->resourceId . "\n";

@@ -23,5 +23,6 @@ class DatabaseSeeder extends Seeder
         Professor::factory(10)->create();
         Subject::factory(10)->create(['professor_id'=>Professor::first()->id]);
         Admin::factory(5)->create();
+        Student::first()->subjects()->attach(Subject::first()->id);
     }
 }

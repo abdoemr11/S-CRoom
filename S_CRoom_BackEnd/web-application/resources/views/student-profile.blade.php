@@ -87,25 +87,26 @@
             <div class="container cc-experience">
                 <div class="h4 text-center mb-4 title">Courses</div>
 {{--                start card--}}
-                <div class="card">
-                    <div class="row">
-                        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-                            <div class="card-body cc-experience-header">
-                                <div class="h5">[Name of the course1 from database]</div>
+                @foreach($user->subjects as $subject)
+                    <div class="card">
+                        <div class="row">
+                            <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+                                <div class="card-body cc-experience-header">
+                                    <div class="h5">{{$subject->subject_name}}</div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-                            <div class="card-body">
-                                <p>[Discription of the course from database (added by admin)]</p>
-                                <p>Number of bonuses: </p>
-                                <p>Number of minuses: </p>
-                                <p>Quizes grades: </p>
-                                <p>Final test grade: </p>
-                                <p>Total grade: </p>
+                            <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+                                <div class="card-body">
+                                    <p>Number of bonuses: {{rand(1,4)}} </p>
+                                    <p>Number of minuses: {{rand(1,4)}}</p>
+                                    <p>Quizes grades: {{rand(5,20)}}</p>
+
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                @endforeach
+
 {{--                end card--}}
 
             </div>

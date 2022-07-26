@@ -19,15 +19,9 @@ class Message implements MessageComponentInterface {
     {
         $this->clients->attach($conn);
         echo "New connection! ({$conn->resourceId})\n";
-        $conn->send(Message_Handler::encode_msg(array('action' => 'hello',
-        'from'=> 'server', 'to' => 'student', 'execute'=>[])));
-//        $conn->close();
-//        foreach ($this->clients as $client) {
-//
-//                // The sender is not the receiver, send to each client connected
-////                $client->send("Welcome to the server");
-//
-//        }    }
+//        $conn->send(Message_Handler::encode_msg(array('action' => 'hello',
+//        'from'=> 'server', 'to' => 'student', 'execute'=>[])));
+
     }
     /** TODO if message come from the admin to a student
         the controller singleton should have a list of student{id, ConnectionInterface connection}

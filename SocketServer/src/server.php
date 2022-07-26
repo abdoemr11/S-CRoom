@@ -16,5 +16,5 @@ use Ratchet\WebSocket\WsServer;
         ),
         8080
     );
-
+    echo "Starting server at PORT 8080\n";
     $server->run();
