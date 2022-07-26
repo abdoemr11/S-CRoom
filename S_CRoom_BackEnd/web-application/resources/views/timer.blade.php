@@ -25,7 +25,7 @@
     // Set the date we're counting down to
     //July 21, 2022 15:04:40
     let countDownDate = new Date("{{Auth::guard('exams')->exam_date}} {{Auth::guard('exams')->exam_start}} ").getTime();
-
+    let ws = new WebSocket("wss://127.0.0.1:8080");
     // Update the countdown every 1 second
     let x = setInterval(function() {
 
@@ -52,6 +52,12 @@
             document.getElementById("current_action").style.display = "none";
         }
     }, 1000);
+    ws.onmessage = function (event) {
+        let received_msg = JSON.parse(event.data);
+        if (received_msg.action=== "start_exam") {
+        location.replace("/loginr");
+        }
+    }
 </script>
 
 </body>

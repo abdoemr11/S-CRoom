@@ -17,6 +17,9 @@
 <script>
     let cheat_id,x=0;
     let ws = new WebSocket("wss://127.0.0.1:8080");
+    let end_timer = //Get end time from database;
+    let start_timer = //Get start time from database;
+    let timer = end_timer - start_timer;
     function conncet() {
         //Get questions from database and put them in the questions array and then put it instead of the questions array in the json file.
         ws.send(JSON.stringify({
@@ -26,7 +29,7 @@
             "execute": {
                 "token": "123124",
                 "student_id": "00000",
-                "timer": "Seconds",
+                "timer": timer,
                 "questions": [
                     {
                         'question': 'what is your name?',
