@@ -83,8 +83,11 @@ Route::get('/prof-socket', function () {
 Route::get('/loginr', function () {
     return view('loginRasp');
 });
-Route::get('/examwatch', function () {
-    return view('exam_watching');
+Route::post('/examwatch', function () {
+
+    return view('exam_watching')->with([
+        "exam_data" => \request()->all()
+    ]);
 })->middleware('professor');
 Route::get('/wait', function () {
     return view('timer');

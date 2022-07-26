@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="bootstrap.min.css">
 </head>
 <body>
+@dd($exam_data)
 <header>
     <h1 id="header">Here Professor can control the exam</h1>
     <button onclick="conncet()" class="btn btn-success">Start Exam

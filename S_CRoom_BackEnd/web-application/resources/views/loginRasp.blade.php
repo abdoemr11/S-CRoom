@@ -22,7 +22,7 @@
 </main>
 <script src="keyboard.js"></script>
 <script>
-    let ws = new WebSocket("ws://127.0.0.1:8080");
+    let ws = new WebSocket("ws://192.168.1.8:8080");
     console.log("here");
     let std_id  = document.getElementById("std_id").value;
     let prof_id = document.getElementById("prof_id").value;

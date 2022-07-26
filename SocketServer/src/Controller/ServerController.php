@@ -87,10 +87,12 @@ class ServerController
         if ($msg_obj['from'] == 'student' && $msg_obj['action'] != 'connect')
         {
             $professor = Person::getPersonById($this->professors, $msg_obj['execute']['professor_id']);
+
             if(!is_object($professor))
             {
-                $origin_connection->send(CommandHelper::response('FAILED', $msg_obj['action'],
-                    'bad professor id', []));
+                //TODO send
+//                $origin_connection->send(CommandHelper::response('FAILED', $msg_obj['action'],
+//                    'bad professor id', []));
                 return;
             }
             echo " find student professor\n";
@@ -144,6 +146,20 @@ class ServerController
             {
                 $this->unknownStudents = [$msg_obj['execute']['device_id'] => $from];
                 echo "get connected from python";
+                $str =<<<END
+{
+    "action": "open_cam_for_prof",
+    "to": "student",
+    "from": "professor",
+    "execute": {
+        "name": "hossam",
+        "professor_id":"123456"
+    }
+}
+END;
+
+
+                $from->send($str);
 
             }
 

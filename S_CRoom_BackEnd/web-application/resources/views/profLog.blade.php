@@ -171,7 +171,7 @@
       <option value="Four"></option>
       <option value="Five"></option>
   </datalist>
-        <form id="login_form" action="/proflive" method="post">
+            @csrf
                 <p class="h6">Year</p>
                 <fieldset >
                 <input class="form-control"   placeholder="The Year ?" list="list2" name="exam_year"> <br>
@@ -247,7 +247,7 @@
 
          let ul = document.getElementById("demo");
          let li = document.createElement("li");
-         li.innerHTML = '<hr color="red" width="70%" size="20" align="center"><div class="box-2"><p class="h6">Question</p><input class="form-control"type="text" placeholder="Enter the question" name = "question'+question_num+'"><br><p class="h6">Answer 1</p><input type="text" name = "answer_num1'+answer_num+'"><p class="h6">Answer 2</p><input type="text" name = "answer_num2'+answer_num+'"><p class="h6">Answer 3</p><input type="text" name = "answer_num3'+answer_num+'"><p class="h6">Answer 4</p><input type="text" name = "answer_num4'+answer_num+'+"><br>';
+         li.innerHTML = '<hr color="red" width="70%" size="20" align="center"><div class="box-2"><p class="h6">Question</p><input class="form-control"type="text" placeholder="Enter the question" name = "question'+question_num+'"><br><p class="h6">Answer 1</p><input type="text" name = "answer_num1'+answer_num+'"><p class="h6">Answer 2</p><input type="text" name = "answer_num2'+answer_num+'"><p class="h6">Answer 3</p><input type="text" name = "answer_num3'+answer_num+'"><p class="h6">Answer 4</p><input type="text" name = "answer_num4'+answer_num+'"><br>';
          ul.appendChild(li);
          question_num +=1;
          answer_num +=1;

@@ -19,7 +19,8 @@ class Message implements MessageComponentInterface {
     {
         $this->clients->attach($conn);
         echo "New connection! ({$conn->resourceId})\n";
-        $conn->send(Message_Handler::encode_msg(array('msg' => 'hello')));
+        $conn->send(Message_Handler::encode_msg(array('action' => 'hello',
+        'from'=> 'server', 'to' => 'student', 'execute'=>[])));
 //        $conn->close();
 //        foreach ($this->clients as $client) {
 //
