@@ -12,9 +12,9 @@ use Ratchet\ConnectionInterface;
 class Professor extends Person
 {
     private array $students = array();
-    public function __construct(private ConnectionInterface $connection, string $token, $id, $name)
+    public function __construct(private ConnectionInterface $connection, string $token, $id, $name, $dest)
     {
-        parent::__construct($connection, $token, $id, $name, 'professor');
+        parent::__construct($connection, $token, $id, $name, $dest);
     }
     public function addStudent($from, string $device_id, string $id, $name)
     {

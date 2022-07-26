@@ -76,7 +76,10 @@ Route::get('student-profile', function () {
 Route::get('/admin', function () {
     return view('admin');
 });
-
+//Route::post('/admin', [AdminController::class, 'create']);
+Route::post('/admin', function (){
+    \request()->all();
+});
 Route::get('/prof-socket', function () {
     return view('professor-socket');
 });

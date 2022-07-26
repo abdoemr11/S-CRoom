@@ -179,7 +179,7 @@ END;
 
             }
             $randomId = "123456";
-            $this->professors[] = new Professor($from, $msg_obj['execute']['token'], $randomId, $msg_obj['execute']['name']);
+            $this->professors[] = new Professor($from, $msg_obj['execute']['token'], $randomId, $msg_obj['execute']['name'], $msg_obj['from']);
             //TODO throw error
         }
     }
