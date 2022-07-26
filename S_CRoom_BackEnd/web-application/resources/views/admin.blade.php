@@ -33,6 +33,10 @@
   <input class="form-control" type="text" placeholder="Student name ?" required id="student_name">
   <p class="h6">student id</p>
   <input class="form-control" type="number" placeholder="Student id" id="student_id">
+  <p class="h6">year</p>
+  <input class="form-control" type="number" placeholder="Student year" id="student_year">
+  <p class="h6">email</p>
+  <input class="form-control" type="email" placeholder="Student email" id="student_email">
   <button onclick="open_cam()" class="btn btn-primary" type="btn">Register a student</button>
    <div class="footer">
       <p>Copyright © 2022 Benha Faculty Of Engineering All Rights Reserved.
@@ -63,6 +67,17 @@
                 else if (received_msg.action==="response" && received_msg.execute.status === "OK")
                 {
                   alert("Train model completed.");
+                    ws.send(JSON.stringify({
+                        "action": "open_cam_for_admin",
+                        "to": "server",
+                        "from": "adminstrator",
+                        "execute": {
+                            "student_name": document.getElementById("student_name").value,
+                            "student_ID": document.getElementById("student_id").value,
+                            "student_year":document.getElementById("student_year").value,
+                            "student_email":document.getElementById("student_email").value,
+                            "n.o pictures": 15 //this number is default
+                        }}));
                   location.replace('/admin');
                 }}
 
