@@ -3,12 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="ee614767-cd45-418e-a06e-f46a68b34b31" name="Changes" comment="now it should work &#10;send_to send to javascript connection&#10;sendToPython">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/views/exam_watching.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/views/exam_watching.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/views/loginRasp.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/views/loginRasp.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/views/profLog.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/views/profLog.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/app/Models/Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/app/Models/Admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/factories/AdminFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/factories/AdminFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/database/seeders/DatabaseSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocketServer/src/Controller/ServerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/src/Controller/ServerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocketServer/src/message.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/src/message.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -455,5 +453,9 @@
     <MESSAGE value="hossam modification" />
     <MESSAGE value="now it should work &#10;send_to send to javascript connection&#10;sendToPython" />
     <option name="LAST_COMMIT_MESSAGE" value="now it should work &#10;send_to send to javascript connection&#10;sendToPython" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

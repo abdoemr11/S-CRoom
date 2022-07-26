@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Admin;
 use App\Models\Professor;
 use App\Models\Student;
 use App\Models\Subject;
@@ -21,5 +22,6 @@ class DatabaseSeeder extends Seeder
         Student::factory(10)->create();
         Professor::factory(10)->create();
         Subject::factory(10)->create(['professor_id'=>Professor::first()->id]);
+        Admin::factory(5)->create();
     }
 }

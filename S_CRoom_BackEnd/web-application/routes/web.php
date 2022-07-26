@@ -75,7 +75,7 @@ Route::get('student-profile', function () {
 
 Route::get('/admin', function () {
     return view('admin');
-})->middleware('admin');
+});
 
 Route::get('/prof-socket', function () {
     return view('professor-socket');
