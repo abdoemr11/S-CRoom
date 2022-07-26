@@ -290,9 +290,10 @@
       }
 
     }
-      let end_timer = document.getElementById('exam_end').value//Get end time from database;
-          let start_timer = document.getElementById('exam_start').value;
-          let timer = end_timer - start_timer;
+      let end_timer = document.getElementById('exam_end').value;
+      let start_timer = document.getElementById('exam_start').value;
+      let timer = end_timer - start_timer;
+      let now = new Date().getTime();
     function exam_submit()
     {
         let ws = new WebSocket("ws://192.168.1.8:8080");
@@ -319,6 +320,10 @@
                     }
                 }));
             }
+        }
+        setTimeout(myURL, 5000);
+        function myURL(){
+            location.replace('/examwatch');
         }
 
 
