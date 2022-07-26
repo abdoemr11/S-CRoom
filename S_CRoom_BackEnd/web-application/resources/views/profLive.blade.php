@@ -138,6 +138,7 @@
             "to" : "server" ,
             "from" : "professor" ,
             "execute" : {
+                "type" : "lecture",
                 "token" : "{{$token}}"
             }}));
     }

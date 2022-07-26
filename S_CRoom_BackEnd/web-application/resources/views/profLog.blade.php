@@ -171,7 +171,6 @@
       <option value="Four"></option>
       <option value="Five"></option>
   </datalist>
-            @csrf
                 <p class="h6">Year</p>
                 <fieldset >
                 <input class="form-control"   placeholder="The Year ?" list="list2" name="exam_year"> <br>
@@ -198,8 +197,7 @@
                   <button type="button" class="btn btn-primary" title="Delete question" onclick="delq()"><img src="delete.png" width="20" height="25" class="img-rounded"></button>
                 <br>
                 </div><br>
-                <button class="btn btn-success" type="submit">Submit</button>
-        </form>
+                <button class="btn btn-success" onclick="exam_submit()">Submit</button>
       </div>
     </div>
    <div class="footer">
@@ -225,6 +223,7 @@
       let question_num = 0;
       let answer_num = 0;
       let c=0;
+      let questions;
       function lec() {
         lecs.style.display="none";
         exams.style.display="none";
@@ -283,12 +282,45 @@
       }
     }
     for (let i = 0; i < arr_q.length; i++) {
-        let questions;
+
         questions[i] = { //All questions created will be in this array to send it to database.
         "question":document.getElementById("question1").value,
         "correct_answer" : right_ans,
         "incorrect_answers" : wrong_ans
       }
+
+    }
+      let end_timer = document.getElementById('exam_end').value//Get end time from database;
+          let start_timer = document.getElementById('exam_start').value;
+          let timer = end_timer - start_timer;
+    function exam_submit()
+    {
+        let ws = new WebSocket("ws://192.168.1.8:8080");
+        ws.send(JSON.stringify({"action" : "verifyStudents" ,
+            "to" : "server" ,
+            "from" : "professor" ,
+            "execute" : {
+                "token" : "{{$token}}"
+            }}));
+        ws.onmessage = function (event) {
+            let received_msg = JSON.parse(event.data);
+            if (received_msg.action === "response" && received_msg.execute.status === "OK" && received_msg.execute.type === "verify")
+            {
+                ws.send(JSON.stringify({
+                    "action": "start_exam",
+                    "to": "student",
+                    "from": "professor",
+                    "execute": {
+                        "token": "123124",
+                        "student_id": received_msg.execute.student_id,
+                        "timer": timer,
+                        "questions": questions
+
+                    }
+                }));
+            }
+        }
+
 
     }
     </script>

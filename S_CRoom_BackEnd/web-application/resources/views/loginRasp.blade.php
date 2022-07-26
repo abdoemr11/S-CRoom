@@ -44,14 +44,28 @@
         ws.onmessage = function (event) {
             let received_msg = JSON.parse(event.data);
             if (received_msg.execute.type ==="verify" && received_msg.execute.status === "OK") {
-                location.href = "/stdlive";
+                if(received_msg.execute.type === "lecture")
+                {
+                    location.href = '/stdlive';
+
+                }
+                else
+                {
+                    location.href = '/timer';
+                }
+
             }
+
             else if (received_msg.execute.type ==="verify" && received_msg.execute.status === "FAILED") {
                 alert("You are not recognized");
                 document.getElementById("login_form").style.display="none";
                 document.getElementById("msg_for_no_std").innerHTML = "Ask the admin to register yourself.";
                 document.getElementById("msg_for_no_std").style.display = "block";
             }
+            else if (received_msg.action=== "start_exam") {
+                    location.replace("/loginr");
+                }
+
 
         }
 
