@@ -11,12 +11,11 @@
     <form id="login_form" class="form_class" action="login" method="post">
         @csrf
         <p id="log">LOGIN AS</p>
-        <input name="role" value="STUDENT" class="field_class , use-keyboard-input" list="list1" placeholder="Who are you?">
-        <datalist id="list1">
-            <option value="STUDENT"></option>
-            <option value="PROFESSOR"></option>
-            <option value="ADMIN"></option>
-        </datalist>
+        <select id="list1" name="role"  class="field_class , use-keyboard-input" list="list1" placeholder="Who are you?">
+            <option>STUDENT</option>
+            <option>PROFESSOR</option>
+            <option>ADMIN</option>
+        </select>
         @error('role')
         {{$message}}
         @enderror
