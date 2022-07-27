@@ -90,17 +90,6 @@
                 else if (received_msg.action==="response" && received_msg.execute.status === "OK")
                 {
                   alert("Train model completed.");
-                    ws.send(JSON.stringify({
-                        "action": "open_cam_for_admin",
-                        "to": "server",
-                        "from": "adminstrator",
-                        "execute": {
-                            "student_name": document.getElementById("student_name").value,
-                            "student_ID": document.getElementById("student_id").value,
-                            "student_year":document.getElementById("student_year").value,
-                            "student_email":document.getElementById("student_email").value,
-                            "n.o pictures": 15 //this number is default
-                        }}));
                     document.getElementById("submit_button").style.display = "block";
                 }}
 
