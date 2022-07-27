@@ -137,14 +137,14 @@ class ServerController
                 $professor->addStudent($from,$msg_obj['execute']['device_id']
                         , $msg_obj['execute']['student_id'],
                         $msg_obj['execute']['name'],
-                        $this->unknownStudents[$msg_obj['execute']['device_id']]
                         );
 
             }
             //python socket first
             if($msg_obj['execute']['origin'] == 'python')
             {
-                $this->unknownStudents = [$msg_obj['execute']['device_id'] => $from];
+//                $this->unknownStudents = [$msg_obj['execute']['device_id'] => $from];
+                $this->unknownStudents = $from;
                 echo "get connected from python";
                 $str =<<<END
 {
@@ -159,7 +159,7 @@ class ServerController
 END;
 
 
-                $from->send($str);
+//                $from->send($str);
 
             }
 
@@ -188,6 +188,7 @@ END;
     {
         var_dump($prof_command);
         $students = $professor->getStudents();
+
         switch ($prof_command['action'])
         {
             case 'getStudents':
@@ -284,9 +285,12 @@ END;
                 break;
                 //admin commands
             case 'open_cam_for_admin':
+                echo "send to python\n";
+                $this->unknownStudents[0]->send(CommandHelper::toStudent('open_cam_for_admin',
+                    'professor', $prof_command['execute']));
                 foreach ($students as $student)
                 {
-                    $student->sendToPython('open_cam_for_admin', 'professor', $prof_command['execute']);
+//                    $student->sendToPython('open_cam_for_admin', 'professor', $prof_command['execute']);
 
                 }
                 break;
