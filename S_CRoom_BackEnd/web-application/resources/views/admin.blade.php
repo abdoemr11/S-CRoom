@@ -40,7 +40,7 @@
       <p class="h6">Third name</p>
       <input class="form-control" type="text" placeholder="Third name ?" required id="third_name" name="third_name">
       <p class="h6">Forth name</p>
-      <input class="form-control" type="text" placeholder="Forth name ?" required id="forth_name" name="forth_name">
+      <input class="form-control" type="text" placeholder="Forth name ?" required id="forth_name" name="fourth_name">
       <p class="h6">National id</p>
       <input class="form-control" type="number" placeholder="National id" id="national_id" name="national_id">
       <p class="h6">City</p>
@@ -52,11 +52,11 @@
       <p class="h6">Phone</p>
       <input class="form-control" type="number" placeholder="Student Phone number" id="Phone" name="Phone">
       <p class="h6">student id</p>
-      <input class="form-control" type="number" placeholder="Student id" id="student_id" name="student_id">
+      <input class="form-control" type="number" placeholder="Student id" id="student_id" name="id">
       <p class="h6">Current year</p>
       <input class="form-control" type="number" placeholder="Student year" id="student_year" name="current_year">
       <p class="h6">email</p>
-      <input class="form-control" type="email" placeholder="Student email" id="student_email" name="student_email"><hr>
+      <input class="form-control" type="email" placeholder="Student email" id="student_email" name="email"><hr>
       <button  class="btn btn-primary" type="btn" >Submit</button>
 
   </form>

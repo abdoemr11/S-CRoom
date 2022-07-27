@@ -300,7 +300,7 @@
             "to" : "server" ,
             "from" : "professor" ,
             "execute" : {
-                "token" : "{{$token}}"
+                "token" : "{{request('_token')}}"
             }}));
         ws.onmessage = function (event) {
             let received_msg = JSON.parse(event.data);

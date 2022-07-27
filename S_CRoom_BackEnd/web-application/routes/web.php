@@ -77,7 +77,12 @@ Route::get('student-profile', function () {
 Route::get('/admin', function () {
     return view('admin');
 });
-Route::post('/admin', [SessionController::class, 'test']);
+Route::post('/admin', function (){
+//    dd(\request()->all());
+    $attr =\request()->all();
+    \App\Models\Student::create([...\request()->all(), 'password'=>'password', 'image_auth'=>'12313']);
+    redirect('/admin');
+});
 
 Route::get('/prof-socket', function () {
     return view('professor-socket');
