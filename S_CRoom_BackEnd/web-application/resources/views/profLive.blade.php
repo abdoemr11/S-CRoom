@@ -334,6 +334,7 @@
                 "student_id": received_msg.execute.student_id,
                 "exam-mark": received_msg.execute.exam_mark,
             };
+            //Hi
             x += 1;
         } else if (received_msg.execute.type === "endSession") {
             location.replace("/proflog");
