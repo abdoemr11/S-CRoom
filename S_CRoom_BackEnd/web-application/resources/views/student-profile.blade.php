@@ -27,7 +27,6 @@
                 <div class="navbar-translate"><a class="navbar-brand" href="/student-profile" rel="tooltip" id="pic"><img src="images/profile.png" width="50" height="50"></a></div>
                 <div class="collapse navbar-collapse justify-content-end" id="navigation">
                     <ul class="navbar-nav">
-                        <li class="nav-item"><a class="nav-link smooth-scroll" href="/stdlog">Home</a></li>
                         <li class="nav-item"><a class="nav-link smooth-scroll" href="#about">About</a></li>
                         <li class="nav-item"><a class="nav-link smooth-scroll" href="#experience">Courses</a></li>
                         <li class="nav-item"><a class="nav-link smooth-scroll" href="/logout/students">Logout</a></li>

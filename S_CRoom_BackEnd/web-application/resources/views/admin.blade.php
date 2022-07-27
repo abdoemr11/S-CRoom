@@ -67,53 +67,33 @@
     </div>
     <script>
       let ws = new WebSocket("ws://127.0.0.1:8080");
-      setTimeout(()=> {
-          ws.send(JSON.stringify({
-              "action": "connect",
-              "to": "server",
-              "from": "adminstrator",
-              "execute": {
-                  "token": "12341351325123413513251234135321",
-                  "name": "adsfafda",
-                  "professor_id": "123456"
-              }
-          }))
-      },2000)
-
       function open_cam() {
-          setTimeout(()=>{
-              alert("Registeration completed.");
-            document.getElementById("submit_button").style.display = "block";
-          },5000)
-      }
-        // ws.send(JSON.stringify({
-        //                       "action": "open_cam_for_admin",
-        //                       "to": "student",
-        //                       "from": "adminstrator",
-        //                       "execute": {
-        //                           "token": "12341351325123413513251234135321",
-        //                           "professor_id": "123456",
-        //                           "student_name": document.getElementById("first_name").value,
-        //                           "student_ID": document.getElementById("student_id").value,
-        //                           "n.o pictures": 15 //this number is default
-        //                       }}));
-        // ws.onmessage = function (event) {
-        //         let received_msg = JSON.parse(event.data);
-        //         if (received_msg.action==="done registering") {
-        //           alert("Registeration completed.");
-        //           ws.send(JSON.strigify({
-        //                             "action": "train",
-        //                             "to": "student",
-        //                             "from": "adminstrator",
-        //                             "execute": {}
-        //                         }));}
-        //         else if (received_msg.action==="response" && received_msg.execute.status === "OK")
-        //         {
-        //           alert("Train model completed.");
-        //             document.getElementById("submit_button").style.display = "block";
-        //         }}
-        //
-        //         }
+        ws.send(JSON.stringify({
+                              "action": "open_cam_for_admin",
+                              "to": "student",
+                              "from": "adminstrator",
+                              "execute": {
+                                  "student_name": document.getElementById("student_name").value,
+                                  "student_ID": document.getElementById("student_id").value,
+                                  "n.o pictures": 15 //this number is default
+                              }}));
+        ws.onmessage = function (event) {
+                let received_msg = JSON.parse(event.data);
+                if (received_msg.action==="done registering") {
+                  alert("Registeration completed.");
+                  ws.send(JSON.strigify({
+                                    "action": "train",
+                                    "to": "student",
+                                    "from": "adminstrator",
+                                    "execute": {}
+                                }));}
+                else if (received_msg.action==="response" && received_msg.execute.status === "OK")
+                {
+                  alert("Train model completed.");
+                    document.getElementById("submit_button").style.display = "block";
+                }}
+
+                }
 
     </script>
 </body>
