@@ -20,6 +20,8 @@ class ServerController
         echo "\nreciveing message \n";
         $msg_obj = json_decode($msg, true);
         var_dump($msg_obj);
+        echo "\nbefore connect \n";
+
         //TODO validate the message more correctly
         //TODO handle exception
         if ($this->isEncrypted)
@@ -47,16 +49,19 @@ class ServerController
             $this->sendToConnection($origin_connection,...$response);
             return;
         }
+
         if ($msg_obj['action'] == 'connect')
         {
 
             $this->connect($origin_connection, $msg_obj);
+            return;
 
         }
         //if the message is not plain object, it will be encrypted
         if($msg_obj['action'] != 'connect' && ($msg_obj['from'] == 'professor'
                 || $msg_obj['from'] == 'adminstrator'))
         {
+            echo "professor is connected\n";
             $action_array = $msg_obj;
 
             $person_type = $action_array['from'];
@@ -64,6 +69,7 @@ class ServerController
 //            echo $professor . "professor is\n";
             if(!is_object($person))
             {
+                echo "can't find professor\n";
                 $plain_repsonse = (Professor::DENIED_ACCESS);
                 $response = ['action'=> $plain_repsonse[0], 'from'=>$plain_repsonse[1],'to'=>$person_type,
                 'execute' => $plain_repsonse[3]
@@ -76,6 +82,7 @@ class ServerController
             if($person instanceof Professor)
             {
 //                $action_array = Message_Handler::decrypt_msg($msg, $professor->getToken());
+                echo "handling professor command\n";
                 $this->handle_professor_command($person, $action_array);
             } elseif ($person instanceof Student)
             {
@@ -83,6 +90,16 @@ class ServerController
             }
 
 
+        }
+        echo "\nafter connect \n";
+
+        if($msg_obj['action'] != 'connect' && (
+                $msg_obj['from'] == 'adminstrator'))
+        {
+            echo "for here \n";
+            $action_array = $msg_obj;
+
+            $this->handle_professor_command($this->professors[0], $action_array);
         }
         if ($msg_obj['from'] == 'student' && $msg_obj['action'] != 'connect')
         {
@@ -144,7 +161,7 @@ class ServerController
             if($msg_obj['execute']['origin'] == 'python')
             {
 //                $this->unknownStudents = [$msg_obj['execute']['device_id'] => $from];
-                $this->unknownStudents = $from;
+                $this->unknownStudents[] = $from;
                 echo "get connected from python";
                 $str =<<<END
 {
@@ -187,6 +204,7 @@ END;
     private function handle_professor_command($professor, $prof_command): void
     {
         var_dump($prof_command);
+        echo "hi no \n";
         $students = $professor->getStudents();
 
         switch ($prof_command['action'])
@@ -286,6 +304,7 @@ END;
                 //admin commands
             case 'open_cam_for_admin':
                 echo "send to python\n";
+                var_dump($this->unknownStudents[0]->resourceId);
                 $this->unknownStudents[0]->send(CommandHelper::toStudent('open_cam_for_admin',
                     'professor', $prof_command['execute']));
                 foreach ($students as $student)

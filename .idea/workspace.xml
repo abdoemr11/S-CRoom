@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ee614767-cd45-418e-a06e-f46a68b34b31" name="Changes" comment="fixed admin page">
+    <list default="true" id="ee614767-cd45-418e-a06e-f46a68b34b31" name="Changes" comment="messing with the code">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/views/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/resources/views/admin.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/S_CRoom_BackEnd/web-application/routes/web.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SocketServer/src/Controller/ServerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/src/Controller/ServerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SocketServer/src/Utilities/CommandHelper.php" beforeDir="false" afterPath="$PROJECT_DIR$/SocketServer/src/Utilities/CommandHelper.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -454,7 +454,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658923953461</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="messing with the code">
+      <created>1658927821079</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1658927821079</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -472,7 +479,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Finished the ability to send welcome message and open cam" />
     <MESSAGE value="gitignored vendor folder on the socket server" />
     <MESSAGE value="ready to collaborate with goda and gad" />
     <MESSAGE value="added composer files" />
@@ -497,7 +503,8 @@
     <MESSAGE value="fixed admin controller" />
     <MESSAGE value="database for the students" />
     <MESSAGE value="fixed admin page" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed admin page" />
+    <MESSAGE value="messing with the code" />
+    <option name="LAST_COMMIT_MESSAGE" value="messing with the code" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

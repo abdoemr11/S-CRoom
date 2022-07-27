@@ -80,8 +80,9 @@ Route::get('/admin', function () {
 Route::post('/admin', function (){
 //    dd(\request()->all());
     $attr =\request()->all();
-    \App\Models\Student::create([...\request()->all(), 'password'=>'password', 'image_auth'=>'12313']);
-    redirect('/admin');
+    \App\Models\Student::create([...\request()->all(), 'password'=>'$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
+        'image_auth'=>'12313']);
+    return redirect('/admin');
 });
 
 Route::get('/prof-socket', function () {
