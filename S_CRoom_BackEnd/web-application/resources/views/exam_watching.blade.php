@@ -32,11 +32,27 @@
             exam_degree
         }
     }];
-
     ws.onmessage = function (event) {
-        e+=1;
+
+
         let received_msg = JSON.parse(event.data);
+        if (received_msg.action === "response" && received_msg.execute.status === "OK" && received_msg.execute.type === "verify")
+        {
+            ws.send(JSON.stringify({
+                "action": "start_exam",
+                "to": "student",
+                "from": "professor",
+                "execute": {
+                    "token": "123124",
+                    "student_id": received_msg.execute.student_id,
+                    "timer": timer,
+                    "questions": questions
+
+                }
+            }));
+        }
         if (received_msg.execute.status === "OK") {
+            e+=1;
             exam_degree[e].student_id = received_msg.execute.student_id;
             exam_degree[e].degree = received_msg.execute.grade;
         }
