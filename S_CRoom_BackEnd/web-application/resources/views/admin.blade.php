@@ -81,6 +81,7 @@
                 let received_msg = JSON.parse(event.data);
                 if (received_msg.action==="done registering") {
                   alert("Registeration completed.");
+                  document.getElementById("submit_button").style.display = "block";
                   ws.send(JSON.strigify({
                                     "action": "train",
                                     "to": "student",
@@ -90,7 +91,7 @@
                 else if (received_msg.action==="response" && received_msg.execute.status === "OK")
                 {
                   alert("Train model completed.");
-                    document.getElementById("submit_button").style.display = "block";
+
                 }}
 
                 }
