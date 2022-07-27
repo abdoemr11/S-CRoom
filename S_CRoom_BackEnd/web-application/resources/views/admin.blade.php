@@ -66,7 +66,7 @@
       <p>Copyright © 2022 Benha Faculty Of Engineering All Rights Reserved.
     </div>
     <script>
-      let ws = new WebSocket("ws://192.168.1.7:8080");
+      let ws = new WebSocket("ws://192.168.47.252:8080");
       function open_cam() {
         ws.send(JSON.stringify({
                               "action": "open_cam_for_admin",
