@@ -57,7 +57,7 @@
       <input class="form-control" type="number" placeholder="Student year" id="student_year" name="current_year">
       <p class="h6">email</p>
       <input class="form-control" type="email" placeholder="Student email" id="student_email" name="email"><hr>
-      <button  class="btn btn-primary" type="btn" >Submit</button>
+      <button  class="btn btn-primary" type="btn"  style="display: none;" id="submit_button">Submit</button>
 
   </form>
 
@@ -101,7 +101,7 @@
                             "student_email":document.getElementById("student_email").value,
                             "n.o pictures": 15 //this number is default
                         }}));
-                  // location.replace('/admin');
+                    document.getElementById("submit_button").style.display = "block";
                 }}
 
                 }
